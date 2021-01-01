@@ -1,4 +1,3 @@
-
 # HTML -
 
 ## Table Of Content :
@@ -13,12 +12,10 @@
 * [Frames](#frames)
 * [Forms](#forms)
 
-
 <br>
 
 
 ## HTML Entity
-
 | Char | Entity |
 | --- | --- |
 | & | `&amp;` |
@@ -41,9 +38,7 @@
 | ☚ | `&#9754;` |
 
 
-
 ## Formatting
-
 | Info | Tags |
 | --- | --- |
 | comments | `<!-- comment -->` |
@@ -74,25 +69,18 @@
 | work title | `<cite>` |
 
 
-
 ## Links
-
 - `<a href="url" target="_blank"> Link Text </a>`
-
-**target :** blanck/self/parent/top
-
+**target :** blanck\|self\|parent\|top
 
 ### &gt; Bookmarks :
-
 ```
 <h2 id="C4">Chapter 4</h2>
 <a href="#C4">Jump to Chapter 4</a>
 ```
 
 
-
 ## Lists
-
 ### &gt; Unordered :
 ```
 <ul>
@@ -100,17 +88,14 @@
 </ul>
 ```
 
-
 ### &gt; Ordered :
 ```
 <ol type="value" start="20">
     <li>Items</li>
 </ol>
 ```
-
-- **value**=1/a/A/I/i
+- **value**=1\|a\|A\|I\|i
 - **start** : start counting from 20
-
 
 ### &gt; Description Lists :
 ```
@@ -123,9 +108,7 @@
 ```
 
 
-
 ## Tables
-
 ```
 <table>
     <thead>
@@ -152,16 +135,12 @@
 - **colspan="value"** : span columns
 - **rowspan="value"** : span rows
 
-
 **Caption -**
 - `caption: <caption>text</caption>`
 
 
-
 ## Images
-
 `<img src="image.jpg" alt="Image Not Supported" width="104" height="142">`
-
 
 ### &gt; Clickable Area :
 ```
@@ -172,7 +151,6 @@
 </map>
 ```
 
-
 ### &gt; Picture Gallery :
 ```
 <picture>
@@ -181,13 +159,10 @@
     <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
 </picture>
 ```
-
-- **shape** : rect/circle/poly/default
-
+- **shape** : rect\|circle\|poly\|default
 
 
 ## Video
-
 ```
 <video width="320" height="240" autoplay>
     <source src="movie.mp4" type="video/mp4">
@@ -197,9 +172,7 @@
 ```
 
 
-
 ## Audio
-
 ```
 <audio controls>
     <source src="horse.ogg" type="audio/ogg">
@@ -209,9 +182,7 @@
 ```
 
 
-
 ## Frames
-
 `<iframe src="URL" height="100px" width="100px"></iframe>`
 
 ```
@@ -222,9 +193,7 @@
 `<iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>`
 
 
-
 ## Forms
-
 ```
 <form action="action.php" method="get/post" autocomplete="on/off">
     <label for="fname">Name</label>
@@ -232,13 +201,12 @@
 </form>
 ```
 
-- **Input Type :** button/checkbox/color/date/datetime-local/email/file/hidden/image/month/number/password/radio/range/reset/search/submit/text/tel/time/url/week
-- **Form Attribute :** autofocus/checked/disabled/readonly/required/multiple/placeholder/size/value/min/max/maxlength
+- **Input Type :** button\|checkbox\|color\|date\|datetime-local\|email\|file\|hidden\|image\|month\|number\|password\|radio\|range\|reset\|search\|submit\|text\|tel\|time\|url\|week
+- **Form Attribute :** autofocus\|checked\|disabled\|readonly\|required\|multiple\|placeholder\|size\|value\|min\|max\|maxlength
 
 
 ### &gt; Button :
 `<button type="button" onclick="alert('Hello World!')">Click Me!</button>`
-
 
 ### &gt; Fieldset :
 ```
@@ -246,7 +214,6 @@
     <legend>Caption Name</legend>
 </fieldset>
 ```
-
 
 ### &gt; Selection List :
 ```
@@ -259,7 +226,6 @@
 </select>
 ```
 
-
 ### &gt; Data List :
 ```
 <datalist id="browsers">
@@ -270,7 +236,6 @@
     <option value="Safari">
 </datalist>
 ```
-
 
 ### &gt; Textarea :
 `<textarea name="message" rows="10" cols="30">Text</textarea>`

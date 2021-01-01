@@ -1,4 +1,3 @@
-
 # Bash -
 
 ## Table Of Content :
@@ -16,12 +15,10 @@
 * [Regex](#regex)
 * [Conditionals and Loops](#conditionals-and-loops)
 
-
 <br>
 
 
 ## Usefull Commands
-
 | Commands | Info |
 | --- | --- |
 | `clear` | clear screen |
@@ -30,7 +27,7 @@
 | `sudo su` | open shell in root |
 | `history` | print command history |
 | `history x` | print last x command history |
-| `!!` or `!$` | repeat previous command |
+| `!!` \| `!$` | repeat previous command |
 | `!x` | run xth command |
 | `!-x` | run last xth command |
 | `man command` | show system' manual page (man) for program/command |
@@ -66,9 +63,7 @@
 | `sleep x` | sleep terminal for x sec |
 
 
-
 ## Organizing Files
-
 | Commands | Info |
 | --- | --- |
 | `pwd` | print present working dir |
@@ -79,7 +74,7 @@
 | `touch file` | create empty file |
 | `touch -c file` | modify access time if file exist but doesn\`t create new file |
 | `cd dir` | change dir |
-| `cd` or `cd ~` | change to home dir |
+| `cd` \| `cd ~` | change to home dir |
 | `cd -` | change to last dir & print path |
 | `cd ..` | change to one level above current dir |
 | `mkdir dir` | create dir |
@@ -105,9 +100,7 @@
 | `wc -l file` | count no lines (`m-char, c-byte, w-word`) |
 
 
-
 ## CLI Inputs and Output
-
 ### Input :
 
 - `read var` : input (STDIN)
@@ -116,7 +109,6 @@
 - `read -n x var` : allow only x number of input char
 - `read -a array` : accept array input
 
-
 ### Output :
 
 - `echo "message"` : print message to STDOUT
@@ -124,11 +116,9 @@
 - `printf "some text"` : print message to STDOUT
 
 
-
 ## Variables Declaration
-
-- Declare Variable : `var="hello"` OR `var=12`
-- Access Value : `$var` OR `${var}`
+- Declare Variable : `var="hello"`|`var=12`
+- Access Value : `$var`|`${var}`
 - Remove variable : `unset var`
 - Read only variable : `readonly var`
 
@@ -141,9 +131,7 @@ echo "Hello $var"
 echo "Mandar${var2}!"
 ```
 
-
 ### Arrays :
-
 - Declare array : `array=("I" "am" "Mandar" 007 )`
 - Input Array : `read -a array`
 - Assign Value : `array[0]="hello"`
@@ -161,18 +149,14 @@ done
 ```
 
 
-
 ## Shell Functions and Scripts
-
 **Syntax :**
 ```
 function-name(){
     #statements
 }
 ```
-
 **Calling Function :** `function-name`
-
 
 Ex :
 ```
@@ -194,7 +178,6 @@ echo $(greet)
 echo `greet`
 ```
 
-
 | CLI Arguments | Info |
 | --- | --- |
 | `$0` | returns name of script |
@@ -206,14 +189,12 @@ echo `greet`
 | `$∗` | returns all the arguments (stored in single string) |
 | `$@` | same as $∗, but differ when enclosed in ("), (stored as array) |
 
-
 **Note :**
-1. Escape character ie backslash (\\) is use to remove special meaning of char : `\$` or `\>`
+1. Escape character ie backslash (\\) is use to remove special meaning of char : `\$`|`\>`
 2. Commands inside quote (\`) or \$() are interpreted : path=\`pwd\` &amp; `echo "Path : $(pwd)"`
 3. Arithmetic operations should be in double braces : `count=$((count+1))`
 4. Name scripts with .sh extension : `script.sh`
 5. Start script with - Shell Bang : `#!/bin/sh`
-
 
 | Executing Scripts |
 | --- |
@@ -224,12 +205,9 @@ echo `greet`
 | `source script-name` |
 
 
-
 ## File Permissions
-
 - `chmod user+permission file` : change file permission
 - `chmod -R user+permission file` : change file permission recursively
-
 
 **Format of permissions :** -rwx r-- r--
 - 1st bit is file type
@@ -244,9 +222,7 @@ echo `greet`
 | permission | r (read), w (write), x (execute), - (no permission) |
 | owner | u (user), g (group), o (other), a (all three) |
 
-
 ### Setting permissions using integers :
-
 | Permission | Value |
 | --- | --- |
 | r | 4 |
@@ -270,7 +246,6 @@ echo `greet`
 - wrx wrx --- = 4+2+1 4+2+1 0+0+0 = 770
 - r-x r-- r-- = 4+0+1 4+0+0 4+0+0 = 544
 
-
 Ex :
 ```
 chmod u+wr-r text.txt
@@ -281,9 +256,7 @@ chmod 777 file.sh
 ```
 
 
-
 ## Bash Aliases
-
 Redefine aliases by assigning command to word or short-name as substitution or short-cut.
 
 **Synatx :** `alias short-name='command'`
@@ -297,9 +270,7 @@ alias repo='cd /document/github/repo'
 ```
 
 
-
 ## Output Redirection
-
 | Commands | info |
 | --- | --- |
 | `command > file` | redirect output (STDOUT) to file |
@@ -318,13 +289,10 @@ alias repo='cd /document/github/repo'
 1. 0 is STDIN, 1 is STDOUT, 2 is STDERR (0,1,2 are global file descriptor)
 2. /dev/null is special device everything redirects to it is completely lost.
 
-
 ### Define own File Descriptor & Redirect to it :
-
 - Define/Create output file descriptor with x and redirect to file : `exec x<> file`
 - Redirect to it : `command >&x`
 - Undefine/Close output file descriptor x : `exec x>&-`
-
 Ex :
 ```
 $ exec 3<> log.txt
@@ -336,9 +304,7 @@ $ exec 3>&-
 ```
 
 
-
 ## Pipelines
-
 Pipeline or pipes (|) are used as funnel to pass output of one command to another command as input or parameter.
 
 **Syntax :** `command | command`
@@ -359,9 +325,7 @@ grep -l int *.cpp | sort | uniq
 ```
 
 
-
 ## Find
-
 Search for files in directory hierarchy.
 
 **Syntax :** `find path -option file`
@@ -376,9 +340,7 @@ Search for files in directory hierarchy.
 - `find / -cmin 10` : find files which created within last 10 min
 
 
-
 ## Grep
-
 Global regular expression print (grep) print lines that match patterns from text or file.
 
 **Syntax :** `grep -option pattern file`
@@ -395,11 +357,8 @@ Global regular expression print (grep) print lines that match patterns from text
 - `grep -E -w 'hello|HELLO' file.txt` : match for "hello" or "HELLO" in file.txt & w select only matched word lines, E will treat it as regex
 
 
-
 ## Regex
-
 Regular expressions for pattern matching
-
 - `grep ^The file.txt` : print line start with "The"
 - `grep The^ file.txt` : print line end with "The"
 - `grep [Hh]ello file.txt` : match for "Hello" or "hello" and print found
@@ -413,24 +372,19 @@ Regular expressions for pattern matching
 - `ls test_[!3]` - test test_2 test_4 : print all with any no except 3
 
 
-
 ## Conditionals and Loops
-
 **Note :**
 1. Conditional expressions should in square braces []
 2. Space must be given between operands and operator
 
-
 | Operator | Operation |
 | --- | --- |
 | `! expression` | not |
-| `expression \|\| expression` or `expression -o expression` | or |
-| `expression && expression` or `expression -a expression` | and |
+| `expression \|\| expression` \| `expression -o expression` | or |
+| `expression && expression` \| `expression -a expression` | and |
 | `( expression )` | grouping expressions |
 
-
 ### Numerical Comparison :
-
 | Operator | Operation |
 | --- | --- |
 | `expression -eq expression` | equal |
@@ -448,9 +402,7 @@ then
 fi
 ```
 
-
 ### String Comparison :
-
 | Operator | Operation |
 | --- | --- |
 | `string1 = string2` | equal |
@@ -469,17 +421,13 @@ else
 fi
 ```
 
-
 ### Lexicographic Comparison :
-
 | Operator | Operation |
 | --- | --- |
 | `string > string` | left string is greater than right in alphabetical order |
 | `string < string` | right string is greater than left string in alphabetical order |
 
-
 ### Testing Files :
-
 | Operator | Operation |
 | --- | --- |
 | `-e file` | true if file exists |
@@ -500,9 +448,7 @@ then
 fi
 ```
 
-
 ### Bash Ranges :
-
 - `echo {1,2,3}` : 1 2 3
 - `echo {1..3}` : 1 2 3
 - `echo {1..-3}` : 1 0 -1 -2 -3
@@ -510,9 +456,7 @@ fi
 - `echo a{2..5}b` : a2b a3b a4b a5b
 - `echo a, b, c, d{1..3}, e` : a, b, c, d1, d2, d3, e
 
-
 ### &gt; Conditionals
-
 ### If Statement :
 ```
 # Syntax :
@@ -586,7 +530,6 @@ esac
 
 
 ### &gt; Loops
-
 ### While Loop :
 ```
 # Syntax :

@@ -1,4 +1,3 @@
-
 # Bootstrap 4 -
 
 ## Table Of Content :
@@ -23,6 +22,7 @@
 * [Alert Box Classes](#alert-box-classes)
 * [Button Classes](#button-classes)
 * [Badges](#badges)
+* [Progress Bar](#progress-bar)
 * [Spinners](#spinners)
 * [Pagination](#pagination)
 * [List Groups](#list-groups)
@@ -37,23 +37,21 @@
 * [Popover](#popover)
 * [Toast](#toast)
 * [Scrollspy](#scrollspy)
+* [Media Objects](#media-objects)
 * [Forms](#forms)
 * [Form Inputs](#form-inputs)
 * [Input Group](#input-group)
 * [Custom Forms](#custom-forms)
+* [Flexbox](#flexbox)
 * [Grid](#grid)
-
-
 
 <br>
 
 
-
 ## Container Classes
-
 - `container` : add to `<div>` for fixed width container
 - `container-fluid` : add to `<div>` for full width container
-- `container-sm/md/lg/xl` : add to `<div>` for responive containers
+- `container-sm|md|lg|xl` : add to `<div>` for responive containers
 
 Ex :
 ```
@@ -61,9 +59,7 @@ Ex :
 ```
 
 
-
 ## Jumbotron Classes
-
 - `jumbotron` : add to `<div>` for indicate big grey box for calling extra attention
 - `jumbotron-fluid` : add to `<div>` for full-width jumbotron without rounded borders
 
@@ -83,10 +79,8 @@ Ex :
 ```
 
 
-
 ## Heading Classes
-
-- `display-1/2/3/4` : define header for element
+- `display-1|2|3|4` : define header for element
 
 Ex :
 ```
@@ -94,9 +88,7 @@ Ex :
 ```
 
 
-
 ## Typography Classes
-
 ### Font Style :
 - `font-weight-bold` : bold text
 - `font-weight-bolder` : bolder text
@@ -110,21 +102,19 @@ Ex :
 <p class="font-weight-bold">Bold text</p>
 ```
 
-
 ### Text Alignment :
 - `text-left` : left aligned text
-- `text-sm/md/lg/xl-left` : left-aligned text on screen size
+- `text-sm|md|lg|xl-left` : left-aligned text on screen size
 - `text-right` : right aligned text
-- `text-sm/md/lg/xl-right` : right aligned text on screens size
+- `text-sm|md|lg|xl-right` : right aligned text on screens size
 - `text-center` : center aligned text
-- `text-sm/md/lg/xl-center` : center aligned text on screens size
+- `text-sm|md|lg|xl-center` : center aligned text on screens size
 - `text-justify` : justified text
 
 Ex :
 ```
 <p class="text-right">Right-aligned text</p>
 ```
-
 
 ### Text Format & Cases :
 - `text-monospace` : monospaced text
@@ -140,7 +130,6 @@ Ex :
 ```
 <p class="text-uppercase">Uppercased text</p>
 ```
-
 
 ### Lists Style :
 - `list-unstyled` : add to `<ul>/<ol>` to remove default list-style & ml on list items (this class only applies to immediate children list items)
@@ -158,7 +147,6 @@ Ex :
 </ul>
 ```
 
-
 ### Text Format :
 - `lead` : makes paragraph stand out
 - `small` : small text than parent
@@ -174,18 +162,15 @@ Ex :
 </pre>
 ```
 
-
 ### Flex & Grid :
 - `justify-content` : justify content to start (default)
-- `justify-content-start/end/center/between/around` : justifies inside content to
-- `align-content-start/end/center/between/around/stretch` : align content to
-- `align-items-start/end/center/baseline/stretch` : align item to
-
+- `justify-content-start|end|center|between|around` : justifies inside content to
+- `align-content-start|end|center|between|around|stretch` : align content to
+- `align-items-start|end|center|baseline|stretch` : align item to
 
 
 ## Float and Clearfix
-
-- `float-left/right` : float image to left or right
+- `float-left|right` : float image to left or right
 - `clearfix` : clear floats
 
 Ex :
@@ -196,9 +181,8 @@ Ex :
 </div>
 ```
 
-
 ### Responive Floats Class :
-- `float-sm/md/lg/xl-left/right` : float depends on screen width
+- `float-sm|md|lg|xl-left|right` : float depends on screen width
 
 Ex :
 ```
@@ -206,9 +190,7 @@ Ex :
 ```
 
 
-
 ## Height and Width
-
 - `w-%` : set width to %
 - `mw-%` : set max-width to %
 - `h-%` : set height to %
@@ -220,9 +202,7 @@ Ex :
 ```
 
 
-
 ## Margin and Padding
-
 - `property-size` : set margin/padding
 - `property(side)-size` : set specific sides margin/padding
 - `property(side)-screen-size` : set margin/padding according to screen width
@@ -242,14 +222,12 @@ Ex :
 <div class="px-xl-5 bg-primary">Padding on x 5 on xl screens</div>
 ```
 
-
 ### Center Align Element Using Margin :
 - Set left & right margin to auto ie `mx-auto`
 
 ```
 <div class="mx-auto bg-warning" style="width:150px">Centered</div>
 ```
-
 
 
 ## Vertical Align
@@ -268,9 +246,7 @@ Ex :
 ```
 
 
-
 ## Visibility
-
 - `visible` : make element visible (visibility:visible)
 - `invisible` : make element invisible (visibility:hidden)
 
@@ -280,10 +256,8 @@ Ex :
 ```
 
 
-
 ## Position
-
-- `fixed-top/bottom` : fixed to top or bottom
+- `fixed-top|bottom` : fixed to top or bottom
 - `sticky-top` : sticks to top on scroll
 
 Ex : *Fixed nav-bar at top*
@@ -292,17 +266,15 @@ Ex : *Fixed nav-bar at top*
 ```
 
 
-
 ## Display Element
-
 - `d-block` : add to make element block level
-- `d-sm/md/lg/xl-block` : make block level depends on screen width
+- `d-sm|md|lg|xl-block` : make block level depends on screen width
 - `d-none` : set display property none
-- `d-sm/md/lg-none` : make display none depends on srceen width
+- `d-sm|md|lg-none` : make display none depends on srceen width
 - `d-inline` : make element inline
-- `d-sm/md/lg/xl-inline` : make element inline on specific screen width
+- `d-sm|md|lg|xl-inline` : make element inline on specific screen width
 - `d-inline-block` : make element inline block
-- `d-sm/md/lg/xl-inline-block` : make element inline-block on specific screen size
+- `d-sm|md|lg|xl-inline-block` : make element inline-block on specific screen size
 
 Ex :
 ```
@@ -310,14 +282,13 @@ Ex :
 <span class="d-sm-block bg-success">d-sm-block</span>
 ```
 
-
 ### Display as Table :
 - `d-table` : add to `<div>` to make element display as table
-- `d-sm/md/lg/xl-table` : add to `<div>` make element display as table depends on screen size
+- `d-sm|md|lg|xl-table` : add to `<div>` make element display as table depends on screen size
 - `d-table-cell` : add to `<div>` inside table make element display as table cell
-- `d-sm/md/lg/xl-table-cell` : add to `<div>` to make element display as table cell depends on screen size
+- `d-sm|md|lg|xl-table-cell` : add to `<div>` to make element display as table cell depends on screen size
 - `d-table-row` : add to `<div>` inside cell to make element display as table row
-- `d-sm/md/lg/xl-table-row` : add to `<div>` to make element display as table row depends on screen size
+- `d-sm|md|lg|xl-table-row` : add to `<div>` to make element display as table row depends on screen size
 
 Ex :
 ```
@@ -339,12 +310,11 @@ Ex :
 </div>
 ```
 
-
 ### Display as Flex :
 - `d-flex` : create flexbox container & transform direct children into flex items
-- `d-md/sm/lg/xl-flex` : create flexbox container depends on screen size
+- `d-md|sm|lg|xl-flex` : create flexbox container depends on screen size
 - `d-inline-flex` : create inline flexbox container
-- `d-sm/md/lg/xl-inline-flex` : create inline flexbox container depends on screen size
+- `d-sm|md|lg|xl-inline-flex` : create inline flexbox container depends on screen size
 
 Ex :
 ```
@@ -356,9 +326,7 @@ Ex :
 ```
 
 
-
 ## Color Classes
-
 ### Text Color Classes :
 - `text-primary` : blue
 - `text-secondary` : silver grey
@@ -380,7 +348,6 @@ Ex :
 <p class="text-black-50">Black text with 50% opacity on white background</p>
 ```
 
-
 ### Background Color Classes :
 - `bg-primary` : blue
 - `bg-secondary` : grey
@@ -397,9 +364,7 @@ Ex :
 ```
 
 
-
 ## Screenreaders
-
 - `sr-only` : to hide element on all devices, except screen readers
 
 Ex :
@@ -408,9 +373,7 @@ Ex :
 ```
 
 
-
 ## Responsive Embeds
-
 - `embed-responsive-aspectRatio` : add to parent element of video/iframe (div/span)
 - `embed-responsive-item` : add to `<video>/<iframe>`
 
@@ -422,12 +385,10 @@ Ex : *frame will be open is ratio 21:9 on screen*
 ```
 
 
-
 ## Border
-
 - `border` : add default border to element
 - `border-0` : set border width to 0
-- `border-top/bottom/left/right-0` : set specific border to 0
+- `border-top|bottom|left|right-0` : set specific border to 0
 
 Ex :
 ```
@@ -435,7 +396,6 @@ Ex :
 <span class="border border-0"></span>
 <span class="border border-top-0"></span>
 ```
-
 
 ### Contextual Border Color Classes :
 - `border-primary` : blue
@@ -453,12 +413,11 @@ Ex :
 <span class="border border-primary"></span>
 ```
 
-
 ### Border Radius Classes :
 - `rounded` : rounded border
 - `rounded-sm` : rounded border on sm, lg & xl screens
 - `rounded-lg` : rounded border on lg and xl screens
-- `rounded-left/right/top/bottom` : border to specific side
+- `rounded-left|right|top|bottom` : border to specific side
 - `rounded-circle` : border of 50% radius
 - `rounded-0` : no rounded border
 
@@ -468,12 +427,10 @@ Ex :
 ```
 
 
-
 ## Shadow
-
 - `shadow` : add default shadow to element
 - `shadow-none` : no shadow
-- `shadow-sm/lg` : add shadow on sm & lg shadow
+- `shadow-sm|lg` : add shadow on sm & lg shadow
 
 Ex :
 ```
@@ -482,9 +439,7 @@ Ex :
 ```
 
 
-
 ## Tables Classes
-
 - `table` : add to `<table>` for basic table style
 
 Ex :
@@ -503,7 +458,6 @@ Ex :
     </tbody>
 </table>
 ```
-
 
 ### Table Style Classes :
 - `table-striped` : add zebra-stripes to rows
@@ -534,10 +488,9 @@ Ex :
 </table>
 ```
 
-
 ### Responsive Table :
 - `table-responsive` : add scrollbar to table when needed
-- `table-responsive-sm/md/lg/xl` : add scrollbar to table when needed depends on screen width
+- `table-responsive-sm|md|lg|xl` : add scrollbar to table when needed depends on screen width
 
 *add in parent `<div>` element of table*
 
@@ -547,7 +500,6 @@ Ex :
     <table class="table table-bordered"> ... </table>
 </div>
 ```
-
 
 ### Table Header Color :
 - `thead-dark` : add dark background to table header
@@ -573,7 +525,6 @@ Ex :
     </tbody>
 </table>
 ```
-
 
 ### Contextual Color Classes :
 - `table-primary` : blue
@@ -605,9 +556,7 @@ Ex :
 ```
 
 
-
 ## Image Classes
-
 - `rounded` : add rounded corners to image
 - `rounded-circle` : shape image to circle
 - `img-thumbnail` : shape image to thumbnail (bordered)
@@ -628,9 +577,7 @@ Ex :
 ```
 
 
-
 ## Alert Box Classes
-
 - `alert` : default alert
 
 Ex :
@@ -639,7 +586,6 @@ Ex :
     <strong>Alert!</strong> This is alert-box
 </div>
 ```
-
 
 ### Contextual Alert Classes :
 - `alert-success`
@@ -658,7 +604,6 @@ Ex :
 </div>
 ```
 
-
 ### Alert Links Class :
 - `alert-link` : add to links `<a>` inside alert box to create matching colored links
 
@@ -668,7 +613,6 @@ Ex :
     <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
 </div>
 ```
-
 
 ### Animated Alerts :
 - add `.fade` and `.show` class to alert box
@@ -680,7 +624,6 @@ Ex :
     <strong>Success!</strong> This alert box could indicate a successful or positive action.
 </div>
 ```
-
 
 ### Close Button Class :
 - `alert-dismissible` : add to create dismussible alert box
@@ -694,9 +637,7 @@ Ex :
 ```
 
 
-
 ## Button Classes
-
 - `btn` : add to `<button>/<input>/<a>` for basic button style
 
 Ex :
@@ -716,7 +657,6 @@ Ex :
 <a href="#" class="btn btn-primary disabled">Disabled Link</a>
 ```
 
-
 ### Contextual Button Colors :
 - `btn-primary` : blue
 - `btn-secondary` : grey
@@ -733,7 +673,6 @@ Ex :
 <button type="button" class="btn btn-warning">Warning</button>
 ```
 
-
 ### Button Outline Classes :
 - `btn-outline-primary` : blue
 - `btn-outline-secondary` : grey
@@ -748,7 +687,6 @@ Ex :
 ```
 <button type="button" class="btn btn-outline-primary">Primary</button>
 ```
-- 
 
 ### Spinner Buttons :
 ```
@@ -756,7 +694,6 @@ Ex :
     <span class="spinner-border spinner-border-sm"></span>
 </button>
 ```
-
 
 ### Button Size Classes :
 - `btn-sm` : small size button
@@ -766,7 +703,6 @@ Ex :
 ```
 <button type="button" class="btn btn-primary btn-lg">Large</button>
 ```
-
 
 ### Button Groups Classes :
 - `btn-group` : add to parent `<div>` of `<button>` for horizontal group buttons
@@ -785,7 +721,6 @@ Ex :
 </div> 
 ```
 
-
 ### Button Group Sizing Classes :
 `btn-group-sm` : small button
 `btn-group-lg` : large button
@@ -797,7 +732,6 @@ Ex :
     <button type="button" class="btn btn-primary">Sony</button>
 </div>
 ```
-
 
 ### Button Group With Dropdown List :
 ```
@@ -816,7 +750,6 @@ Ex :
 </div>
 ```
 
-
 ### Split Button Dropdown :
 ```
 dropdown-toggle-split : add to button for split
@@ -833,16 +766,13 @@ dropdown-toggle-split : add to button for split
 ```
 
 
-
 ## Badges
-
 - `badge` : add badge to `<span>`
 
 Ex :
 ```
 <span class="badge">Badge</span>
 ```
-
 
 ### Pill Badges :
 - `badge-pill` : to make badges more round
@@ -851,7 +781,6 @@ Ex :
 ```
 <span class="badge badge-pill badge-primary">Primary</span>
 ```
-
 
 ### Contextual Color Badges :
 - `badge-primary` : blue
@@ -869,9 +798,7 @@ Ex :
 ```
 
 
-
-# Progress Bar
-
+## Progress Bar
 - `progress` : add progress to parent `<div>`
 - `progress-bar` : add progress-bar inside of parent progress for progress status
 
@@ -881,7 +808,6 @@ Ex :
     <div class="progress-bar" style="width:70%"> 70% </div>
 </div>
 ```
-
 
 ### Progress Bar Style Class :
 - `progress-bar-striped` : add stripes to progress bar
@@ -897,7 +823,6 @@ Ex :
     <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
 </div>
 ```
-
 
 ### Multiple Progress Bar :
 *Use contextual color classes for bg & text color*
@@ -916,9 +841,7 @@ Ex :
 ```
 
 
-
 ## Spinners
-
 - `spinner-border` : add to `<div>/<span>` for spinner of spinning border
 
 Ex :
@@ -926,7 +849,6 @@ Ex :
 ```
 <div class="spinner-border text-primary"></div>
 ```
-
 
 ### Growing Spinner :
 - `spinner-grow` : add to `<div>/<span>` for growing spinner
@@ -936,10 +858,9 @@ Ex :
 <div class="spinner-grow text-muted"></div>
 ```
 
-
 ### Spinner Size Classes :
-- `spinner-border-sm/lg` : spinner size
-- `spinner-grow-sm/lg` : spinner size
+- `spinner-border-sm|lg` : spinner size
+- `spinner-grow-sm|lg` : spinner size
 
 Ex :
 ```- 
@@ -948,9 +869,7 @@ Ex :
 ```
 
 
-
 ## Pagination
-
 - `pagination` : add class to `<ul>`
 - `page-item` : add to each `<li>` inside `<ul>`
 - `page-link` : add to each link `<a>` inside of `<li>`
@@ -970,9 +889,8 @@ Ex :
 </ul>
 ```
 
-
 ### Pagination Size :
-- `pagination-sm/lg` : small & large pagination
+- `pagination-sm|lg` : small & large pagination
 
 Ex :
 ```
@@ -983,7 +901,6 @@ Ex :
     <li class="page-item"><a class="page-link" href="#">Next</a></li>
 </ul>
 ```
-
 
 ### Pagination Alignment Classes :
 - `justify-content-center` : center aligned
@@ -996,8 +913,7 @@ Ex :
 </ul>
 ```
 
-
-### Breadcrumbs :- 
+### Breadcrumbs :
 *(indicates current page's location within navigational hierarchy)*
 - `breadcrumb` : add to `<ul>`
 - `breadcrumb-item` : add to each `<li>`
@@ -1013,9 +929,7 @@ Ex :
 ```
 
 
-
 ## List Groups
-
 - `list-group` : add to `<ul>`
 - `list-group-item` : add to each `<li>`
 
@@ -1035,7 +949,6 @@ Ex :
 </ul>
 ```
 
-
 ### List Group With Linked Items :
 - `list-group` : add to `<div>`
 - `list-group-items` : add to each `<a>`
@@ -1049,7 +962,6 @@ Ex :
 </div>
 ```
 
-
 ### Horizontal List Groups :
 - `list-group-horizontal` : groups list horizontally
 
@@ -1060,7 +972,6 @@ Ex :
     <li class="list-group-item">Second item</li>
 </ul>
 ```
-
 
 ### List Group Style :
 - `list-group-flush` : add to `<ul>` to remove border & rounded corners
@@ -1073,7 +984,6 @@ Ex :
     <li class="list-group-item list-group-item-action">Second item</li>
 </ul>
 ```
-
 
 ### Contextual List BG Colors :
 - `list-group-item-action` : white
@@ -1103,9 +1013,7 @@ Ex :
 ```
 
 
-
 ## Cards
-
 - `card` : add to parent `<div>` for basic card
 
 ### Card Classes :
@@ -1130,7 +1038,6 @@ Ex :
 </div>
 ```
 
-
 ### Card Images Classes :
 - `card-img-top` : add inside card for add image to top
 - `card-img-bottom` : add inside card for add image to bottom
@@ -1147,7 +1054,6 @@ Ex :
 </div>
 ```
 
-
 ### Stretched Link :
 - `stretched-link` : add inside make whole card clickable & hoverable
 
@@ -1163,7 +1069,6 @@ Ex :
 </div>
 ```
 
-
 ### Card Image Overlay :
 - `card-img-overlay` : add inside card for text on top of image
 
@@ -1178,7 +1083,6 @@ Ex :
     </div>
 </div>
 ```
-
 
 ### Card Columns :
 - `card-columns` : add to parent `<div>` of card to create grid of cards (like pinterest)
@@ -1206,7 +1110,6 @@ Ex :
 </div>
 ```
 
-
 ### Card Deck :
 - `card-deck` : add to parent `<div>` of card to create grid of cards are of equal height & width
 
@@ -1232,7 +1135,6 @@ Ex :
     </div>
 </div>
 ```
-
 
 ### Card Group :
 - `card-group` : add to parent `<div>` of card to create group of cards (same as card column & deck but it removes left & right margin)
@@ -1261,9 +1163,7 @@ Ex :
 ```
 
 
-
 ## Dropdown
-
 - `dropdown` : add to `<div>` element for dropdown menu
 - `dropdown-menu` : add to `<div>` inside dropdown for menu for dropdown
 - `dropdown-item` : add to each `<div>` for dropdown items
@@ -1284,7 +1184,6 @@ Ex :
 </div>
 ```
 
-
 ### Dropdown Item Status :
 - `active` : add to `<a>` of each menu for highlight active class
 - `disabled` : add to `<a>` of each menu for disable item
@@ -1303,7 +1202,6 @@ Ex :
 </div>
 ```
 
-
 ### Dropdown Divider :
 - `dropdown-divider` : add to `<div>` for dividing dropdown list & link with thin horiz border
 
@@ -1320,7 +1218,6 @@ Ex :
     </div>
 </div>
 ```
-
 
 ### Dropdown Header :
 - `dropdown-header` : add inside of dropdown menu for header
@@ -1339,7 +1236,6 @@ Ex :
     </div>
 </div>
 ```
-
 
 ### Dropdown Position Class :
 - `dropleft` : add to dropdown class for left dropdown menu
@@ -1373,7 +1269,6 @@ Ex :
 </div>
 ```
 
-
 ### Dropdown Text :
 - `dropdown-item-text` : add text with dropdown link
 
@@ -1390,7 +1285,6 @@ Ex :
     </div>
 </div>
 ```
-
 
 **Grouped Buttons with Dropdown -**
 ```
@@ -1409,7 +1303,6 @@ Ex :
 </div>
 ```
 
-
 ### Split Button Dropdowns :
 - `dropdown-toggle-split` : add to button to split button & dropdown toggle
 
@@ -1425,7 +1318,6 @@ Ex :
     </div>
 </div>
 ```
-
 
 ### Vertical Button Group with Dropdown :
 - `btn-group-vertical` : add to parent `<div>` for vertical button group
@@ -1448,9 +1340,7 @@ Ex :
 ```
 
 
-
 ## Collapse
-
 - `collapse` : add to `<div>` to make collapsible element
 <br>
 - `data-toggle="collapse"` : to control (show/hide) collapsible content add attribute to `<button>/<a>`
@@ -1473,7 +1363,6 @@ Ex :
     Text Here
 </div>
 ```
-
 
 ### Accordion (Collaspible Cards) :
 ```
@@ -1506,9 +1395,7 @@ Ex :
 ```
 
 
-
 ## Navs
-
 - `nav` : add to `<ul>` to create horiz nav
 - `nav-item` : add to each `<li>` for nav items
 - `nav-link` : add to each link (`<a>)` of `<li>`
@@ -1525,7 +1412,6 @@ Ex :
 </ul>
 ```
 
-
 ### Nav Alignment :
 - `justify-content-center` : add to `<ul>` for center aligned nav
 - `justify-content-end` : add to `<ul>` for right aligned nav
@@ -1535,7 +1421,6 @@ Ex :
 <ul class="nav justify-content-center"> ... </ul>
 ```
 
-
 ### Vertical Nav :
 - `flex-column` : add to `<ul>` for vertical nav
 
@@ -1543,7 +1428,6 @@ Ex :
 ```
 <ul class="nav flex-column">
 ```
-
 
 ### Nav Tabs :
 - `nav-tabs` : add to `<ul>` for turn nav menu into navigation tabs
@@ -1565,7 +1449,6 @@ Ex :
 </ul>
 ```
 
-
 ### Nav Pills :
 - `nav-pills` : add to `<ul>` for turn nav menu into navigation pills
 
@@ -1586,7 +1469,6 @@ Ex :
 </ul>
 ```
 
-
 **Justified Tabs/pills (of equal width) -**
 - `nav-justified` : add to `<ul>` for nav-tabs/pills of equal width tabs
 
@@ -1595,7 +1477,6 @@ Ex :
 <ul class="nav nav-pills nav-justified"> ... </ul>
 <ul class="nav nav-tabs nav-justified"> ... </ul>
 ```
-
 
 ### Pills with Dropdown :
 ```
@@ -1616,7 +1497,6 @@ Ex :
 </ul>
 ```
 
-
 ### Tabs with Dropdown :
 ```
 <ul class="nav nav-tabs">
@@ -1636,7 +1516,6 @@ Ex :
 </ul>
 ```
 
-
 ### Toggleable / Dynamic Tabs :
 ```
 <!-- Nav Tabs -->
@@ -1654,7 +1533,6 @@ Ex :
     <div class="tab-pane container fade" id="menu">...</div>
 </div>
 ```
-
 
 ### Toggleable / Dynamic Pills :
 ```
@@ -1675,18 +1553,16 @@ Ex :
 ```
 
 
-
 ## Navbar
-
 - `navbar` : add to `<nav>` to create navbar
-- `navbar-expand-sm/md/lg/xl` : responsive expandable bar, stacks vertically on sm screens
+- `navbar-expand-sm|md|lg|xl` : responsive expandable bar, stacks vertically on sm screens
 - `navbar-nav` : add to `<ul>` for navbar menu
 - `nav-items` : add to each `<li>` for nav items
 - `nav-links` : add to link `(<a>)` inside `<li>`
 - `navbar-dark` : add to `<nav>` for white text navbar
 - `navbar-light` : add to `<nav>` for dark text navbar
 <br>
-- `active/disabled` : add to link `(<a>)` for disable/active nav-item
+- `active|disabled` : add to link `(<a>)` for disable|active nav-item
 
 *Use contextual color class for colored navbar*
 
@@ -1704,7 +1580,6 @@ Ex :
 </nav>
 ```
 
-
 ### Navbar Brand/Logo :
 - `navbar-brand` : add to `<a>/<span>` for navigation brand/logo and place inside `<nav>` on top
 
@@ -1715,7 +1590,6 @@ Ex :
     ...
 </nav>
 ```
-
 
 ### Navbar Text :
 - `navbar-text` : add inside `<nav>` for text to navbar
@@ -1734,9 +1608,8 @@ Ex :
 </nav>
 ```
 
-
 ### Vertical Navbar :
-- remove `navbar-expand-sm/md/lg/xl` to create vertical navbar
+- remove `navbar-expand-sm|md|lg|xl` to create vertical navbar
 
 Ex :
 ```
@@ -1752,7 +1625,6 @@ Ex :
 </nav>
 ```
 
-
 ### Center Navbar :
 - `justify-content-center` : add to `<nav>` for center aligned navbar
 
@@ -1761,13 +1633,12 @@ Ex :
 <nav class="navbar navbar-expand-sm bg-light justify-content-center"> ... </nav>
 ```
 
-
 ### Collapsing Navigation Bar :
 - `navbar-toggler` : add to `<button>` to create collapsible navbar
 - `navbar-toggler-icon` : add in `<span>` inside button for collapse icon
 - `collapse` : add to parent `<div>` of `<ul>`
 - `navbar-collapse` : add to parent `<div>` of `<ul>`
-
+<br>
 - add `data-toggle="collapse"` to `<button>` for collapsing navbar
 - add `data-target="#thetarget"` to `<button>` for selecting nav menu
 - remove `.navbar-expand-md` class to always hide `nav-menu` items
@@ -1789,7 +1660,6 @@ Ex :
 </nav>
 ```
 
-
 ### Fixed Navigation Bar :
 - `fixed-top` : add to `<nav>` for navigation bar fixed at top
 - `fixed-bottom` : add to `<nav>` for navigation bar fixed at bottom
@@ -1801,7 +1671,6 @@ Ex :
     ...
 </nav>
 ```
-
 
 ### Navbar With Dropdown :
 ```
@@ -1824,7 +1693,6 @@ Ex :
 </nav>
 ```
 
-
 ### Navbar With Forms & Buttons :
 ```
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -1834,7 +1702,6 @@ Ex :
     </form>
 </nav>
 ```
-
 
 
 ## Carousel
@@ -1886,7 +1753,6 @@ Ex :
 </div>
 ```
 
-
 ### Add Caption :
 - `carousel-caption` : add within each `<div class="carousel-item">` to create caption for each slide
 
@@ -1915,9 +1781,7 @@ Ex :
 ```
 
 
-
 ## Modal
-
 - `modal` : add to `<div>` to create modal
 - `modal-dialog` : add to `<div>` inside .modal for modal elements
 - `modal-content` : add to `<div>` inside .modal-dialog for modal content
@@ -1958,7 +1822,6 @@ Ex :
 </div>
 ```
 
-
 ### Add Open/Close Animation :
 - `fade` : add with `.modal` class for open/close fading animation
 
@@ -1967,15 +1830,13 @@ Ex :
 <div class="modal fade"> ... </div>
 ```
 
-
 ### Modal Size :
-- `modal-sm/lg/xl` (default md) : add with `.modal-dialog` class for sizing modal
+- `modal-sm|lg|xl` (default md) : add with `.modal-dialog` class for sizing modal
 
 Ex :
 ```
 <div class="modal-dialog modal-sm"> ... </div>
 ```
-
 
 ### Centered Modal :
 - `modal-dialog-centered` : add with `.modal-dialog` for center modal vertically & horizontally within page
@@ -1984,7 +1845,6 @@ Ex :
 ```
 <div class="modal-dialog modal-dialog-centered"> ... </div>
 ```
-
 
 ### Scrolling Modal :
 - `modal-dialog-scrollable` : add with `.modal-dialog` to only scroll inside modal body instead of page itself
@@ -1995,19 +1855,16 @@ Ex :
 ```
 
 
-
 ## Tooltip
-
 - `data-toggle="tooltip"` : add attribute to element to create tooltip
 - `title="Hover Text"` : add attribute to element for hover text
-- `data-placement="top/bottom/left/right"` : add attribute to element for placement of tooltip
+- `data-placement="top|bottom|left|right"` : add attribute to element for placement of tooltip
 
 Ex :
 ```
 <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
 <a href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">Hover</a>
 ```
-
 
 **Note :**
 Tooltips must be initialized with jQuery, select specified element & call tooltip() method.
@@ -2021,13 +1878,11 @@ $(document).ready(function(){
 ```
 
 
-
 ## Popover
-
 - `data-toggle="popover"` : add attribute to element to create popover
 - `title="text"` : add attribute to element for popover header text
 - `data-content="content text"` : add attribute to element for popover body text
-- `data-placement="top/bottom/left/right"` : add attribute to element for placement of popover
+- `data-placement="top|bottom|left|right"` : add attribute to element for placement of popover
 - `data-trigger="focus"` : add attribute to element to close popover when clicking outside element
 - `data-trigger="hover"` : add attribute to element for popover to be display when mouse-over element
 
@@ -2038,7 +1893,6 @@ Ex :
 <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="focus" data-content="Click anywhere in document to close this popover">Click</a>
 <a href="#" title="Dismissible Popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in document to close this popover">Click</a>
 ```
-
 
 **Note :**
 Popovers must be initialized with jQuery, select specified element & call popover() method.
@@ -2052,9 +1906,7 @@ $(document).ready(function(){
 ```
 
 
-
 ## Toast
-
 - `toast` : add to element `(<div>)` to create toast
 - `toast-header` : add to element `(<div>)` inside `.toast` for toast header
 - `toast-body` : add to element `(<div>)` inside `.toast` for toast body
@@ -2084,7 +1936,6 @@ Ex :
 </div>
 ```
 
-
 **Note :**
 Toasts must be initialized with jQuery, select specified element & call toast() method.
 *following code will show all "toasts" in document -*
@@ -2097,11 +1948,9 @@ $(document).ready(function(){
 ```
 
 
-
 ## Scrollspy
-
 - `data-spy="scroll"` : add attribute to scrollable element Ex. `<body>`
-- `data-target="#id/.class"` : add attribute to target navigation bar and set class/id
+- `data-target="#id|.class"` : add attribute to target navigation bar and set class/id
 - `data-offset="value"` : set number of pixels to offset from top when calculating position of scroll (optional)
 
 **Note :**
@@ -2143,7 +1992,6 @@ Ex :
 </body>
 ```
 
-
 ### Vertical Navigation Bar :
 ```
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
@@ -2183,9 +2031,7 @@ Ex :
 ```
 
 
-
-# Media Objects
-
+## Media Objects
 - `media` : add to `<div>` element for creating media & must be add inside container
 - `media-body` : add to `<div>` inside `.media` for adding content
 
@@ -2199,7 +2045,6 @@ Ex :
     </div>
 </div>
 ```
-
 
 ### Nested Media Objects :
 ```
@@ -2219,7 +2064,6 @@ Ex :
 </div>
 ```
 
-
 ### Right-Aligned Media Image :
 ```
 <div class="media border p-3">
@@ -2231,9 +2075,7 @@ Ex :
 </div>
 ```
 
-
 ### Top Middle or Bottom Alignment :
-
 **Media Top -**
 ```
 <div class="media">
@@ -2268,9 +2110,7 @@ Ex :
 ```
 
 
-
 ## Forms
-
 - `form-group` : add wrapper `<div>` with this class to each form's element for full width stacked form
 
 Ex :
@@ -2293,7 +2133,6 @@ Ex :
 </form>
 ```
 
-
 ### Inline Form :
 - `form-inline` : add to `<form>` for inline forms
 
@@ -2302,9 +2141,8 @@ Ex :
 <form class="form-inline" action="/action_page.php"> ... </form>
 ```
 
-
 ### form row/column :
-- `row/form-row` : add to wrapper `<div>` to create row form element
+- `row|form-row` : add to wrapper `<div>` to create row form element
 - `col` : to add `<div>` inside .row to create col for each element
 
 Ex :
@@ -2320,7 +2158,6 @@ Ex :
     </div>
 </form>
 ```
-
 
 ### Form Validation :
 - `was-validated` : add to `<form>` for validate before submision
@@ -2402,13 +2239,11 @@ Ex :
 ```
 
 
-
 ## Form Inputs
-
 - `form-control` : add to `<input>` to style inputs with full-width & proper padding
 
 ### Form Control Sizing :
-- `form-control-sm/lg` : add to `<input>` for input on specific screen size
+- `form-control-sm|lg` : add to `<input>` for input on specific screen size
 
 Ex :
 ```
@@ -2417,9 +2252,7 @@ Ex :
 <input type="text" class="form-control form-control-lg">
 ```
 
-
 ### Form Control Types :
-
 **Form Control with Plain text -**
 - `form-control-plaintext` : add to `<input>` for plain text form without border
 ```
@@ -2438,9 +2271,7 @@ Ex :
 <input type="range" class="form-control-range">
 ```
 
-
 ### Inputs Types :
-
 **text/password -**
 - `form-control` : add to `<input>`
 ```
@@ -2565,9 +2396,7 @@ Ex :
 ```
 
 
-
 ## Input Group
-
 - `input-group` : add to wrapper `<div>` container to enhance input by adding icon/text/button in front/behind input field as help text
 - `input-group-prepend` : add to `<div>` for help text front of input
 - `input-group-append` : add to `<div>` for help text behind input
@@ -2591,9 +2420,8 @@ Ex :
 </form>
 ```
 
-
 ### Input Group Sizing :
-- `input-group-sm/lg` : add with `.input-group` for sizing input groups (default md)
+- `input-group-sm|lg` : add with `.input-group` for sizing input groups (default md)
 
 Ex :
 ```
@@ -2607,9 +2435,7 @@ Ex :
 </form>
 ```
 
-
 ### Multiple Inputs & Helpers :
-
 **Multiple Inputs -**
 ```
 <form>
@@ -2637,9 +2463,7 @@ Ex :
 </form>
 ```
 
-
 ### Input Group with Checkboxes & Radios :
-
 **Checkboxes -**
 ```
 <div class="input-group mb-3">
@@ -2664,9 +2488,7 @@ Ex :
 </div>
 ```
 
-
 ### Input Group Buttons :
-
 **Basic Button -**
 ```
 <div class="input-group mb-3">
@@ -2698,7 +2520,6 @@ Ex :
 </div>
 ```
 
-
 ### Input Group with Dropdown Button :
 ```
 <div class="input-group mt-3 mb-3">
@@ -2716,7 +2537,6 @@ Ex :
 </div>
 ```
 
-
 ### Input Group Labels :
 ```
 <form>
@@ -2731,9 +2551,7 @@ Ex :
 ```
 
 
-
 ## Custom Forms
-
 - `custom-control` : add to wrapper `<div>` around `<input>` to create custom forms
 - `custom-control-inline` : add with `.custom-control` to create inline custom form element
 - `custom-control-label` : add to `<label>` inside `.custom-control` for label text
@@ -2752,7 +2570,6 @@ Ex :
 </form>
 ```
 
-
 ### Custom Checkbox :
 - `custom-control-input` : add to `<input>`
 - `custom-checkbox` : add with `.custom-control` for custom checkboxes
@@ -2767,7 +2584,6 @@ Ex :
 </form>
 ```
 
-
 ### Custom Switch :
 - `custom-control-input` : add to `<input>`
 - `custom-switch` : add with `.custom-control` for custom switch
@@ -2780,7 +2596,6 @@ Ex :
     </div>
 </form>
 ```
-
 
 ### Custom Radio buttons :
 - `custom-control-input` : add to `<input>`
@@ -2795,10 +2610,9 @@ Ex :
 </form>
 ```
 
-
 ### Custom Select Menu :
 - `custom-select` : add to `<select>` element for custom select menu
-- `custom-select-sm/lg` : add to `<select>` element for sizing custom select menu (default md)
+- `custom-select-sm|lg` : add to `<select>` element for sizing custom select menu (default md)
 
 ```
 <form>
@@ -2823,7 +2637,6 @@ Ex :
 </form>
 ```
 
-
 ### Custom Range :
 - `custom-range` : add to `<input>` type range for custom range
 
@@ -2833,7 +2646,6 @@ Ex :
     <input type="range" class="custom-range" id="customRange" name="points1">
 </form>
 ```
-
 
 ### Custom File Upload :
 - `custom-file` : add to wrapper `<div>` element for custom file upload
@@ -2857,11 +2669,9 @@ $(".custom-file-input").on("change", function() {
 ```
 
 
-
-# Flexbox
-
+## Flexbox
 - `d-flex` : add it to `<div>` to create flexbox container & transforms direct children into flex items 
-- `d-md/sm/lg/xl-flex` : add it to `<div>` to create flexbox container on specific screen size
+- `d-md|sm|lg|xl-flex` : add it to `<div>` to create flexbox container on specific screen size
 
 **Note : maximum columns are 12**
 
@@ -2874,10 +2684,9 @@ Ex :
 </div>
 ```
 
-
 ### Inine Flexbox :
 - `d-inline-flex` : add it to `<div>` to create inline flexbox container    
-- `d-sm/md/lg/xl-inline-flex` : add it to `<div>` to create inline flexbox container on specific screen size
+- `d-sm|md|lg|xl-inline-flex` : add it to `<div>` to create inline flexbox container on specific screen size
 
 Ex :
 ```
@@ -2887,7 +2696,6 @@ Ex :
 	<div class="p-2 bg-primary">Flex item 3</div>
 </div>
 ```
-
 
 ### Horizontal Direction Flexbox Items :
 - `flex-row` : add with `.d-flex` to display flex items horizontally (side by side)
@@ -2901,7 +2709,6 @@ Ex :
     <div class="p-2 bg-primary">Flex item 3</div>
 </div>
 ```
-- 
 
 ### Vertical Direction Flexbox Items :
 - `flex-column` : add with `.d-flex` to display flex items vertically (on top of each other)
@@ -2916,9 +2723,8 @@ Ex :
 </div>
 ```
 
-
 ### Justify Content Flex Items (align) :
-- `justify-content-start/end/center/between/around` : add with `.d-flex` to justify inside content to following
+- `justify-content-start|end|center|between|around` : add with `.d-flex` to justify inside content to following
 
 Ex :
 ```
@@ -2926,7 +2732,6 @@ Ex :
 <div class="d-flex justify-content-center">...</div>
 <div class="d-flex justify-content-end">...</div>
 ```
-
 
 ### Fill/Equal Width Flex Items :
 - `flex-fill` : add to each flex item to force them into equal widths
@@ -2940,7 +2745,6 @@ Ex :
 </div>
 ```
 
-
 ### Flex Grow & Shrink :
 - `flex-grow-1` : add to flex item to take up rest of space
 - `flex-shrink-1` : add to flex item to make it shrink if necessary
@@ -2953,7 +2757,6 @@ Ex :
 </div>
 ```
 
-- 
 ### Flex Order :
 - `order` : add to flex items to change visual order of specific flex item
 
@@ -2968,7 +2771,6 @@ Ex :
 </div>
 ```
 
-
 ### Flex Wrap :
 *(control how flex items wrap in flex container)*
 - `flex-nowrap` : add with `d-flex` to no wrapping to flex container (default)
@@ -2981,7 +2783,6 @@ Ex :
 <div class="d-flex flex-wrap-reverse">..</div>
 <div class="d-flex flex-nowrap">..</div>
 ```
-
 
 ### Auto Margins :
 - **add auto margins to flex items with `.mr-auto`, push items to right -**
@@ -3002,10 +2803,9 @@ Ex :
 </div>
 ```
 
-
 ### Flex Align Content :
 *(control vertical alignment of gathered flex items)*
-- `align-content-start/end/center/between/around/stretch` : add with `d-flex` for vertical alignment of gathered flex items
+- `align-content-start|end|center|between|around|stretch` : add with `d-flex` for vertical alignment of gathered flex items
 
 *Note : these classes have no effect on single rows of flex items.*
 
@@ -3015,10 +2815,9 @@ Ex :
 <div class="d-flex flex-wrap align-content-end">..</div>
 ```
 
-
 ### Flex Align Items :
 *(control vertical alignment of single rows of flex items)*
-- `align-items-start/end/center/baseline/stretch` : add with `d-flex` for vertical alignment of single rows of flex items
+- `align-items-start|end|center|baseline|stretch` : add with `d-flex` for vertical alignment of single rows of flex items
 
 Ex :
 ```
@@ -3026,10 +2825,9 @@ Ex :
 <div class="d-flex align-items-end">..</div>
 ```
 
-
 ### Flex Align Self :
 *(control vertical alignment of specified flex item)*
-- `align-self-start/end/center/baseline/stretch` : add with `d-flex` for vertical alignment of specified flex item
+- `align-self-start|end|center|baseline|stretch` : add with `d-flex` for vertical alignment of specified flex item
 
 Ex :
 ```
@@ -3040,10 +2838,8 @@ Ex :
 </div>
 ```
 
-
 ### Responsive Flex :
-
-*Note : \* = sm/md/lg/xl*
+*Note : \* = sm|md|lg|xl*
 
 **Flex Container -**
 - `d-*-flex` : creates flexbox container for different screens
@@ -3103,21 +2899,18 @@ Ex :
 - `align-self-*-stretch` : stretch flex item on different screens
 
 
-
 ## Grid
-
 - `row` : add to `<div>` to create horizontal groups of columns
 - `col` : add to `<div>` inside `.row` to create column (must be immediate childs of row)
-- `col-sm/md/lg/xl` : create responsive col - decide by us create equal of width
-- `col-sm/md/lg/xl-n` : responsive col that spans 1-12 rows (n = 1-12)
+- `col-sm|md|lg|xl` : create responsive col - decide by us create equal of width
+- `col-sm|md|lg|xl-n` : responsive col that spans 1-12 rows (n = 1-12)
 
 *no-gutters : add with `.row` to remove gutters (extra space)*
 
 **Note :**
 1. row must be placed in container or container-fluid
 2. cols spanned must be sum to 12
-3. \* = sm/md/lg/xl
-
+3. \* = sm|md|lg|xl
 
 **Create unequal col of 25% 50% 25% -**
 ```
@@ -3175,9 +2968,8 @@ Ex :
 </div>
 ```
 
-
 ### On Xtra Small Screen Devices :
-**two cols of 25% 75% split on all devices (xsm, sm, md, lg, xl) -**
+*two cols of 25% 75% split on all devices (xsm, sm, md, lg, xl) -*
 ```
 <div class="container-fluid">
     <div class="row">
@@ -3191,9 +2983,8 @@ Ex :
 </div>
 ```
 
-
 ### On Small Screen Devices :
-**two cols of 25% 75% split on sm (md, lg, xl) devices, on x-sm devices it will automatically stack 100% width -**
+*two cols of 25% 75% split on sm (md, lg, xl) devices, on x-sm devices it will automatically stack 100% width -*
 ```
 <div class="container-fluid">
     <div class="row">
@@ -3207,9 +2998,8 @@ Ex :
 </div>
 ```
 
-
 ### On Medium Screen Devices :
-**On sm size, look at classes with `-sm-` in them and use those & on md size look at classes with `-md-` in them and use those. 25% 75% split on sm devices & 50% 50% split on md (lg, xl) devices. on x-sm devices, it will automatically stack (100%) -**
+*On sm size, look at classes with `-sm-` in them and use those & on md size look at classes with `-md-` in them and use those. 25% 75% split on sm devices & 50% 50% split on md (lg, xl) devices. on x-sm devices, it will automatically stack (100%) -*
 ```
 <div class="container-fluid">
     <div class="row">
@@ -3223,7 +3013,7 @@ Ex :
 </div>
 ```
 
-**Using Only Medium. md, lg, xl devices it split 50% 50%, for sm, x-sm devices t will stack vertically (100% width) -**
+*Using Only Medium. md, lg, xl devices it split 50% 50%, for sm, x-sm devices t will stack vertically (100% width) -*
 ```
 <div class="row">
 	<div class="col-md-6">
@@ -3235,9 +3025,8 @@ Ex :
 </div>
 ```
 
-
 ### On Large Screen Devices :
-**On sm size, look at classes with `-sm-`. on md size, look at classes with `-md-`. on lg size, look at classes with `-lg-`. 25% 75% split on sm devices, 50% 50% split on md devices & 33% 66% split on lg & xl devices. On x-sm devices, it will automatically stack (100%) -**
+*On sm size, look at classes with `-sm-`. on md size, look at classes with `-md-`. on lg size, look at classes with `-lg-`. 25% 75% split on sm devices, 50% 50% split on md devices & 33% 66% split on lg & xl devices. On x-sm devices, it will automatically stack (100%) -*
 ```
 <div class="container-fluid">
     <div class="row">
@@ -3251,7 +3040,7 @@ Ex :
 </div>
 ```
 
-**Using Only Large. lg & xl devices split 50% 50%, for md, sm & x-sm devices it will stack vertically (100% width) -**
+*Using Only Large. lg & xl devices split 50% 50%, for md, sm & x-sm devices it will stack vertically (100% width) -*
 ```
 <div class="container-fluid">
     <div class="row">
@@ -3265,9 +3054,8 @@ Ex :
 </div>
 ```
 
-
 ### On Extra Large Screen Devices :
-**25% 75% split on sm devices, 50% 50% split on md devices, 33% 66% split on lg & 20% 80% split on xl devices. On x-sm devices it will automatically stack (100%) -**
+*25% 75% split on sm devices, 50% 50% split on md devices, 33% 66% split on lg & 20% 80% split on xl devices. On x-sm devices it will automatically stack (100%) -*
 ```
 <div class="container-fluid">
     <div class="row">
@@ -3281,7 +3069,7 @@ Ex :
 </div>
 ```
 
-**Using Only XLarge. On xl devices split 50% 50%. for lg, md, sm, x-sm devices it will stack vertically (100% width) -**
+*Using Only XLarge. On xl devices split 50% 50%. for lg, md, sm, x-sm devices it will stack vertically (100% width) -*
 ```
 <div class="row">
 	<div class="col-xl-6">

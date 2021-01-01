@@ -1,4 +1,3 @@
-
 # CSS -
 
 ## Table Of Content :
@@ -30,12 +29,10 @@
 * [Transform 3D](#transform-3d)
 * [Animation](#animation)
 
-
 <br>
 
 
 ## CSS Units
-
 | Absolute Lengths |
 | --- |
 | `cm` - centimeters |
@@ -44,7 +41,6 @@
 | `px` - pixels (1px = 1/96th of 1in) |
 | `pt` - points (1pt = 1/72 of 1in) |
 | `pc` - picas (1pc = 12 pt) |
-
 
 | Relative Lengths |
 | --- |
@@ -59,14 +55,11 @@
 | `%` - Relative to the parent element |
 
 
-
 ## CSS Selectors
-
 - Class : `.class-name , a.class-name , div.a`
 - Id : `#id-name` (id is unique within page)
 - Universal : `*`
 - Grouping : `element, tag`
-
 
 ### Combinators :
 - Descendant (space) : selects all descendants elements. `.class a`
@@ -74,10 +67,8 @@
 - Adjacent Sibling (+) : selects all adjacent siblings (placed immediately after) elements. `div + p`
 - General Sibling (\~) : selects all siblings elements. `div ~ p`
 
-
 ### Attributes :
-
-- `[ attribute=value ]` : `a [target="_blank"]` or `input[type=text/password/number]`
+- `[ attribute=value ]` : `a [target="_blank"]` or `input[type=text|password|number]`
 - `[attribute~="value"]` : select elements with attribute value containing specified word `[title~="flower"]`
 - `[attribute|="value"]` : select elements with specified attribute starting with specified value `[class|="top"]`
 - `[attribute^="value"]` : select elements whose attribute value begins with specified value `[class^="top"]`
@@ -85,12 +76,11 @@
 - `[attribute*="value"] ` : select elements whose attribute value contains specified value `[class*="to"]`
 
 
-
 ## Pseudo Classes
 *Selects all with pseudo-class.*
 
 **Pseudo Class :**
-first-child, last-child, hover, active, link, visited, focus, checked, disabled, enabled, empty, required, target, invalid, not(element)
+first-child\|last-child\|hover\|active\|link\|visited\|focus\|checked\|disabled\|enabled\|empty\|required\|target\|invalid\|not(element)
 
 **Syntax :**
 ```
@@ -110,7 +100,7 @@ div:hover {
 ## Pseudo Elements
 *Selects & Inserts content with pseudo-element.*
 
-**Pseudo Element :** after,before,first-letter,first-line,selection
+**Pseudo Element :** after\|before\|first-letter\|first-line\|selection
 
 **Syntax :**
 ```
@@ -128,24 +118,20 @@ p :: before {
 ```
 
 
-
 ## Fonts
-
 | Properties |
 | --- |
-| `color: color-name/hexdec/rgb(,,)/rgb(%,%,%, opacity)` |
+| `color: color-name|hexdec|rgb(,,)|rgb(%,%,%, opacity)` |
 | `font-family: font-name , generic-family-name` |
-| `font-size: small/medium/large/x-large/absolute/relative/value` |
-| `font-style: italic/normal/oblique` |
-| `font-weight: lighter/bold/bolder/100-900` |
-| `font-variant: normal/small-caps` |
-| `font-stretch: normal/condensed/ultra-condensed/extra-condensed/semi-condensed/expanded/semi-expanded/extra-expanded/ultra-expanded` |
+| `font-size: small|medium|large|x-large|absolute|relative|value` |
+| `font-style: italic|normal|oblique` |
+| `font-weight: lighter|bold|bolder|100-900` |
+| `font-variant: normal|small-caps` |
+| `font-stretch: normal|condensed|ultra-condensed|extra-condensed|semi-condensed|expanded|semi-expanded|extra-expanded|ultra-expanded` |
 
 > font: style variant weight color-name font-name
 
-
 ### Font-Face Rules :
-
 **Syntax :**
 ```
 @font-face { 
@@ -155,7 +141,7 @@ p :: before {
     font-style: italic;
     font-weight: 400;
 }
-tag/selector {
+tag|selector {
    font-family: font-name;
 }
 ```
@@ -172,72 +158,64 @@ div {
 ```
 
 
-
 ## Text Formatting
-
 | Properties |
 | --- |
-| `text-align: left/right/center/justify` |
-| `vertical-align: top/right/center/justify` |
-| `text-decoration: none/inherit/overline/underline/line-through/blink` |
+| `text-align: left|right|center|justify` |
+| `vertical-align: top|right|center|justify` |
+| `text-decoration: none|inherit|overline|underline|line-through|blink` |
 | `text-indent: value` |
-| `text-transform: capitalize/uppercase/lowercase/none` |
-| `text-spacing: normal/inherit/value` |
-| `text-overflow: clip/ellipsis/string/initial/inherit` |
-| `word-spacing: normal/inherit/value` |
-| `white-spacing: normal/inherit/nowrap/pre/pre-line/pre-wrap/nowrap` |
-| `letter-spacing:normal/value` |
-| `line-height: auto/value` |
-| `direction: ltr/rtl` |
-| `text-justify: auto/inter-word/inter-character/none/initial/inherit` |
-| `text-align-last: auto/left/right/center/justifstart/end/initial/inherit` |
-
+| `text-transform: capitalize|uppercase|lowercase|none` |
+| `text-spacing: normal|inherit|value` |
+| `text-overflow: clip|ellipsis|string|initial|inherit` |
+| `word-spacing: normal|inherit|value` |
+| `white-spacing: normal|inherit|nowrap|pre|pre-line|pre-wrap|nowrap` |
+| `letter-spacing:normal|value` |
+| `line-height: auto|value` |
+| `direction: ltr|rtl` |
+| `text-justify: auto|inter-word|inter-character|none|initial|inherit` |
+| `text-align-last: auto|left|right|center|justifstart|end|initial|inherit` |
 
 
 ## Display and Layout
-
 | Properties |
 | --- |
-| `z-index: low/high/integer` |
-| `display: block/inline/flex/none` |
-| `visibility: hidden/visible/collapse` |
-| `position: static/fixed/relative/absolute/sticky` |
-| `top/bottom/left/right: value` |
-| `margin: value/auto/inherit` |
-| `margin-top/bottom/left/right: value` |
-| `padding: value/inherit` |
-| `padding-top/bottom/left/right: value` |
-
+| `z-index: low|high|integer` |
+| `display: block|inline|flex|none` |
+| `visibility: hidden|visible|collapse` |
+| `position: static|fixed|relative|absolute|sticky` |
+| `top|bottom|left|right: value` |
+| `margin: value|auto|inherit` |
+| `margin-top|bottom|left|right: value` |
+| `padding: value|inherit` |
+| `padding-top|bottom|left|right: value` |
 
 
 ## Sizing and Content
-
 | Properties |
 | --- |
-| `height: value/auto/initial/inherit` |
-| `width: value/auto/initial/inherit` |
-| `min-width: auto/value` |
-| `max-width: auto/value` |
-| `min-height: auto/value` |
-| `max-height: auto/value` |
-| `box-sizing: border-box/content-box/initial/inherit` |
-| `resize: none/both/horizontal/vertical/initial/inherit` |
-| `word-wrap: normal/break-word` |
-| `text-overflow: clip/ellipsis` |
-| `word-break: break-all/keep-all/break-word` |
-| `writing-mode: horizontal-tb/vertical-rl/vertical-lr` |
-| `float: left/right/center/none/initial/inherit` |
-| `clear: left/right/both/none/initial/inherit` |
-| `overflow: visible/scroll/hidden/auto` |
-| `overflow-x/y: auto/scroll` |
-| `object-fit: fill/contain/cover/none/scale-down` (for image) |
-
+| `height: value|auto|initial|inherit` |
+| `width: value|auto|initial|inherit` |
+| `min-width: auto|value` |
+| `max-width: auto|value` |
+| `min-height: auto|value` |
+| `max-height: auto|value` |
+| `box-sizing: border-box|content-box|initial|inherit` |
+| `resize: none|both|horizontal|vertical|initial|inherit` |
+| `word-wrap: normal|break-word` |
+| `text-overflow: clip|ellipsis` |
+| `word-break: break-all|keep-all|break-word` |
+| `writing-mode: horizontal-tb|vertical-rl|vertical-lr` |
+| `float: left|right|center|none|initial|inherit` |
+| `clear: left|right|both|none|initial|inherit` |
+| `overflow: visible|scroll|hidden|auto` |
+| `overflow-x|y: auto|scroll` |
+| `object-fit: fill|contain|cover|none|scale-down` (for image) |
 
 
 ## Link
-
 ```
-a: link/visited/hower/active/a:focus {
+a: link|visited|hower|active|a:focus {
    color: color-name;
 }
 ```
@@ -251,42 +229,36 @@ a: link {
 ```
 
 
-
 ## List
-
 | Properties |
 | --- |
-| `list-style-type: cirle/square/lower-alpha/disc/decimal/upper-roman` |
+| `list-style-type: cirle|square|lower-alpha|disc|decimal|upper-roman` |
 | `list-style-image: url("name.jpg")` |
-| `list-style-position: inside/outside` |
+| `list-style-position: inside|outside` |
 | `marker-offset: value` |
 
 > list-style: list-style-type list-style-position none
 
 
-
 ## Table
-
 | Properties |
 | --- |
 | `border-collapse: separate` |
 | `border-spacing: value value` |
-| `caption-side: top/bottom/left/right` |
-| `empty-cell: show/hide/inherit` |
-| `table-layout: auto/fixed/inherit` |
-
+| `caption-side: top|bottom|left|right` |
+| `empty-cell: show|hide|inherit` |
+| `table-layout: auto|fixed|inherit` |
 
 
 ## Border
-
 | Properties |
 | --- |
-| `border-style: solid/dotted/dashed/double/groove/ridge/inset/outset/hidden/none` |
+| `border-style: solid|dotted|dashed|double|groove|ridge|inset|outset|hidden|none` |
 | `border-width: value` |
 | `border-color: blue` |
-| `border-bottom/top/left/right-color: value` |
-| `border-bottom/top/left/right-style: value` |
-| `border-bottom/top/left/right-width: value` |
+| `border-bottom|top|left|right-color: value` |
+| `border-bottom|top|left|right-style: value` |
+| `border-bottom|top|left|right-width: value` |
 | `border-radius: value` |
 | `border-radius: top-left top-right bottom-right bottom-left` |
 | `border-radius: top bottom` |
@@ -297,100 +269,82 @@ a: link {
 | `border-image-source: url()` |
 | `border-image-slice: +integer` |
 | `border-image-width: value` |
-| `border-image-repeat: round/repeat/stretched` |
+| `border-image-repeat: round|repeat|stretched` |
 
 > border: value style color-name
 
 
-
 ## Outline
-
 | Properties |
 | --- |
-| `outline-width: thin/medium/thick` |
+| `outline-width: thin|medium|thick` |
 | `outline-width: value` |
-| `outline-style: solid/dotted/dashed/double/groove/ridge/inset/outset/hidden/none` |
+| `outline-style: solid|dotted|dashed|double|groove|ridge|inset|outset|hidden|none` |
 | `outline-color: value` |
-| `outline-offset: value/initial/inherit` |
+| `outline-offset: value|initial|inherit` |
 
 > outline:  value style color-name
 
 
-
 ## Shadow
-
 | Properties |
 | --- |
-| `text-shadow: X Y / X Y color / X Y blur color / X Y spread color` *(multiple seperate by comma)* |
-| `box-shadow: X Y color / X Y blur spread color` |
+| `text-shadow: X Y | X Y color | X Y blur color | X Y spread color` *(multiple seperate by comma)* |
+| `box-shadow: X Y color | X Y blur spread color` |
 | `box-shadow: inset (X Y color)`  (inner shadow) |
 
 
-
 ## Background
-
 | Properties |
 | --- |
-| `background-color: hexdec/color-name/rgb(,,)` |
+| `background-color: hexdec|color-name|rgb(,,)` |
 | `background-image: url("name.png")` |
-| `background-repeat: repeat-x/repeat-y/no-repeat` |
-| `background-attachment: fixed/scroll` |
-| `background-size: width height /auto` |
-| `background-size: contain/cover` |
-| `background-clip: border-box/padding-box/content-box` |
-
-
-
-----
-
+| `background-repeat: repeat-x|repeat-y|no-repeat` |
+| `background-attachment: fixed|scroll` |
+| `background-size: width height |auto` |
+| `background-size: contain|cover` |
+| `background-clip: border-box|padding-box|content-box` |
 
 
 ## Background Gradient Linear
-
 | Properties |
 | --- |
 | `background: linear-gradient(90deg)` |
 | `background: linear-gradient(color, color)` |
 | `background: linear-gradient(color %, color value)` |
-| `background: linear-gradient(to left/right/top/bottom/bottom right, color, color)` |
+| `background: linear-gradient(to left|right|top|bottom|bottom right, color, color)` |
 | `background: linear-gradient(x-deg, color)` |
 | `background: repeating-linear-gradient(color, color value)` |
 
 
-
 ## Background Gradient Radial
-
 | Properties |
 | --- |
-| `background: radial-gradient(top/bottom/left/right ,cirlce/ellipse ,color-stop)` |
+| `background: radial-gradient(top|bottom|left|right ,cirlce|ellipse ,color-stop)` |
 | `background: radial-gradient(color, color)` |
 | `background: radial-gradient(color %, value)` |
-| `background: radial-gradient(left/right/top/bottom, color, color)` |
+| `background: radial-gradient(left|right|top|bottom, color, color)` |
 | `background: radial-gradient(shape, color, color)` |
 
 
-
 ## Multiple Background
-
 | Properties |
 | --- |
 | `background-image: url(img.png), url(img.jpg)` |
 | `background-position: right bottom, left top` |
-| `background-repeat: repeat/no-repeat/repeat-x/repeat-y` |
-| `background-size: contain/cover/auto/initial/inherit` |
-| `background-clip: border-box/padding-box/content-box` |
+| `background-repeat: repeat|no-repeat|repeat-x|repeat-y` |
+| `background-size: contain|cover|auto|initial|inherit` |
+| `background-clip: border-box|padding-box|content-box` |
 
 > background: background-image background-position background-repeat
 
 *(comma seperate multiple)*
 
 
-
 ## Media Queries
+**Media-Types :** all|print|screen|speech
 
-**Media-Types :** all/print/screen/speech
-
-**Media-Features :** width/resolution/overflow-inline/overflow-block/orientation/aspect-ratio/height/min-width/min-resolution/min-height/min-aspect-ratio/max-width/max-resolution/max-height/max-aspect-ratio
+**Media-Features :** width|resolution|overflow-inline|overflow-block|orientation|aspect-ratio|height|min-width|min-resolution|min-height|min-aspect-ratio|max-width|max-resolution|max-height|max-aspect-ratio
 
 **Syntax :**
 ```
@@ -398,7 +352,6 @@ a: link {
     property: value;
 }
 ```
-
 
 Ex :
 ```
@@ -418,41 +371,35 @@ Ex :
 ```
 
 
-
 ## Multi Columns
-
 | Properties |
 | --- |
 | `column-count: n-count` |
 | `column-gap: value` |
-| `column-rule-style: solid/dotted/dashed/double/groove/ridge/inset/outset/hidden/none/initial/inherit` |
+| `column-rule-style: solid|dotted|dashed|double|groove|ridge|inset|outset|hidden|none|initial|inherit` |
 | `column-rule-width: value` |
-| `column-rule-color: color-name/hex/rgb` |
-| `column-span: all/none/initial/inherit` |
+| `column-rule-color: color-name|hex|rgb` |
+| `column-span: all|none|initial|inherit` |
 | `column-width: value` |
-| `column-fill: auto/balance/initial/inherit` |
+| `column-fill: auto|balance|initial|inherit` |
 
 > column: column-rule-width column-count
 
 > column-rule: column-rule-width column-rule-style column-rule-color
 
 
-
 ## Flexbox
-
 **Note : should be `display: flex`**
-
 
 | Flex Container Properties |
 | --- |
-| `flex-direction: column/row/column-reverse/row-reverse` |
-| `flex-wrap: wrap/no-wrap/wrap-reverse` |
-| `justify-content: center/flex-start/flex-end/space-around/space-between` |
-| `align-items: center/flex-start/flex-end/stretch/baseline` |
-| `align-content: center/flex-start/flex-end/space-around/space-between/stretch` |
+| `flex-direction: column|row|column-reverse|row-reverse` |
+| `flex-wrap: wrap|no-wrap|wrap-reverse` |
+| `justify-content: center|flex-start|flex-end|space-around|space-between` |
+| `align-items: center|flex-start|flex-end|stretch|baseline` |
+| `align-content: center|flex-start|flex-end|space-around|space-between|stretch` |
 
 > flex-flow: flex-direction flex-wrap
-
 
 | Flex Items Properties |
 | --- |
@@ -460,24 +407,21 @@ Ex :
 | `flex-grow: +integer` (how much item grows relatively) |
 | `flex-shrink: +integer` (how much item shrinks relatively) |
 | `flex-basis: value` (specify initial length) |
-| `align-self: center/flex-start/flex-end/stretch/baseline` |
+| `align-self: center|flex-start|flex-end|stretch|baseline` |
 
 > flex: flex-grow flex-shrink flex-basis
 
 
-
 ## Grid View
-
-**Note : should be `display: grid/inline-grid`**
-
+**Note : should be `display: grid|inline-grid`**
 
 | Properties |
 | --- |
-| `justify-content: space-evenly/space-around/space-between/center/start/end` |
-| `align-content: center/space-evenly/space-between/space-around/start/end` |
+| `justify-content: space-evenly|space-around|space-between|center|start|end` |
+| `align-content: center|space-evenly|space-between|space-around|start|end` |
 | `grid-column-gap: value` |
 | `grid-row-gap: value` |
-| `grid-gap: col-value row-value / both` |
+| `grid-gap: col-value row-value | both` |
 | `grid-column-start: int-start-line` |
 | `grid-column-end: int-end-line` |
 | `grid-row-start: int-start-line` |
@@ -486,20 +430,17 @@ Ex :
 | `grid-template-rows: value value` (same 2 rows) |
 | `grid-area: grid-name` |
 
-> grid-column: start / end
+> grid-column: start | end
 
-> grid-row: start / end
+> grid-row: start | end
 
-> grid-area: row-start / column-start / row-end / column-end
-
+> grid-area: row-start | column-start | row-end | column-end
 
 
 ## CSS Filters
-
 | Opacity |
 | --- |
 | `opacity : 0.0-1.0` |
-
 
 | Transparency |
 | --- |
@@ -507,18 +448,17 @@ Ex :
 | `hsl(hue,saturation,lightness)` |
 | `hsla(hue,saturation,lightness,alpha)` (alpha=0.1-1.0) |
 
-
 | Filter Properties |
 | --- |
 | `filter: blur( radius value )` |
-| `filter: brightness(% / no)` |
-| `filter: contrast(% / no)` |
+| `filter: brightness(% | no)` |
+| `filter: contrast(% | no)` |
 | `filter: drop-shadow(X Y offset color)` |
 | `filter: grayscale(%)` |
 | `filter: hue-rotate(deg)` |
 | `filter: invert(%)` |
 | `filter: opacity(%)` |
-| `filter: saturate(% / no)` |
+| `filter: saturate(% | no)` |
 | `filter: sepia(%)` |
 
 > filter: blur hue-rotate()
@@ -527,20 +467,17 @@ Ex :
 `blur(5px) hue-rotate(180deg)`
 
 
-
 ## Transitions
-
 | Properties |
 | --- |
-| `transition-property: tag/element` |
+| `transition-property: tag|element` |
 | `transition-duration: sec` |
-| `transition-timing-function: linear/ease/ease-in/ease-out/ease-in-out/cubuc-bezier(0,0,1,1)` |
+| `transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubuc-bezier(0,0,1,1)` |
 | `transition-delay: sec` |
 
 > transition: transition-property transition-duration transition-timing-function transition-delay
 
 *(comma seperate multiple)*
-
 
 Ex : *trigger When div elements width changes*
 ```
@@ -553,7 +490,6 @@ div {
 div:hover {
     width: 300px;
 }
-
 ```
 
 Ex : *transition with transform*
@@ -571,9 +507,7 @@ div:hover {
 ```
 
 
-
 ## Transformation 2D
-
 | Properties |
 | --- |
 | `transform: translate(x-width,y-height)` |
@@ -592,7 +526,6 @@ div:hover {
 
 *Comma seperate muliple*
 
-
 Ex :
 ```
 div {
@@ -603,9 +536,7 @@ div {
 ```
 
 
-
 ## Transform 3D
-
 | Properties |
 | --- |
 | `transform: rotateX(deg)` |
@@ -620,11 +551,10 @@ div {
 | `transform: scaleY(y)` |
 | `transform: scaleZ(z)` |
 | `transform: scale3d(x,y,z)` |
-| `transform-style: flat/preserve-3d/initial/inherit` |
+| `transform-style: flat|preserve-3d|initial|inherit` |
 | `perspective: value` |
-| `backface-visibility: visible/hidden/initial/inherit` |
-| `perspective-origin: x-axis (left/center/right/length/%) / y-axis (top/center/bottom/length/%) / initial/inheritet` |
-
+| `backface-visibility: visible|hidden|initial|inherit` |
+| `perspective-origin: x-axis (left|center|right|length|%) | y-axis (top|center|bottom|length|%) | initial|inheritet` |
 
 Ex :
 ```
@@ -639,9 +569,7 @@ div {
 ```
 
 
-
 ## Animation
-
 **Syntax :**
 ```
 @keyframes animation-name {
@@ -654,15 +582,14 @@ div {
 | --- |
 | `animation-name: animation-name` |
 | `animation-duration: sec` |
-| `animation-timing-function: linear/ease-in/ease-out/ease-in-out/cubic-bezier(n,n,n,n)` |
+| `animation-timing-function: linear|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)` |
 | `animation-delay: sec` |
-| `animation-iteration-count: n-count/infinite` |
-| `animation-direction: normal/reverse/alternate/alternate-reverse` |
-| `animation-fill-mode: none/forwards/backwards/both` |
-| `animation-play-state: paused/running/initial/inherit` |
+| `animation-iteration-count: n-count|infinite` |
+| `animation-direction: normal|reverse|alternate|alternate-reverse` |
+| `animation-fill-mode: none|forwards|backwards|both` |
+| `animation-play-state: paused|running|initial|inherit` |
 
 > animation: anim-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction
-
 
 Ex : *change bg-color when animation is 25% complete, 50% complete & animation is 100% complete*
 ```

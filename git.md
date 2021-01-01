@@ -1,4 +1,3 @@
-
 # Git -
 
 ## Table Of Content :
@@ -13,12 +12,10 @@
 * [Merging Branches](#merging-branches)
 * [Adding and Deleting Remotes](#adding-and-deleting-remotes)
 
-
 <br>
 
 
 ## Initial Setup
-
 | Command | Info |
 | --- | --- |
 | `git --version` | show installed git version |
@@ -30,9 +27,7 @@
 **Note :** All global settings are save in file .gitconfig in home directory
 
 
-
 ## Initialize and Cloning Repo
-
 | Command | Info |
 | --- | --- |
 | `git init` | initialize local repo |
@@ -41,9 +36,7 @@
 | `git clone ssh://git@github.com/[username]/[repo].git` | clone remote repo over SSH |
 
 
-
 ## View or Inspect Changes
-
 | Command | Info |
 | --- | --- |
 | `git status` | show working tree status |
@@ -56,13 +49,11 @@
 | `git log [commit-ID]` | show info of commit |
 | `git log --oneline --graph --decorate` | show all commit history |
 | `git show` | show recent commited changes |
-| `git show [commit-ID OR file]` | show changes for commit or file |
+| `git show [commit-ID|file]` | show changes for commit or file |
 | `git blame [file]` | show last modified revisions & authors for file |
 
 
-
 ## Staging Unstaging and Deleting Changes
-
 | Command | Info |
 | --- | --- |
 | `git add [file]` | add changes to stage area or index |
@@ -77,9 +68,7 @@
 | `git stash clear` | remove all stashed entries |
 
 
-
 ## Commit Changes
-
 | Command | Info |
 | --- | --- |
 | `git commit` | commit staged changes |
@@ -90,9 +79,7 @@
 | `git commit --amend -m "commit message` | revert last commit with message |
 
 
-
 ## Fetch Pull and Push Changes to Remote
-
 | Command | Info |
 | --- | --- |
 | `git fetch [remote]` | download objects and refs (branches and tags) from another repo |
@@ -106,9 +93,7 @@
 | `git push -u origin [branch]` | push commited changes to remote repo & remember branch |
 | `git push origin --delete [branch]` | delete remote branch |
 
-
 **Note :** Default, remote is origin & branch is main
-
 
 **Ex :** Push commited changes to repo
 ```
@@ -116,9 +101,7 @@ git push origin main
 ```
 
 
-
 ## Branches
-
 | Command | Info |
 | --- | --- |
 | `git branch` | list branch & * is current working branch |
@@ -138,33 +121,28 @@ git push origin main
 
 
 ## Tags
-
 | Command | Info |
 | --- | --- |
 | `git tag [tag/version]` | create new tag |
 | `git tag -a [tag/version] -m "tag message"` | create new tag with message |
 | `git tag [insert-commitID]` | give tag to commit |
-| `git tag` or `git tag -l` or `git tag --list` | list all tags |
-
+| `git tag` \| `git tag -l` \| `git tag --list` | list all tags |
 
 
 ## Merging Branches
-
 | Command | Info |
 | --- | --- |
 | `git merge [branch]` | merge branch into active branch |
 | `git merge [source-branch] [target-branch]` | merge branch into target branch from source-branch |
 
 
-
 ## Adding and Deleting Remotes
-
 | Command | Info |
 | --- | --- |
 | `git remote` | show active remote |
 | `git remote -v` | show active remote url |
 | `git remote show [remote]` | show info about remote |
-| `git remote add origin ssh://git@github.com/[username]/[repository-name].git OR https://path-to-repo` | add remote repository |
+| `git remote add origin ssh://git@github.com/[username]/[repository-name].git|https://path-to-repo` | add remote repository |
 | `git remote add [source] [repository-path]` | add new remote repo as short-name |
 | `git remote rename [old-name] [new-name]` | rename remote |
 | `git remote remove [short-name]` | delete remote |
