@@ -301,7 +301,7 @@ a: link {
 |`background-image: url("name.png")`|
 |`background-repeat: repeat-x\|repeat-y\|no-repeat`|
 |`background-attachment: fixed\|scroll`|
-|`background-size: width height|auto`|
+|`background-size: width height \| auto`|
 |`background-size: contain\|cover`|
 |`background-clip: border-box\|padding-box\|content-box`|
 
@@ -421,7 +421,7 @@ Ex :
 |`align-content: center\|space-evenly\|space-between\|space-around\|start\|end`|
 |`grid-column-gap: value`|
 |`grid-row-gap: value`|
-|`grid-gap: col-value row-value| both`|
+|`grid-gap: col-value row-value \| both`|
 |`grid-column-start: int-start-line`|
 |`grid-column-end: int-end-line`|
 |`grid-row-start: int-start-line`|
