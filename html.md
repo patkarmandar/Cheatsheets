@@ -73,7 +73,7 @@
 - `<a href="url" target="_blank"> Link Text </a>`
 **target :** blanck\|self\|parent\|top
 
-### &gt; Bookmarks :
+### Bookmarks :
 ```
 <h2 id="C4">Chapter 4</h2>
 <a href="#C4">Jump to Chapter 4</a>
@@ -81,14 +81,14 @@
 
 
 ## Lists
-### &gt; Unordered :
+### Unordered :
 ```
 <ul>
     <li>Items</li>
 </ul>
 ```
 
-### &gt; Ordered :
+### Ordered :
 ```
 <ol type="value" start="20">
     <li>Items</li>
@@ -97,7 +97,7 @@
 - **value**=1\|a\|A\|I\|i
 - **start** : start counting from 20
 
-### &gt; Description Lists :
+### Description Lists :
 ```
 <dl>
     <dt>Term</dt>
@@ -142,7 +142,7 @@
 ## Images
 `<img src="image.jpg" alt="Image Not Supported" width="104" height="142">`
 
-### &gt; Clickable Area :
+### Clickable Area :
 ```
 <map name="workmap">
     <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
@@ -151,7 +151,7 @@
 </map>
 ```
 
-### &gt; Picture Gallery :
+### Picture Gallery :
 ```
 <picture>
     <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
@@ -205,17 +205,17 @@
 - **Form Attribute :** autofocus\|checked\|disabled\|readonly\|required\|multiple\|placeholder\|size\|value\|min\|max\|maxlength
 
 
-### &gt; Button :
+### Button :
 `<button type="button" onclick="alert('Hello World!')">Click Me!</button>`
 
-### &gt; Fieldset :
+### Fieldset :
 ```
 <fieldset>
     <legend>Caption Name</legend>
 </fieldset>
 ```
 
-### &gt; Selection List :
+### Selection List :
 ```
 <select id="cars" name="cars" size="3" multiple>
     <option value="volvo">Volvo</option>
@@ -226,7 +226,7 @@
 </select>
 ```
 
-### &gt; Data List :
+### Data List :
 ```
 <datalist id="browsers">
     <option value="Internet Explorer">
@@ -237,5 +237,5 @@
 </datalist>
 ```
 
-### &gt; Textarea :
+### Textarea :
 `<textarea name="message" rows="10" cols="30">Text</textarea>`

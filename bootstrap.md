@@ -1167,7 +1167,9 @@ Ex :
 - `dropdown` : add to `<div>` element for dropdown menu
 - `dropdown-menu` : add to `<div>` inside dropdown for menu for dropdown
 - `dropdown-item` : add to each `<div>` for dropdown items
+
 <br>
+
 - `dropdown-toggle` : add to `<button>/<a>` for dropdown toggle
 - `data-toggle="dropdown"` : add to `<button>/<a>` to made toggle as dropdown
 
@@ -1342,7 +1344,9 @@ Ex :
 
 ## Collapse
 - `collapse` : add to `<div>` to make collapsible element
+
 <br>
+
 - `data-toggle="collapse"` : to control (show/hide) collapsible content add attribute to `<button>/<a>`
 - `data-target="#id"` : add attribute to connect button with collapsible content `(<div id="demo">)`
 - `hide` (default) : hide content
@@ -1561,7 +1565,9 @@ Ex :
 - `nav-links` : add to link `(<a>)` inside `<li>`
 - `navbar-dark` : add to `<nav>` for white text navbar
 - `navbar-light` : add to `<nav>` for dark text navbar
+
 <br>
+
 - `active|disabled` : add to link `(<a>)` for disable|active nav-item
 
 *Use contextual color class for colored navbar*
@@ -1638,7 +1644,9 @@ Ex :
 - `navbar-toggler-icon` : add in `<span>` inside button for collapse icon
 - `collapse` : add to parent `<div>` of `<ul>`
 - `navbar-collapse` : add to parent `<div>` of `<ul>`
+
 <br>
+
 - add `data-toggle="collapse"` to `<button>` for collapsing navbar
 - add `data-target="#thetarget"` to `<button>` for selecting nav menu
 - remove `.navbar-expand-md` class to always hide `nav-menu` items
@@ -2162,7 +2170,9 @@ Ex :
 ### Form Validation :
 - `was-validated` : add to `<form>` for validate before submision
 - `needs-validation` : add to `<form>` for validate after submision
+
 <br>
+
 - `valid-feedback` : add to seperate `<div>` with message for feedback if form is valid
 - `invalid-feedback` : add to seperate `<div>` with message for feedback if form is invalid
 

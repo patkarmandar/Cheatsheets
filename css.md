@@ -5,13 +5,13 @@
 * [CSS Selectors](#css-selectors)
 * [Pseudo Classes](#pseudo-classes)
 * [Pseudo Elements](#pseudo-elements)
-* [Fonts](#fonts)
+* [Font](#font)
 * [Text Formatting](#text-formatting)
 * [Display and Layout](#display-and-layout)
 * [Sizing and Content](#sizing-and-content)
-* [Links](#links)
-* [Lists](#lists)
-* [Tables](#tables)
+* [Link](#link)
+* [List](#list)
+* [Table](#table)
 * [Border](#border)
 * [Outline](#outline)
 * [Shadow](#shadow)
@@ -118,16 +118,16 @@ p :: before {
 ```
 
 
-## Fonts
-| Properties |
-| --- |
-| `color: color-name|hexdec|rgb(,,)|rgb(%,%,%, opacity)` |
-| `font-family: font-name , generic-family-name` |
-| `font-size: small|medium|large|x-large|absolute|relative|value` |
-| `font-style: italic|normal|oblique` |
-| `font-weight: lighter|bold|bolder|100-900` |
-| `font-variant: normal|small-caps` |
-| `font-stretch: normal|condensed|ultra-condensed|extra-condensed|semi-condensed|expanded|semi-expanded|extra-expanded|ultra-expanded` |
+## Font
+|Properties|
+|---|
+|`color: color-name\|hexdec\|rgb(,,)\|rgb(%,%,%, opacity)`|
+|`font-family: font-name , generic-family-name`|
+|`font-size: small\|medium\|large\|x-large\|absolute\|relative\|value`|
+|`font-style: italic\|normal\|oblique`|
+|`font-weight: lighter\|bold\|bolder\|100-900`|
+|`font-variant: normal\|small-caps`|
+|`font-stretch: normal\|condensed\|ultra-condensed\|extra-condensed\|semi-condensed\|expanded\|semi-expanded\|extra-expanded\|ultra-expanded`|
 
 > font: style variant weight color-name font-name
 
@@ -159,58 +159,58 @@ div {
 
 
 ## Text Formatting
-| Properties |
-| --- |
-| `text-align: left|right|center|justify` |
-| `vertical-align: top|right|center|justify` |
-| `text-decoration: none|inherit|overline|underline|line-through|blink` |
-| `text-indent: value` |
-| `text-transform: capitalize|uppercase|lowercase|none` |
-| `text-spacing: normal|inherit|value` |
-| `text-overflow: clip|ellipsis|string|initial|inherit` |
-| `word-spacing: normal|inherit|value` |
-| `white-spacing: normal|inherit|nowrap|pre|pre-line|pre-wrap|nowrap` |
-| `letter-spacing:normal|value` |
-| `line-height: auto|value` |
-| `direction: ltr|rtl` |
-| `text-justify: auto|inter-word|inter-character|none|initial|inherit` |
-| `text-align-last: auto|left|right|center|justifstart|end|initial|inherit` |
+|Properties|
+|---|
+|`text-align: left\|right\|center\|justify`|
+|`vertical-align: top\|right\|center\|justify`|
+|`text-decoration: none\|inherit\|overline\|underline\|line-through\|blink`|
+|`text-indent: value`|
+|`text-transform: capitalize\|uppercase\|lowercase\|none`|
+|`text-spacing: normal\|inherit\|value`|
+|`text-overflow: clip\|ellipsis\|string\|initial\|inherit`|
+|`word-spacing: normal\|inherit\|value`|
+|`white-spacing: normal\|inherit\|nowrap\|pre\|pre-line\|pre-wrap\|nowrap`|
+|`letter-spacing:normal\|value`|
+|`line-height: auto\|value`|
+|`direction: ltr\|rtl`|
+|`text-justify: auto\|inter-word\|inter-character\|none\|initial\|inherit`|
+|`text-align-last: auto\|left\|right\|center\|justifstart\|end\|initial\|inherit`|
 
 
 ## Display and Layout
-| Properties |
-| --- |
-| `z-index: low|high|integer` |
-| `display: block|inline|flex|none` |
-| `visibility: hidden|visible|collapse` |
-| `position: static|fixed|relative|absolute|sticky` |
-| `top|bottom|left|right: value` |
-| `margin: value|auto|inherit` |
-| `margin-top|bottom|left|right: value` |
-| `padding: value|inherit` |
-| `padding-top|bottom|left|right: value` |
+|Properties|
+|---|
+|`z-index: low\|high\|integer`|
+|`display: block\|inline\|flex\|none`|
+|`visibility: hidden\|visible\|collapse`|
+|`position: static\|fixed\|relative\|absolute\|sticky`|
+|`top\|bottom\|left\|right: value`|
+|`margin: value\|auto\|inherit`|
+|`margin-top\|bottom\|left\|right: value`|
+|`padding: value\|inherit`|
+|`padding-top\|bottom\|left\|right: value`|
 
 
 ## Sizing and Content
-| Properties |
-| --- |
-| `height: value|auto|initial|inherit` |
-| `width: value|auto|initial|inherit` |
-| `min-width: auto|value` |
-| `max-width: auto|value` |
-| `min-height: auto|value` |
-| `max-height: auto|value` |
-| `box-sizing: border-box|content-box|initial|inherit` |
-| `resize: none|both|horizontal|vertical|initial|inherit` |
-| `word-wrap: normal|break-word` |
-| `text-overflow: clip|ellipsis` |
-| `word-break: break-all|keep-all|break-word` |
-| `writing-mode: horizontal-tb|vertical-rl|vertical-lr` |
-| `float: left|right|center|none|initial|inherit` |
-| `clear: left|right|both|none|initial|inherit` |
-| `overflow: visible|scroll|hidden|auto` |
-| `overflow-x|y: auto|scroll` |
-| `object-fit: fill|contain|cover|none|scale-down` (for image) |
+|Properties|
+|---|
+|`height: value\|auto\|initial\|inherit`|
+|`width: value\|auto\|initial\|inherit`|
+|`min-width: auto\|value`|
+|`max-width: auto\|value`|
+|`min-height: auto\|value`|
+|`max-height: auto\|value`|
+|`box-sizing: border-box\|content-box\|initial\|inherit`|
+|`resize: none\|both\|horizontal\|vertical\|initial\|inherit`|
+|`word-wrap: normal\|break-word`|
+|`text-overflow: clip\|ellipsis`|
+|`word-break: break-all\|keep-all\|break-word`|
+|`writing-mode: horizontal-tb\|vertical-rl\|vertical-lr`|
+|`float: left\|right\|center\|none\|initial\|inherit`|
+|`clear: left\|right\|both\|none\|initial\|inherit`|
+|`overflow: visible\|scroll\|hidden\|auto`|
+|`overflow-x\|y: auto\|scroll`|
+|`object-fit: fill\|contain\|cover\|none\|scale-down` (for image)|
 
 
 ## Link
@@ -230,58 +230,58 @@ a: link {
 
 
 ## List
-| Properties |
-| --- |
-| `list-style-type: cirle|square|lower-alpha|disc|decimal|upper-roman` |
-| `list-style-image: url("name.jpg")` |
-| `list-style-position: inside|outside` |
-| `marker-offset: value` |
+|Properties|
+|---|
+|`list-style-type: cirle\|square\|lower-alpha\|disc\|decimal\|upper-roman`|
+|`list-style-image: url("name.jpg")`|
+|`list-style-position: inside\|outside`|
+|`marker-offset: value`|
 
 > list-style: list-style-type list-style-position none
 
 
 ## Table
-| Properties |
-| --- |
-| `border-collapse: separate` |
-| `border-spacing: value value` |
-| `caption-side: top|bottom|left|right` |
-| `empty-cell: show|hide|inherit` |
-| `table-layout: auto|fixed|inherit` |
+|Properties|
+|---|
+|`border-collapse: separate`|
+|`border-spacing: value value`|
+|`caption-side: top\|bottom\|left\|right`|
+|`empty-cell: show\|hide\|inherit`|
+|`table-layout: auto\|fixed\|inherit`|
 
 
 ## Border
-| Properties |
-| --- |
-| `border-style: solid|dotted|dashed|double|groove|ridge|inset|outset|hidden|none` |
-| `border-width: value` |
-| `border-color: blue` |
-| `border-bottom|top|left|right-color: value` |
-| `border-bottom|top|left|right-style: value` |
-| `border-bottom|top|left|right-width: value` |
-| `border-radius: value` |
-| `border-radius: top-left top-right bottom-right bottom-left` |
-| `border-radius: top bottom` |
-| `border-top-left-radius: value` |
-| `border-top-right-radius: value` |
-| `border-bottom-right-radius: value` |
-| `border-bottom-left-radius: value` |
-| `border-image-source: url()` |
-| `border-image-slice: +integer` |
-| `border-image-width: value` |
-| `border-image-repeat: round|repeat|stretched` |
+|Properties|
+|---|
+|`border-style: solid\|dotted\|dashed\|double\|groove\|ridge\|inset\|outset\|hidden\|none`|
+|`border-width: value`|
+|`border-color: blue`|
+|`border-bottom\|top\|left\|right-color: value`|
+|`border-bottom\|top\|left\|right-style: value`|
+|`border-bottom\|top\|left\|right-width: value`|
+|`border-radius: value`|
+|`border-radius: top-left top-right bottom-right bottom-left`|
+|`border-radius: top bottom`|
+|`border-top-left-radius: value`|
+|`border-top-right-radius: value`|
+|`border-bottom-right-radius: value`|
+|`border-bottom-left-radius: value`|
+|`border-image-source: url()`|
+|`border-image-slice: +integer`|
+|`border-image-width: value`|
+|`border-image-repeat: round\|repeat\|stretched`|
 
 > border: value style color-name
 
 
 ## Outline
-| Properties |
-| --- |
-| `outline-width: thin|medium|thick` |
-| `outline-width: value` |
-| `outline-style: solid|dotted|dashed|double|groove|ridge|inset|outset|hidden|none` |
-| `outline-color: value` |
-| `outline-offset: value|initial|inherit` |
+|Properties|
+|---|
+|`outline-width: thin\|medium\|thick`|
+|`outline-width: value`|
+|`outline-style: solid\|dotted\|dashed\|double\|groove\|ridge\|inset\|outset\|hidden\|none`|
+|`outline-color: value`|
+|`outline-offset: value\|initial\|inherit`|
 
 > outline:  value style color-name
 
@@ -289,52 +289,52 @@ a: link {
 ## Shadow
 | Properties |
 | --- |
-| `text-shadow: X Y | X Y color | X Y blur color | X Y spread color` *(multiple seperate by comma)* |
-| `box-shadow: X Y color | X Y blur spread color` |
+| `text-shadow: X Y \| X Y color \| X Y blur color \| X Y spread color` *(multiple seperate by comma)* |
+| `box-shadow: X Y color \| X Y blur spread color` |
 | `box-shadow: inset (X Y color)`  (inner shadow) |
 
 
 ## Background
-| Properties |
-| --- |
-| `background-color: hexdec|color-name|rgb(,,)` |
-| `background-image: url("name.png")` |
-| `background-repeat: repeat-x|repeat-y|no-repeat` |
-| `background-attachment: fixed|scroll` |
-| `background-size: width height |auto` |
-| `background-size: contain|cover` |
-| `background-clip: border-box|padding-box|content-box` |
+|Properties|
+|---|
+|`background-color: hexdec\|color-name\|rgb(,,)`|
+|`background-image: url("name.png")`|
+|`background-repeat: repeat-x\|repeat-y\|no-repeat`|
+|`background-attachment: fixed\|scroll`|
+|`background-size: width height|auto`|
+|`background-size: contain\|cover`|
+|`background-clip: border-box\|padding-box\|content-box`|
 
 
 ## Background Gradient Linear
-| Properties |
-| --- |
-| `background: linear-gradient(90deg)` |
-| `background: linear-gradient(color, color)` |
-| `background: linear-gradient(color %, color value)` |
-| `background: linear-gradient(to left|right|top|bottom|bottom right, color, color)` |
-| `background: linear-gradient(x-deg, color)` |
-| `background: repeating-linear-gradient(color, color value)` |
+|Properties|
+|---|
+|`background: linear-gradient(90deg)`|
+|`background: linear-gradient(color, color)`|
+|`background: linear-gradient(color %, color value)`|
+|`background: linear-gradient(to left\|right\|top\|bottom\|bottom right, color, color)`|
+|`background: linear-gradient(x-deg, color)`|
+|`background: repeating-linear-gradient(color, color value)`|
 
 
 ## Background Gradient Radial
-| Properties |
-| --- |
-| `background: radial-gradient(top|bottom|left|right ,cirlce|ellipse ,color-stop)` |
-| `background: radial-gradient(color, color)` |
-| `background: radial-gradient(color %, value)` |
-| `background: radial-gradient(left|right|top|bottom, color, color)` |
-| `background: radial-gradient(shape, color, color)` |
+|Properties|
+|---|
+|`background: radial-gradient(top\|bottom\|left\|right ,cirlce\|ellipse ,color-stop)`|
+|`background: radial-gradient(color, color)`|
+|`background: radial-gradient(color %, value)`|
+|`background: radial-gradient(left\|right\|top\|bottom, color, color)`|
+|`background: radial-gradient(shape, color, color)`|
 
 
 ## Multiple Background
-| Properties |
-| --- |
-| `background-image: url(img.png), url(img.jpg)` |
-| `background-position: right bottom, left top` |
-| `background-repeat: repeat|no-repeat|repeat-x|repeat-y` |
-| `background-size: contain|cover|auto|initial|inherit` |
-| `background-clip: border-box|padding-box|content-box` |
+|Properties|
+|---|
+|`background-image: url(img.png), url(img.jpg)`|
+|`background-position: right bottom, left top`|
+|`background-repeat: repeat\|no-repeat\|repeat-x\|repeat-y`|
+|`background-size: contain\|cover\|auto\|initial\|inherit`|
+|`background-clip: border-box\|padding-box\|content-box`|
 
 > background: background-image background-position background-repeat
 
@@ -372,16 +372,16 @@ Ex :
 
 
 ## Multi Columns
-| Properties |
-| --- |
-| `column-count: n-count` |
-| `column-gap: value` |
-| `column-rule-style: solid|dotted|dashed|double|groove|ridge|inset|outset|hidden|none|initial|inherit` |
-| `column-rule-width: value` |
-| `column-rule-color: color-name|hex|rgb` |
-| `column-span: all|none|initial|inherit` |
-| `column-width: value` |
-| `column-fill: auto|balance|initial|inherit` |
+|Properties|
+|---|
+|`column-count: n-count`|
+|`column-gap: value`|
+|`column-rule-style: solid\|dotted\|dashed\|double\|groove\|ridge\|inset\|outset\|hidden\|none\|initial\|inherit`|
+|`column-rule-width: value`|
+|`column-rule-color: color-name\|hex\|rgb`|
+|`column-span: all\|none\|initial\|inherit`|
+|`column-width: value`|
+|`column-fill: auto\|balance\|initial\|inherit`|
 
 > column: column-rule-width column-count
 
@@ -391,23 +391,23 @@ Ex :
 ## Flexbox
 **Note : should be `display: flex`**
 
-| Flex Container Properties |
-| --- |
-| `flex-direction: column|row|column-reverse|row-reverse` |
-| `flex-wrap: wrap|no-wrap|wrap-reverse` |
-| `justify-content: center|flex-start|flex-end|space-around|space-between` |
-| `align-items: center|flex-start|flex-end|stretch|baseline` |
-| `align-content: center|flex-start|flex-end|space-around|space-between|stretch` |
+|Flex Container Properties|
+|---|
+|`flex-direction: column\|row\|column-reverse\|row-reverse`|
+|`flex-wrap: wrap\|no-wrap\|wrap-reverse`|
+|`justify-content: center\|flex-start\|flex-end\|space-around\|space-between`|
+|`align-items: center\|flex-start\|flex-end\|stretch\|baseline`|
+|`align-content: center\|flex-start\|flex-end\|space-around\|space-between\|stretch`|
 
 > flex-flow: flex-direction flex-wrap
 
-| Flex Items Properties |
-| --- |
-| `order: +integer` (flex item order) |
-| `flex-grow: +integer` (how much item grows relatively) |
-| `flex-shrink: +integer` (how much item shrinks relatively) |
-| `flex-basis: value` (specify initial length) |
-| `align-self: center|flex-start|flex-end|stretch|baseline` |
+|Flex Items Properties|
+|---|
+|`order: +integer` (flex item order)|
+|`flex-grow: +integer` (how much item grows relatively)|
+|`flex-shrink: +integer` (how much item shrinks relatively)|
+|`flex-basis: value` (specify initial length)|
+|`align-self: center\|flex-start\|flex-end\|stretch\|baseline`|
 
 > flex: flex-grow flex-shrink flex-basis
 
@@ -415,20 +415,20 @@ Ex :
 ## Grid View
 **Note : should be `display: grid|inline-grid`**
 
-| Properties |
-| --- |
-| `justify-content: space-evenly|space-around|space-between|center|start|end` |
-| `align-content: center|space-evenly|space-between|space-around|start|end` |
-| `grid-column-gap: value` |
-| `grid-row-gap: value` |
-| `grid-gap: col-value row-value | both` |
-| `grid-column-start: int-start-line` |
-| `grid-column-end: int-end-line` |
-| `grid-row-start: int-start-line` |
-| `grid-row-end: int-end-line` |
-| `grid-template-columns: auto auto auto auto` (same 4 column) |
-| `grid-template-rows: value value` (same 2 rows) |
-| `grid-area: grid-name` |
+|Properties|
+|---|
+|`justify-content: space-evenly\|space-around\|space-between\|center\|start\|end`|
+|`align-content: center\|space-evenly\|space-between\|space-around\|start\|end`|
+|`grid-column-gap: value`|
+|`grid-row-gap: value`|
+|`grid-gap: col-value row-value| both`|
+|`grid-column-start: int-start-line`|
+|`grid-column-end: int-end-line`|
+|`grid-row-start: int-start-line`|
+|`grid-row-end: int-end-line`|
+|`grid-template-columns: auto auto auto auto` (same 4 column)|
+|`grid-template-rows: value value` (same 2 rows)|
+|`grid-area: grid-name`|
 
 > grid-column: start | end
 
@@ -451,14 +451,14 @@ Ex :
 | Filter Properties |
 | --- |
 | `filter: blur( radius value )` |
-| `filter: brightness(% | no)` |
-| `filter: contrast(% | no)` |
+| `filter: brightness(% \| no)` |
+| `filter: contrast(% \| no)` |
 | `filter: drop-shadow(X Y offset color)` |
 | `filter: grayscale(%)` |
 | `filter: hue-rotate(deg)` |
 | `filter: invert(%)` |
 | `filter: opacity(%)` |
-| `filter: saturate(% | no)` |
+| `filter: saturate(% \| no)` |
 | `filter: sepia(%)` |
 
 > filter: blur hue-rotate()
@@ -468,12 +468,12 @@ Ex :
 
 
 ## Transitions
-| Properties |
-| --- |
-| `transition-property: tag|element` |
-| `transition-duration: sec` |
-| `transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubuc-bezier(0,0,1,1)` |
-| `transition-delay: sec` |
+|Properties|
+|---|
+|`transition-property: tag\|element`|
+|`transition-duration: sec`|
+|`transition-timing-function: linear\|ease\|ease-in\|ease-out\|ease-in-out\|cubuc-bezier(0,0,1,1)`|
+|`transition-delay: sec`|
 
 > transition: transition-property transition-duration transition-timing-function transition-delay
 
@@ -537,24 +537,24 @@ div {
 
 
 ## Transform 3D
-| Properties |
-| --- |
-| `transform: rotateX(deg)` |
-| `transform: rotateY(deg)` |
-| `transform: rotateZ(deg)` |
-| `transform: rotate3d(x,y,z,deg)` |
-| `transform: translateX(x)` |
-| `transform: translateY(y)` |
-| `transform: translateZ(z)` |
-| `transform: translate3d(x,y,z)` |
-| `transform: scaleX(x)` |
-| `transform: scaleY(y)` |
-| `transform: scaleZ(z)` |
-| `transform: scale3d(x,y,z)` |
-| `transform-style: flat|preserve-3d|initial|inherit` |
-| `perspective: value` |
-| `backface-visibility: visible|hidden|initial|inherit` |
-| `perspective-origin: x-axis (left|center|right|length|%) | y-axis (top|center|bottom|length|%) | initial|inheritet` |
+|Properties|
+|---|
+|`transform: rotateX(deg)`|
+|`transform: rotateY(deg)`|
+|`transform: rotateZ(deg)`|
+|`transform: rotate3d(x,y,z,deg)`|
+|`transform: translateX(x)`|
+|`transform: translateY(y)`|
+|`transform: translateZ(z)`|
+|`transform: translate3d(x,y,z)`|
+|`transform: scaleX(x)`|
+|`transform: scaleY(y)`|
+|`transform: scaleZ(z)`|
+|`transform: scale3d(x,y,z)`|
+|`transform-style: flat\|preserve-3d\|initial\|inherit`|
+|`perspective: value`|
+|`backface-visibility: visible\|hidden\|initial\|inherit`|
+|`perspective-origin: x-axis (left\|center\|right\|length\|%) \| y-axis (top\|center\|bottom\|length\|%) \| initial\|inheritet`|
 
 Ex :
 ```
@@ -578,16 +578,16 @@ div {
 }
 ```
 
-| Animation Properties |
-| --- |
-| `animation-name: animation-name` |
-| `animation-duration: sec` |
-| `animation-timing-function: linear|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)` |
-| `animation-delay: sec` |
-| `animation-iteration-count: n-count|infinite` |
-| `animation-direction: normal|reverse|alternate|alternate-reverse` |
-| `animation-fill-mode: none|forwards|backwards|both` |
-| `animation-play-state: paused|running|initial|inherit` |
+|Animation Properties|
+|---|
+|`animation-name: animation-name`|
+|`animation-duration: sec`|
+|`animation-timing-function: linear\|ease-in\|ease-out\|ease-in-out\|cubic-bezier(n,n,n,n)`|
+|`animation-delay: sec`|
+|`animation-iteration-count: n-count\|infinite`|
+|`animation-direction: normal\|reverse\|alternate\|alternate-reverse`|
+|`animation-fill-mode: none\|forwards\|backwards\|both`|
+|`animation-play-state: paused\|running\|initial\|inherit`|
 
 > animation: anim-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction
 

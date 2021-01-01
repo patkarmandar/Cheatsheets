@@ -49,7 +49,7 @@
 | `git log [commit-ID]` | show info of commit |
 | `git log --oneline --graph --decorate` | show all commit history |
 | `git show` | show recent commited changes |
-| `git show [commit-ID|file]` | show changes for commit or file |
+| `git show [commit-ID\|file]` | show changes for commit or file |
 | `git blame [file]` | show last modified revisions & authors for file |
 
 
@@ -142,7 +142,7 @@ git push origin main
 | `git remote` | show active remote |
 | `git remote -v` | show active remote url |
 | `git remote show [remote]` | show info about remote |
-| `git remote add origin ssh://git@github.com/[username]/[repository-name].git|https://path-to-repo` | add remote repository |
+| `git remote add origin ssh://git@github.com/[username]/[repository-name].git\|https://path-to-repo` | add remote repository |
 | `git remote add [source] [repository-path]` | add new remote repo as short-name |
 | `git remote rename [old-name] [new-name]` | rename remote |
 | `git remote remove [short-name]` | delete remote |
