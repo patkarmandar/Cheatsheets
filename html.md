@@ -1,5 +1,12 @@
 # HTML -
 
+**Important languages of web development :**
+1. HTML - define content of web pages
+2. CSS - specify layout of web pages
+3. JavaScript - program behavior of web pages 
+
+<br>
+
 ## Table Of Content :
 * [HTML Entity](#html-entity)
 * [Formatting](#formatting)
