@@ -1,4 +1,4 @@
-# Bash -
+# Linux and Bash -
 
 ## Table Of Content :
 * [Usefull Commands](#usefull-commands)
