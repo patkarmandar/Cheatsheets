@@ -37,12 +37,15 @@
 | × | `&times;` |
 | • | `&bull;` |
 | ← | `&larr;` |
-| → | `&gt;` |
+| → | `&rarr;` |
 | ↑ | `&uarr;` |
 | ↓ | `&darr;` |
-| ↔ | `&harr;` |
+| « | `&laquo;` |
+| » | `&raquo;` |
 | ☛ | `&#9755;` |
 | ☚ | `&#9754;` |
+
+**For more [click here](https://dev.w3.org/html5/html-author/charref).**
 
 
 ## Formatting
