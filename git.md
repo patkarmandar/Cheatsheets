@@ -1,6 +1,6 @@
 # Git -
 
-## Table Of Content :
+### Table Of Content :
 * [Initial Setup](#initial-setup)
 * [Initialize and Cloning Repo](#initialize-and-cloning-repo)
 * [View or Inspect Changes](#view-or-inspect-changes)

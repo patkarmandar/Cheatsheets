@@ -7,7 +7,7 @@
 
 <br>
 
-## Table Of Content :
+### Table Of Content :
 * [HTML Entity](#html-entity)
 * [Formatting](#formatting)
 * [Links](#links)
