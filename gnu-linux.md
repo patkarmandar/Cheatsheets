@@ -15,6 +15,7 @@
 * [Shell Functions and Scripts](#shell-functions-and-scripts)
 * [File Testing](#file-testing)
 * [Conditionals and Loops](#conditionals-and-loops)
+* [Linux Filesystem Hierarchy](#liux-filesystem-hierarchy)
 
 <br>
 
@@ -726,3 +727,8 @@ do
     esac
 done
 ```
+
+
+## Linux Filesystem Hierarchy
+
+![linux filesystem](linux-filesystem.png)
