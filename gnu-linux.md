@@ -736,4 +736,4 @@ done
 
 <br>
 
-### [](https://github.com/patkarmandar/Cheatsheets/blob/main/gnu-linux.md#)
+# [&#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/gnu-linux.md#)

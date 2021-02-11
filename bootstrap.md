@@ -3094,4 +3094,5 @@ Ex :
 
 <br>
 
-### [](https://github.com/patkarmandar/Cheatsheets/blob/main/bootstrap.md#)
+# [&#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/bootstrap.md#)
+)

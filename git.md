@@ -151,4 +151,4 @@ git push origin main
 
 <br>
 
-### [](https://github.com/patkarmandar/Cheatsheets/blob/main/git.md#)
+# [&#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/git.md#)
