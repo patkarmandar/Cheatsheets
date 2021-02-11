@@ -126,7 +126,7 @@ git push origin main
 | `git tag [tag/version]` | create new tag |
 | `git tag -a [tag/version] -m "tag message"` | create new tag with message |
 | `git tag [insert-commitID]` | give tag to commit |
-| `git tag` \| `git tag -l` \| `git tag --list` | list all tags |
+| `git tag` or `git tag -l` or `git tag --list` | list all tags |
 
 
 ## Merging Branches

@@ -15,7 +15,7 @@
 * [Shell Functions and Scripts](#shell-functions-and-scripts)
 * [File Testing](#file-testing)
 * [Conditionals and Loops](#conditionals-and-loops)
-* [Linux Filesystem Hierarchy](#liux-filesystem-hierarchy)
+* [Linux Filesystem Hierarchy](#linux-filesystem-hierarchy)
 
 <br>
 
@@ -25,7 +25,7 @@
 ### &raquo; Basic :
 | Commands | Info |
 | --- | --- |
-| `!!` \| `!$` | repeat previous command |
+| `!!` or `!$` | repeat previous command |
 | `!-x` | run last xth command |
 | `!x` | run xth command |
 | `cal` | display calender |
@@ -88,7 +88,7 @@
 | `cd -` | change to last dir & print path |
 | `cd ..` | change to one level above current dir |
 | `cd dir` | change dir |
-| `cd` \| `cd ~` | change to home dir |
+| `cd` or `cd ~` | change to home dir |
 | `cp -r dir1 dir2` | copy folder & its content recursively |
 | `cp source destination` | copy file from source to destination |
 | `file file` | print file type |
@@ -303,8 +303,8 @@ alias repo='cd /document/github/repo'
 
 
 ## Variables
-- Declare Variable : `var="hello"`|`var=12`
-- Access Value : `$var`|`${var}`
+- Declare Variable : `var="hello"` or `var=12`
+- Access Value : `$var` or `${var}`
 - Remove variable : `unset var`
 - Read only variable : `readonly var`
 
@@ -390,7 +390,7 @@ echo `greet`
 | `$@` | same as $∗, but differ when enclosed in ("), (stored as array) |
 
 **Note :**
-1. Escape character ie backslash (\\) is use to remove special meaning of char : `\$`|`\>`
+1. Escape character ie backslash (\\) is use to remove special meaning of char : `\$` or `\>`
 2. Commands inside quote (\`) or \$() are interpreted : path=\`pwd\` &amp; `echo "Path : $(pwd)"`
 3. Arithmetic operations should be in double braces : `count=$((count+1))`
 4. Name scripts with .sh extension : `script.sh`
@@ -435,8 +435,8 @@ fi
 | Operator | Operation |
 | --- | --- |
 | `! expression` | not |
-| `expression \|\| expression` \| `expression -o expression` | or |
-| `expression && expression` \| `expression -a expression` | and |
+| `expression \|\| expression` or `expression -o expression` | or |
+| `expression && expression` or `expression -a expression` | and |
 | `( expression )` | grouping expressions |
 
 ### Numerical Comparison :
