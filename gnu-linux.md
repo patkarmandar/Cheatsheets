@@ -736,4 +736,4 @@ done
 
 <br>
 
-# [Go Up &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/gnu-linux.md#)
+## [Go Up &uArr;](https://github.com/patkarmandar/Cheatsheets/blob/main/gnu-linux.md#)

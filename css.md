@@ -630,4 +630,4 @@ div {
 
 <br>
 
-# [Go Up &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/css.md#)
+## [Go Up &uArr;](https://github.com/patkarmandar/Cheatsheets/blob/main/css.md#)
