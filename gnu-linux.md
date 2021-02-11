@@ -732,3 +732,8 @@ done
 ## Linux Filesystem Hierarchy
 
 ![linux filesystem](linux-filesystem.png)
+
+
+<br>
+
+### [](https://github.com/patkarmandar/Cheatsheets/blob/main/gnu-linux.md#)

@@ -147,3 +147,8 @@ git push origin main
 | `git remote rename [old-name] [new-name]` | rename remote |
 | `git remote remove [short-name]` | delete remote |
 | `git remote set-url origin ssh://git@github.com/[username]/[repository-name].git` | set repo\`s origin branch to SSH |
+
+
+<br>
+
+### [](https://github.com/patkarmandar/Cheatsheets/blob/main/git.md#)

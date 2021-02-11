@@ -249,3 +249,8 @@
 
 ### Textarea :
 `<textarea name="message" rows="10" cols="30">Text</textarea>`
+
+
+<br>
+
+### [](https://github.com/patkarmandar/Cheatsheets/blob/main/html.md#)
