@@ -253,4 +253,5 @@
 
 <br>
 
-### [Go Up &uarr; &uArr; &#8607; &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/html.md#)
+### [Go Up &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/html.md#)
+s/blob/main/html.md#)

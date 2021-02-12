@@ -151,4 +151,4 @@ git push origin main
 
 <br>
 
-## [Go Up &uArr;](https://github.com/patkarmandar/Cheatsheets/blob/main/git.md#)
+### [Go Up &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/git.md#)
