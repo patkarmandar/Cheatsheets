@@ -39,7 +39,7 @@
 ## View or Inspect Changes
 | Command | Info |
 | --- | --- |
-| `git status` | show working tree status |
+| `git status` | show untracked files |
 | `git diff` | show difference between commits and working tree (unstaged changes) |
 | `git diff [source-branch] [target-branch]` | show diff between branches |
 | `git diff [commit-ID] [commit-ID]` | show diff between two commits |
@@ -56,16 +56,20 @@
 ## Staging Unstaging and Deleting Changes
 | Command | Info |
 | --- | --- |
-| `git add [file]` | add changes to stage area or index |
+| `git add [file]` | add file to stage area or index |
 | `git add .` | add all changes to stage area or index |
 | `git add -A` | add all changes to stage area or index |
 | `git rm -r [file]` | remove file or folder from working tree and index |
-| `git checkout .` | delete all unstage changes or restore working tree file |
-| `git reset .` | unstage all staged changes |
+| `git checkout .` | delete all unstage changes or restore working tree |
+| `git reset` | unstage all staged files |
 | `git reset HEAD~1` | unstage most recent change |
 | `git reset --hard` | revert everything to last commit |
 | `git stash` | stash changes in dirty working directory |
 | `git stash clear` | remove all stashed entries |
+
+**Note:**
+- Working tree = unstaged = untracked
+- Index = staged = tracked
 
 
 ## Commit Changes
@@ -82,15 +86,15 @@
 ## Fetch Pull and Push Changes to Remote
 | Command | Info |
 | --- | --- |
-| `git fetch [remote]` | download objects and refs (branches and tags) from another repo |
+| `git fetch [remote]` | download objects and refs (branches and tags) from remote repo (not merge) |
 | `git fetch [short-name]` | fetch from remote repo |
 | `git fetch --all` | fetch all remotes |
 | `git pull` | update local repository to newest commit from origin |
-| `git pull [remote] [branch]` | pull changes from remote repo |
+| `git pull [remote] [branch]` | pull changes from specified remote repo branch |
 | `git pull --rebase` | fetch latest changes from origin & rebase |
 | `git push` | push commited changes to remote repo (default or remembered branch) |
-| `git push [remote] [branch]` | push commited changes to remote repo |
-| `git push -u origin [branch]` | push commited changes to remote repo & remember branch |
+| `git push [remote] [branch]` | push commited changes to remote branch |
+| `git push -u origin [branch]` | push commited changes to remote branch & remember branch |
 | `git push origin --delete [branch]` | delete remote branch |
 
 **Note :** Default, remote is origin & branch is main
@@ -106,6 +110,7 @@ git push origin main
 | --- | --- |
 | `git branch` | list branch & * is current working branch |
 | `git branch -a` | list all branches (local + remote) |
+| `git branch -r` | list all remote branches |
 | `git branch [branch]` | create new branch |
 | `git branch -d [branch]` | delete branch |
 | `git push origin --delete [branch]` | delete remote branch |
