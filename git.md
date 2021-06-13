@@ -52,6 +52,9 @@
 | `git show [commit-ID\|file]` | show changes for commit or file |
 | `git blame [file]` | show last modified revisions & authors for file |
 
+**Note:**
+- `HEAD` is pointer which points at current working branch and working tree.
+
 
 ## Staging Unstaging and Deleting Changes
 | Command | Info |
@@ -59,6 +62,8 @@
 | `git add [file]` | add file to stage area or index |
 | `git add .` | add all changes to stage area or index |
 | `git add -A` | add all changes to stage area or index |
+| `git restore [file]` | discard changes in working directory |
+| `git restore --staged [file]` | unstage file |
 | `git rm -r [file]` | remove file or folder from working tree and index |
 | `git checkout .` | delete all unstage changes or restore working tree |
 | `git reset` | unstage all staged files |
@@ -79,8 +84,9 @@
 | `git commit -m "commit-message"` | commit staged changes with commit message |
 | `git commit -a -m "commit-message"` | commit all changes (equals to git add + git commit) |
 | `git revert [insert-commit-ID]` | revert commit by producing new commit |
-| `git commit --amend` | revert last commit |
-| `git commit --amend -m "commit message` | revert last commit with message |
+| `git commit --amend` | amend/change last commit |
+| `git commit --amend --no-edit` | amends commit without changing its commit message |
+| `git commit --amend -m "commit message` | amend last commit with message |
 
 
 ## Fetch Pull and Push Changes to Remote
@@ -113,6 +119,7 @@ git push origin main
 | `git branch -r` | list all remote branches |
 | `git branch [branch]` | create new branch |
 | `git branch -d [branch]` | delete branch |
+| `git branch -u [branch]` | set upstream branch |
 | `git push origin --delete [branch]` | delete remote branch |
 | `git switch [branch]` | switch to new branch |
 | `git checkout [branch]` | switch to new branch |
@@ -147,11 +154,27 @@ git push origin main
 | `git remote` | show active remote |
 | `git remote -v` | show active remote url |
 | `git remote show [remote]` | show info about remote |
-| `git remote add origin ssh://git@github.com/[username]/[repository-name].git\|https://path-to-repo` | add remote repository |
-| `git remote add [source] [repository-path]` | add new remote repo as short-name |
+| `git remote add origin [path-to-repo]` | add remote repository |
+| `git remote add [short-name] [repository-path]` | add new remote repo as short-name |
 | `git remote rename [old-name] [new-name]` | rename remote |
 | `git remote remove [short-name]` | delete remote |
 | `git remote set-url origin ssh://git@github.com/[username]/[repository-name].git` | set repo\`s origin branch to SSH |
+
+
+### `.gitignore` file :
+It is special config file, any files added in it will be excluded from git repo. This file should be in root folder of repo.
+
+**For example-**
+```
+# file setup.txt will be excluded
+setup.txt
+
+# all files with extension .sh will be excluded
+*.sh
+
+# folder bin will be excluded
+bin/
+```
 
 
 <br>
