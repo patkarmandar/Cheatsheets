@@ -23,13 +23,13 @@
 | Command | Info |
 | --- | --- |
 | `git --version` | show installed git version |
-| `git --help [command]` | help for specific command |
-| `git config --global user.name "username"` | set git username |
-| `git config --global user.email "email"` | set git email |
+| `git --help [command]` | help for specified command |
+| `git config --global user.name "<username>"` | set git username |
+| `git config --global user.email "<email>"` | set git email |
 | `git config --global --list` | list saved global configs |
 
-**Note:**
-- All global settings are save in file .gitconfig in home directory
+**Note :** <br>
+\- All global settings are save in file .gitconfig in home directory
 
 
 ## Git Ignore File
@@ -38,7 +38,7 @@
 - File name: `.gitignore`
 - [Collection of useful .gitignore templates](https://github.com/github/gitignore)
 
-**For example-**
+**For Example :**
 ```
 # file setup.txt will be excluded
 setup.txt
@@ -54,7 +54,7 @@ bin/
 ## Setting Repo
 | Command | Info |
 | --- | --- |
-| `git init` | initialize local repo |
+| `git init` | initialize current directory as git repo |
 | `git init [repo]` | create local repo |
 | `git clone https://github.com/[username]/[repo]` | clone remote repo over https |
 | `git clone ssh://git@github.com/[username]/[repo].git` | clone remote repo over SSH |
@@ -66,22 +66,22 @@ bin/
 | `git status` | show untracked files |
 | `git diff` | show difference between commits and working tree (unstaged changes) |
 | `git diff [source-branch] [target-branch]` | show diff between branches |
-| `git diff [commit-ID] [commit-ID]` | show diff between two commits |
+| `git diff [commit] [commit]` | show diff between two commits |
 | `git diff HEAD` | show all stage + unstage changes |
 | `git log` | show commits log |
 | `git log -n` | show last n commits log |
 | `git log --summary` | show commits history in detailed |
-| `git log [commit-ID]` | show info of commit |
-| `git log [branch] [commit-ID]` | show commit log of specified branch |
+| `git log [commit]` | show info of commit |
+| `git log [branch] [commit]` | show commit log of specified branch |
 | `git log --oneline` | show each commit in single line only |
 | `git log --graph --decorate` | show commit history in formatted way |
 | `git log -g` | show reflog entries from most recent one to older ones |
 | `git show` | show recent commited changes |
-| `git show [commit-ID\|file]` | show changes for commit or file |
+| `git show [commit\|file]` | show changes for commit or file |
 | `git blame [file]` | show last modified revisions & authors for file |
 
-**Note:**
-- `HEAD` is pointer which points at current working tree and working branch.
+**Note :** <br>
+\- `HEAD` is pointer which points at current working tree and working branch.
 
 
 ## Staging and Unstaging
@@ -94,28 +94,29 @@ bin/
 | `git restore --staged [file]` | unstage file |
 | `git rm -r [file]` | remove file or folder from working tree and index |
 | `git checkout .` | delete all unstage changes or restore working tree |
-| `git checkout [commit-id]` | move/switch HEAD to specified commit-id, in detached HEAD state |
+| `git checkout -- [file]` | discard changes to file |
+| `git checkout [commit]` | move/switch HEAD to specified commit, in detached HEAD state |
 
-**Note:**
-- Working tree = unstaged = untracked
-- Index = staged = tracked
+**Note :** <br>
+\- Working tree = unstaged = untracked <br>
+\- Index = staged = tracked
 
 
 ## Commit and Rebase
 | Command | Info |
 | --- | --- |
 | `git commit` | commit staged changes |
-| `git commit -m "commit-message"` | commit staged changes with commit message |
-| `git commit -a -m "commit-message"` | commit all changes (equals to git add + git commit) |
-| `git revert [insert-commit-ID]` | revert commit by producing new commit |
+| `git commit -m "commit message"` | commit staged changes with commit message |
+| `git commit -a -m "commit message"` | stage and commit changes (git add+commit) |
+| `git revert [commit]` | revert commit by producing new commit |
 | `git commit --amend` | amend/change last commit |
-| `git commit --amend --no-edit` | amends commit without changing its commit message |
-| `git commit --amend -m "commit message` | amend last commit with message |
-| `git rebase` | merge branch without creating additiinal commit |
+| `git commit --amend --no-edit` | amend last commit without changing commit message |
+| `git commit --amend -m "commit message` | amend last commit with changing message |
+| `git rebase` | merge branch without creating additional merge commit |
 | `git rebase -i HEAD~n` | squash commits ie combine series of commits and condense it to few commits interactively |
 
-**Note:**
-- Never rebase on public branch, other team may face conflicts as rebase changes checksums.
+**Note :** <br>
+\- Never rebase on public branch, other team may face conflicts as rebasing changes checksums.
 
 
 ## Reset
@@ -123,15 +124,15 @@ bin/
 | --- | --- |
 | `git reset` | reset current HEAD to specified state (reset index) |
 | `git reset HEAD~n` | reset HEAD to last n-th commit |
-| `git reset --soft [commit-id]` | doesnt touch index file or working tree but resets head to commit |
-| `git reset --mixed [commit-id]` | resets index but not working tree ie changed files are preserved but not marked for commit (default action) |
-| `git reset --hard [commit-id]` | resets index and working tree, Any changes to tracked files in working tree since commit are discarded |
+| `git reset --soft [commit]` | doesn't touch index file or working tree but resets head to commit |
+| `git reset --mixed [commit]` | resets index but not working tree ie changed files are preserved but not marked for commit (default action) |
+| `git reset --hard [commit]` | resets index and working tree, Any changes to tracked files in working tree since commit are discarded |
 
-**Note:**
-- `checkout` vs `reset`
+**Note :** <br>
+\- `checkout` vs `reset` <br>
 Git reset is specifically about updating the index, moving the HEAD. <br>
 Git checkout is about updating the working tree (to the index or the specified tree). <br>
-It will update the HEAD only if you checkout a branch (if not, you end up with a detached HEAD).
+It will update the HEAD only if you checkout a branch (if not, then you end up with a detached HEAD).
 
 
 ## Push
@@ -144,20 +145,15 @@ It will update the HEAD only if you checkout a branch (if not, you end up with a
 | `git push -f` | force push changes, required when command refuses to update remote ref that is not ancestor of local ref (usally happen with rebase) |
 | `git push --force-with-lease` | when rebased already pushed changes, force pushing will lose pushed commits history by others. Force with lease gives flexibility to override new commits on your remote branch, while protecting old commit history |
 
-**Note:**
-- Use `force-with-lease` option instead of `f`.
-- Default, remote is origin & branch is main.
-Ex: Push commited changes to repo
-```
-git push origin main
-```
+**Note :** <br>
+\- Use `force-with-lease` option instead of `f` with push.
 
 
 ## Fetch Merge and Pull
 | Command | Info |
 | --- | --- |
-| `git fetch [remote]` | download objects and refs (branches, tags) from remote (does not merge) |
-| `git fetch [short-name]` | fetch from remote |
+| `git fetch [remote]` | download objects and refs (branches, tags) from remote (doesn't merge) |
+| `git fetch [short-name]` | fetch objects and refs from remote |
 | `git fetch --all` | fetch all remotes |
 | `git merge [branch]` | merge fetched histories/changes to active branch |
 | `git merge [source-branch] [target-branch]` | merge fetched changes into target-branch from source-branch |
@@ -177,17 +173,16 @@ git push origin main
 | `git branch -u [branch]` | set upstream branch |
 | `git push origin --delete [branch]` | delete remote branch |
 | `git switch [branch]` | switch branch |
-| `git switch -c [branch] | create & switch to new branch |
+| `git switch -c [branch]` | create & switch to new branch |
 | `git checkout [branch]` | switch branch |
 | `git checkout -` | switch to branch last checked out |
 | `git checkout -b [branch]` | create & switch to new branch |
 | `git checkout -b [branch] [branch]/Origin` | clone remote branch and switch to it |
 | `git branch -m [new-branch]` | rename current local branch |
 | `git branch -m [old-branch] [new-branch]` | rename local branch |
-| `git checkout -- [file]` | discard changes to file |
 
-**Note:**
-- It is recommended to create branches from main branch.
+**Note :** <br>
+\- It is recommended to create branches from main branch.
 
 
 ## Remote
@@ -217,27 +212,27 @@ git push origin main
 | `git stash clear` | remove all stashed entries |
 | `git stash branch [branch-name]` | create new branch from stash and switch to it, also drop corresponding stash |
 
-**Note:**
-- Stash index start from 0 as in array.
-- It is similar to data structure stack with LIFO.
+**Note :** <br>
+\- Stash index start from 0 as in array. <br>
+\- It is similar to data structure stack with LIFO.
 
 
 ## Reflog
 | Command | Info |
 | --- | --- |
 | `git reflog` | manage reflog information |
-| `git branch [branch-name] [commit-id]` | restore specified commit to branch |
+| `git branch [branch-name] [commit]` | restore specified commit to branch |
 
-**Note:**
-- Git reflog can be used to restore deleted/lost commits.
+**Note :** <br>
+\- Git reflog can be used to restore deleted/lost commits.
 
 
 ## Tags
 | Command | Info |
 | --- | --- |
-| `git tag [tag/version]` | create new tag |
-| `git tag -a [tag/version] -m "tag message"` | create new tag with message |
-| `git tag [insert-commitID]` | give tag to commit |
+| `git tag [tag\|version]` | create new tag |
+| `git tag -a [tag\|version] -m "tag message"` | create new tag with message |
+| `git tag [commit]` | give tag to commit |
 | `git tag` or `git tag -l` or `git tag --list` | list all tags |
 
 
@@ -245,6 +240,3 @@ git push origin main
 <br>
 
 **[Goto Up](https://github.com/patkarmandar/Cheatsheets/blob/main/git.md#)**
-
-
-
