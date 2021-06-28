@@ -1,4 +1,4 @@
-# HTML -
+# HTML
 
 **Important languages of web development :**
 1. HTML - define content of web pages
@@ -253,5 +253,4 @@
 
 <br>
 
-### [Go Up &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/html.md#)
-s/blob/main/html.md#)
+**[GO UP](https://github.com/patkarmandar/Cheatsheets/blob/main/html.md#)**

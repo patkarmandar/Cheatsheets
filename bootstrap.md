@@ -1,4 +1,4 @@
-# Bootstrap 4 -
+# Bootstrap 4
 
 ### Table Of Content :
 * [Container Classes](#container-classes)
@@ -3094,5 +3094,4 @@ Ex :
 
 <br>
 
-### [Go Up &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/bootstrap.md#)
-)
+**[GO UP](https://github.com/patkarmandar/Cheatsheets/blob/main/bootstrap.md#)**

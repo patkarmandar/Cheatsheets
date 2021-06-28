@@ -1,4 +1,4 @@
-# GNU/Linux -
+# GNU/Linux
 
 ### Table Of Content :
 * [GNU-Linux Utils](#gnu-linux-utils)
@@ -736,4 +736,4 @@ done
 
 <br>
 
-### [Go Up &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/gnu-linux.md#)
+**[GO UP](https://github.com/patkarmandar/Cheatsheets/blob/main/gnu-linux.md#)**

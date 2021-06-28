@@ -1,4 +1,4 @@
-# CSS -
+# CSS
 
 ### Table Of Content :
 * [CSS Units](#css-units)
@@ -630,4 +630,4 @@ div {
 
 <br>
 
-### [Go Up &#8679;](https://github.com/patkarmandar/Cheatsheets/blob/main/css.md#)
+**[GO UP](https://github.com/patkarmandar/Cheatsheets/blob/main/css.md#)**

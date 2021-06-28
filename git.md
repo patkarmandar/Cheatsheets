@@ -239,4 +239,4 @@ It will update the HEAD only if you checkout a branch (if not, then you end up w
 
 <br>
 
-**[Goto Up](https://github.com/patkarmandar/Cheatsheets/blob/main/git.md#)**
+**[GO UP](https://github.com/patkarmandar/Cheatsheets/blob/main/git.md#)**
