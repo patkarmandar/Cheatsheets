@@ -2,8 +2,8 @@
 
 **Important languages of web development :**
 1. HTML - define content of web pages
-2. CSS - specify layout of web pages
-3. JavaScript - program behavior of web pages 
+2. CSS - define layout/styling of web pages
+3. JavaScript - define behavior of web pages 
 
 <br>
 
@@ -18,6 +18,7 @@
 * [Audio](#audio)
 * [Frames](#frames)
 * [Forms](#forms)
+* [HTML5 Tags](#html5-tags)
 
 <br>
 
@@ -249,6 +250,10 @@
 
 ### Textarea :
 `<textarea name="message" rows="10" cols="30">Text</textarea>`
+
+
+## HTML5 Tags
+![html5 tags](Assets/html5.jpg)
 
 
 <br>

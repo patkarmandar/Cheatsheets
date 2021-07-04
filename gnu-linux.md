@@ -731,7 +731,7 @@ done
 
 ## Linux Filesystem Hierarchy
 
-![linux filesystem](linux-filesystem.png)
+![linux filesystem](Assets/linux-filesystem.png)
 
 
 <br>
