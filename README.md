@@ -5,5 +5,5 @@ TL;DR for devs - Developed while Experimenting with New Technologies.
 </blockquote>
 
 <p align="center">
-⚡ <b><a href="https://itspatkar.github.io/Cheatsheets">itspatkar.github.io/Cheatsheets</a></b> ⚡
+⚡ <b><a href="https://patkarmandar.github.io/Cheatsheets">patkarmandar.github.io/Cheatsheets</a></b> ⚡
 </p>
