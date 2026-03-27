@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Android Cheatsheet</title>
+
+        <!-- Bootstrap CDN -->  
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body data-theme="light">
+        <div class="container">
+            <!-- Theme Toggle -->
+            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+
+            <h3 class="title">Android</h3>
+
+            <div class="section-list">
+                <ul>
+                    <li><a href="#android-overview">Android Overview</a></li>
+                    <li><a href="#android-architecture">Android Architecture & Layers</a></li>
+                    <li><a href="#application-components">Application Components</a></li>
+                    <li><a href="#file-system-structure">File System Structure</a></li>
+                    <li><a href="#boot-process-low-level-components">Boot Process & Low-Level Components</a></li>
+                    <li><a href="#android-security-core">Android Security Core</a></li>
+                    <li><a href="#google-ecosystem">Google Services & Ecosystem</a></li>
+                    <li><a href="#system-images">System Images & ROMs</a></li>
+                    <li><a href="#root">Root</a></li>
+                </ul>
+            </div>
+
+            <div class="sections" id="android-overview">
+                <h4 class="heading"># Android Overview</h4>
+                <div class="content">
+                    <ul class="justify">
+                        <li>Open-source OS based on Linux kernel, developed by Google</li>
+                        <li>Designed for mobile devices (smartphones, tablets, TVs, wearables, IoT)</li>
+                        <li>Provides middleware framework, runtime environment, application support</li>
+                        <li>Development languages: Java, Kotlin, C/C++</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="android-architecture">
+                <h4 class="heading"># System Architecture Layers</h4>
+                <div class="content">
+                    <h5>Linux Kernel (Base Layer)</h5>
+                    <ul class="justify">
+                        <li>Direct communication with hardware via drivers</li>
+                        <li>Hardware abstraction, device drivers, power/memory/security management</li>
+                        <li>Android-specific: Binder IPC driver for inter-process communication</li>
+                        <li><b>Handles:</b> security, memory, processes, networking, drivers (camera, display, Wi-Fi, Bluetooth, USB)</li>
+                    </ul>
+                    <h5>Hardware Abstraction Layer (HAL)</h5>
+                    <ul class="justify">
+                        <li>Sits above kernel</li>
+                        <li>Provides standard interfaces/APIs between Android framework and hardware drivers</li>
+                        <li>Translator between Java/Kotlin framework and C/C++ hardware drivers</li>
+                        <li>Ensures apps don't need hardware-specific knowledge</li>
+                    </ul>
+                    <h5>Android Runtime & Native Libraries</h5>
+                    <ul class="justify">
+                        <li><b>Android Runtime (ART):</b> Executes apps, replaced Dalvik VM from Android 5.0+</li>
+                        <li>Uses JIT (Just-In-Time) and AOT (Ahead-Of-Time) compilation</li>
+                        <li>Garbage collection, sandboxed process per app</li>
+                        <li><b>Native C/C++ Libraries:</b> SQLite, OpenGL ES, WebKit, SSL, Media Framework</li>
+                    </ul>
+                    <h5>Application Framework</h5>
+                    <ul class="justify">
+                        <li>High-level APIs and services for apps</li>
+                        <li><b>Activity Manager:</b> app lifecycles</li>
+                        <li><b>Package Manager:</b> installation, permissions</li>
+                        <li><b>Resource Manager:</b> layouts, strings, images</li>
+                        <li><b>Notification Manager:</b> system notifications</li>
+                        <li><b>Location Manager:</b> GPS</li>
+                        <li><b>Telephony Manager:</b> calls, SMS</li>
+                        <li><b>View System:</b> UI components</li>
+                        <li><b>Content Providers:</b> data sharing between apps</li>
+                    </ul>
+                    <h5>Applications Layer</h5>
+                    <ul class="justify">
+                        <li>System apps (Phone, Contacts, Camera)</li>
+                        <li>User-installed apps</li>
+                        <li>Built using Java/Kotlin, sometimes C/C++ for native parts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="application-components">
+                <h4 class="heading"># Application Components</h4>
+                <div class="content">
+                    <ul class="justify">
+                        <li>Declared in <b><code>AndroidManifest.xml</code></b></li>
+                        <li>Connected by Intents (messaging objects for data/actions)</li>
+                        <li><b>Activities:</b> Single screen with UI, manages user interaction</li>
+                        <li><b>Services:</b> Runs in background without UI (music player, push notifications)</li>
+                        <li><b>Broadcast Receivers:</b> Respond to system-wide messages/events (low battery notifications, incoming SMS, Wi-Fi)</li>
+                        <li><b>Content Providers:</b> Manage and share data between apps (contacts, calendar)</li>
+                    </ul>
+                    <h5>WebView</h5>
+                    <ul class="justify">
+                        <li>Android component for displaying web content inside apps</li>
+                        <li>Mini browser engine (Chromium-based) embedded in Android</li>
+                        <li>Packaged as: Android System WebView</li>
+                        <li>API: android.webkit.WebView</li>
+                        <li>Can load remote webpages, local HTML/JS files</li>
+                        <li>JavaScript Interfaces: bridge between app code and web code</li>
+                        <li><b>Security risks:</b> JavaScript injection, insecure URL loading, XSS, phishing, MITM attacks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="file-system-structure">
+                <h4 class="heading"># File System Structure</h4>
+                <div class="content">
+                    <ul>
+                        <li><b><code>/</code> :</b> Root Directory - Essential Folders:</li>
+                        <li>
+                            <b><code>/system</code> :</b> Core Android OS files (read-only)
+                            <ul>
+                                <li><b><code>/system/app</code> :</b> Pre-installed system apps</li>
+                                <li><b><code>/system/framework</code> :</b> Android frameworks (.jar files)</li>
+                                <li><b><code>/system/lib, /system/lib64</code> :</b> Shared libraries (.so files)</li>
+                                <li><b><code>/system/bin</code> :</b> Core binaries (sh, toolbox)</li>
+                            </ul>
+                        </li>
+                        <li><b><code>/vendor</code> :</b> Device-specific files (drivers, firmware, HAL)</li>
+                        <li><b><code>/boot</code> :</b> Kernel + ramdisk</li>
+                        <li><b><code>/recovery</code> :</b> Boot partition for system recovery</li>
+                        <li>
+                            <b><code>/data</code> :</b> User data (writable)
+                            <ul>
+                                <li><b><code>/data/app</code> :</b> Installed apps (APK files)</li>
+                                <li><b><code>/data/data/&lt;package_name&gt;</code> :</b> App-specific data (databases, cache, prefs)</li>
+                                <li><b><code>/data/dalvik-cache</code> :</b> Compiled code cache</li>
+                            </ul>
+                        </li>
+                        <li><b><code>/cache</code> :</b> Temporary data, OTA updates</li>
+                        <li><b><code>/sdcard</code></b> or <b><code>/storage/emulated/0</code> :</b> User files (media, downloads)</li>
+                        <li><b><code>/dev</code> :</b> Device nodes for hardware</li>
+                        <li><b><code>/proc</code> :</b> Runtime kernel/system info</li>
+                        <li><b><code>/etc</code> :</b> Config files</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="boot-process-low-level-components">
+                <h4 class="heading"># Boot Process & Low-Level Components</h4>
+                <div class="content">
+                    <h5>Bootloader</h5>
+                    <ul class="justify">
+                        <li>First program on device power-on</li>
+                        <li>Initializes hardware, verifies system integrity, loads OS kernel</li>
+                        <li><b>Decides boot mode:</b> Android OS, Recovery, or Fastboot/Download Mode</li>
+                        <li><b>Locked:</b> secure, stock firmware only</li>
+                        <li><b>Unlocked:</b> allows custom ROMs, kernels, recovery</li>
+                    </ul>
+                    <h5>Fastboot / Download Mode</h5>
+                    <ul class="justify">
+                        <li>Diagnostic and flashing interface before Android boots</li>
+                        <li>Communicates via ADB/Fastboot commands</li>
+                        <li><b>Allows:</b> unlock/lock bootloader, flash system images, repair bricked device</li>
+                        <li>Samsung uses Download Mode (Odin) instead</li>
+                    </ul>
+                    <h5>Recovery</h5>
+                    <ul class="justify">
+                        <li>Separate lightweight runtime on /recovery partition</li>
+                        <li>Stock Recovery: limited, official only</li>
+                        <li>Custom Recovery (TWRP): advanced flashing, backups, root access</li>
+                        <li><b>System maintenance:</b> factory reset, OTA updates, custom ROM flashing</li>
+                    </ul>
+                    <h5>Zygote</h5>
+                    <ul class="justify">
+                        <li>A special daemon process, started early by init, that serves as the parent of all app processes</li>
+                        <li>Loads and initializes Android Runtime (ART/Dalvik), core libraries and system classes once, then forks for new apps</li>
+                        <li>Without Zygote, every app would initialize the ART runtime separately -> resulting in slow launches and high memory usage -> whereas with Zygote, a single preloaded runtime is forked quickly -> enabling fast app launches and efficient memory use</li>
+                        <li><b>Forking model:</b> fast app launches, efficient memory use</li>
+                        <li><b>Security:</b> SELinux and sandboxing apply immediately on fork</li>
+                    </ul>
+                    <h5>BusyBox</h5>
+                    <ul class="justify">
+                        <li>Lightweight package with Unix/Linux utilities in single executable</li>
+                        <li>Often called the "Swiss Army Knife of Embedded Linux"</li>
+                        <li>Designed for systems with limited resources (Android, routers, IoT devices)</li>
+                        <li>Android lacks many standard Linux utilities by default, but BusyBox fills the gap by providing a wide set of Linux commands in a compact form.</li>
+                        <li>Combines many commands (ls, cat, grep, find, ifconfig) into one binary</li>
+                        <li><b>Enables:</b> advanced file operations (find, cp, mv), network utilities (ifconfig, netstat, ping), system admin commands (top, ps), custom shell scripts</li>
+                        <li>Essential for rooting, custom ROMs, pentesting</li>
+                        <li>Common in custom recoveries (TWRP) and rooted environments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="android-security-core">
+                <h4 class="heading"># Android Security Core</h4>
+                <div class="content">
+                    <h5>Android Verified Boot (AVB)</h5>
+                    <ul class="justify">
+                        <li>Ensures device boots only trusted software by verifying the integrity of each stage of the boot process</li>
+                        <li>Evolution of dm-verity (introduced Android 4.4), standardized as AVB 2.0 in Android 7.0+</li>
+                        <li><b>Root of Trust:</b> starts with bootloader (signed by the device manufacturer)</li>
+                        <li><b>Chain of Trust:</b> each stage verifies the integrity and authenticity of the next stage using cryptographic signatures (bootloader -> kernel -> system -> vendor)</li>
+                        <li>Rollback Protection: prevents downgrading to vulnerable OS versions</li>
+                        <li>Prevents persistent malware, rootkits, system partition tampering</li>
+                        <li>Modified blocks fail verification -> device refuses to boot or shows warning</li>
+                    </ul>
+                    <h5>DM-Verity (Device-Mapper Verity)</h5>
+                    <ul class="justify">
+                        <li>Kernel feature for verified boot (AVB implementation)</li>
+                        <li>Block-level integrity checker for /system, /vendor partitions</li>
+                        <li>Uses hash tree (Merkle tree) of cryptographic checksums in boot image</li>
+                        <li>Each block checked against expected hash</li>
+                        <li>
+                            Mismatch -> device refuses to boot (bootloop) or replaces block with zeros
+                            <ul class="justify">
+                                <li>On boot, the kernel initiates dm-verity, which verifies each block of the verified partition by hashing it and comparing it against a precomputed hash tree.</li>
+                                <li>The root hash of that tree is signed by the manufacturer and verified during Verified Boot.</li>
+                                <li>If corruption is detected, the device either fails to boot (boot loop) or replaces bad data with zeros (the device runs, but with corrupted or missing functionality).</li>
+                            </ul>
+                        </li>
+                        <li><b>Prevents:</b> malware persistence, system file tampering, backdoors</li>
+                        <li><b>Obstacle for root/custom ROMs:</b> must disable dm-verity for modifications</li>
+                        <li>Rooting with system modifications (e.g., SuperSU) breaks dm-verity by altering the verified partition, causing hash mismatches that lead to boot loops or zeroed data</li>
+                        <li>Magisk achieves systemless root by keeping /system intact, modifying /boot</li>
+                    </ul>
+                    <h5>SELinux (Security-Enhanced Linux)</h5>
+                    <ul class="justify">
+                        <li>Kernel-level security module, enforces Mandatory Access Control (MAC)</li>
+                        <li>Introduced in Android 4.3 (2013) and default enforcing since Android 5.0 (2014)</li>
+                        <li>Unlike traditional Linux Discretionary Access Control (DAC), where the owner of a resource decides who can access it, SELinux enforces centralized, mandatory rules that define exactly which processes can access which resources.</li>
+                        <li>Every process, file, resource has security context (label)</li>
+                        <li>Policies define allowed actions between contexts</li>
+                        <li>Even root apps must respect SELinux policies (in enforcing mode)</li>
+                        <li>Prevents root malware from complete takeover</li>
+                        <li>Confines compromised apps within defined boundaries</li>
+                        <li>Even if an app like untrusted_app is compromised, SELinux confines it -> blocking access to sensitive areas like /data/system/ and kernel memory</li>
+                        <li><b>Modes:</b> Permissive (logs violations), Enforcing (blocks violations)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="google-ecosystem">
+                <h4 class="heading"># Google Ecosystem</h4>
+                <div class="content">
+                    <h5>Google Mobile Services (GMS)</h5>
+                    <ul class="justify">
+                        <li>Proprietary Google apps & APIs on top of Android</li>
+                        <li><b>Includes:</b> Play Store, Play Services, Firebase, FCM, Play Integrity API, Maps, Gmail, YouTube</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="system-images">
+                <h4 class="heading"># System Images & ROMs</h4>
+                <div class="content">
+                    <h5>Generic System Image (GSI)</h5>
+                    <ul class="justify">
+                        <li>Pure AOSP implementation for Project Treble devices (Android 8.0+)</li>
+                        <li>A system image with unmodified AOSP code (no OEM customizations)</li>
+                        <li><b>Used for:</b> testing, pentesting, device validation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="root">
+                <h4 class="heading"># Root</h4>
+                <div class="content">
+                    <h5>Rooting</h5>
+                    <ul class="justify">
+                        <li>Gaining privileged (root/administrator) access to Android OS</li>
+                        <li>Unlocks root user (superuser) account (UID 0)</li>
+                        <li>Usually requires unlocked bootloader first</li>
+                        <li>Root vs Bootloader Unlock: bootloader unlock allows flashing, root gives admin control</li>
+                        <li><b>Allows:</b> modify system files, remove bloatware, install custom ROMs/kernels, system access apps, performance tweaks</li>
+                        <li><b>Risks:</b> security vulnerabilities, malicious apps could gain full control, warranty void, OTA updates blocked, bricking, SafetyNet/Play Integrity fail</li>
+                    </ul>
+                    <h5>Root Binary (su)</h5>
+                    <ul class="justify">
+                        <li>Root account disabled by default in Android</li>
+                        <li>No su binary in /system/bin or /system/xbin</li>
+                        <li>Apps run sandboxed with own UID, managed by Zygote + SELinux</li>
+                        <li>Rooting installs su binary (switch user) in system</li>
+                        <li>su binary lets processes switch to UID 0 (root)</li>
+                        <li>Superuser Manager (SuperSU/Magisk) intercepts su calls, prompts user for permission</li>
+                    </ul>
+                    <h5>Rooting Methods</h5>
+                    <h6>System Modifying Root (Older):</h6>
+                    <ul class="justify">
+                        <li>Tools like SuperSU modified /system partition</li>
+                        <li>Inserted su binary directly in system</li>
+                        <li><b>Risks:</b> permanently changed system, broke OTA updates, easily detected</li>
+                    </ul>
+                    <h6>Systemless Root - Magisk (Modern):</h6>
+                    <ul class="justify">
+                        <li>Modern systemless rooting framework by topjohnwu</li>
+                        <li><b>Systemless Root:</b> patches boot image (boot.img), not /system and loads root at boot</li>
+                        <li>Provides: root access (su) and modules system</li>
+                        <li>Magisk Modules: plugins for features (ad-block, theming, performance)</li>
+                        <li>Zygisk: runs inside Zygote for finer control</li>
+                        <li>DenyList: hide modifications/root from specific apps</li>
+                        <li>Supports OTA updates, minimal system modification, and easy to undo</li>
+                        <li><b>Steps:</b> unlock bootloader -> extract boot.img -> patch with Magisk -> flash patched boot.img</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav>
+                <a href="/Cheatsheets"><i class="bi bi-arrow-left-square-fill"></i></a>
+                <a href="#" class="float-end"><i class="bi bi-arrow-up-square-fill"></i></a>
+            </nav>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="assets/script.js"></script>
+    </body>
+</html>
