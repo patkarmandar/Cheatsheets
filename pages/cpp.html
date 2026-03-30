@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
             
             <h3 class="title">C++</h3>
 
@@ -64,7 +67,7 @@
             </div>
 
             <div class="sections" id="program-structure">
-                <h4 class="heading"># Program Structure</h4>
+                <h4 class="heading">Program Structure</h4>
                 <pre class="code-box code-box-color"><code>#include&lt;iostream&gt;
 using namespace std;
 
@@ -76,7 +79,7 @@ int main(){
             </div>
 
             <div class="sections" id="compile-execute">
-                <h4 class="heading"># Compile & Execute</h4>
+                <h4 class="heading">Compile & Execute</h4>
                 <p>The g++ is a compiler that is used to compile programs written in the C++ programming language. It is part of the GNU Compiler Collection (GCC).</p>
                 <h5>&bull; Compiling Program :</h5>
                 <div class="code-box"><code>g++ file.cpp</code></div>
@@ -88,7 +91,7 @@ int main(){
             </div>
 
             <div class="sections" id="input-output">
-                <h4 class="heading"># Input &amp; Output</h4>
+                <h4 class="heading">Input &amp; Output</h4>
                 <p>The <code>iostream</code> (or input-output stream) is a C++ Standard Library (or header file) that provides definitions for the <code>istream</code> and <code>ostream</code> classes. It is used to read input from a stream of characters, such as a console or file, and write output data to the console or file.</p>
                 <div>
                     <h5>&bull; Ostream Class :</h5>
@@ -183,7 +186,7 @@ cin >> a >> b >> c;</code></pre>
             </div>
 
             <div class="sections" id="comments">
-                <h4 class="heading"># Comments</h4>
+                <h4 class="heading">Comments</h4>
                 <div>
                     <h5>&bull; Single-Line Comment :</h5>
                     <p><code>//</code> is used for single-line comment.</p>
@@ -203,7 +206,7 @@ comment. */</code></pre>
             </div>
 
             <div class="sections" id="variables">
-                <h4 class="heading"># Variables</h4>
+                <h4 class="heading">Variables</h4>
                 <div>
                     <h6>Syntax :</h6>
                     <div class="code-box"><code>data_type variable_name;</code></div>
@@ -235,7 +238,7 @@ int main(){
             </div>
 
             <div class="sections" id="data-types">
-                <h4 class="heading"># Data Types</h4>
+                <h4 class="heading">Data Types</h4>
                 <p>A data type specifies the type of data that a variable can store such as integer, floating, character, etc.</p>
                 <div>
                     <h5>&bull; Primitive Data Types :</h5>
@@ -364,7 +367,7 @@ cout << "Distance = " << distance << endl;</code></pre>
             </div>
 
             <div class="sections" id="storage-classes">
-                <h4 class="heading"># Storage Classes</h4>
+                <h4 class="heading">Storage Classes</h4>
                 <p>The Storage class defines the scope (visibility) and life-time of variables and/or functions within a C++ program.</p>
                 <h6>Syntax :</h6>
                 <div class="code-box"><code>class type name</code></div>
@@ -442,7 +445,7 @@ static int count = 1;</code></pre>
             </div>
 
             <div class="sections" id="operators">
-                <h4 class="heading"># Operators</h4>
+                <h4 class="heading">Operators</h4>
                 <div>
                     <h5>&bull; Arithmetic Operators :</h5>
                     <div class="table-responsive">
@@ -664,7 +667,7 @@ int main(){
             </div>
 
             <div class="sections" id="decision-making">
-                <h4 class="heading"># Decision Making</h4>
+                <h4 class="heading">Decision Making</h4>
                 <div>
                     <h5>&bull; If Statement :</h5>
                     <h6>Syntax :</h6>
@@ -784,7 +787,7 @@ switch(day){
             </div>
 
             <div class="sections" id="loops">
-                <h4 class="heading"># Loops</h4>
+                <h4 class="heading">Loops</h4>
                 <div>
                     <h5>&bull; While Loop :</h5>
                     <p>Generally, when the number of iterations is unknown, the while loop is used.</p>
@@ -834,7 +837,7 @@ do {
             </div>
 
             <div class="sections" id="loop-control-statements">
-                <h4 class="heading"># Loop Control Statements</h4>
+                <h4 class="heading">Loop Control Statements</h4>
                 <div>
                     <h5>&bull; Break Statement :</h5>
                     <p>Terminates the loop or switch statement and transfers execution to the statement immediately following the loop or switch.</p>
@@ -878,7 +881,7 @@ if (n%2 == 0) goto INPUT;</code></pre>
             </div>
 
             <div class="sections" id="strings">
-                <h4 class="heading"># Strings</h4>
+                <h4 class="heading">Strings</h4>
                 <p>Strings are one-dimensional arrays of characters terminated by the null character '\0'. There are two ways of using strings in C++ :</p>
                 <ol>
                     <li>String as Char Array (C-style)</li>
@@ -964,7 +967,7 @@ int main(){
             </div>
 
             <div class="sections" id="arrays">
-                <h4 class="heading"># Arrays</h4>
+                <h4 class="heading">Arrays</h4>
                 <p>An array is a fixed-size sequential collection of elements of the same type. All arrays consist of contiguous memory locations. Array indexes start with 0: [0] is the first element. Arrays cannot be reinitialized.</p>
                 <h6>Declaring array :</h6>
                 <div class="code-box"><code>type name[size];</code></div>
@@ -1173,7 +1176,7 @@ int main(){
             </div>
 
             <div class="sections" id="pointers">
-                <h4 class="heading"># Pointers</h4>
+                <h4 class="heading">Pointers</h4>
                 <p>A pointer is a variable which holds the memory address of another variable, i.e., it stores the address of a memory location.</p>
                 <ul class="justify">
                     <li><strong>Referencing:</strong> The referencing is accessing the memory address of the variable. The reference operator (<code>&</code>) is used for this.</li>
@@ -1232,7 +1235,7 @@ cout << *(int*)p << endl;</code></pre>
             </div>
 
             <div class="sections" id="references">
-                <h4 class="heading"># References</h4>
+                <h4 class="heading">References</h4>
                 <p>A reference variable is an alias, that is, another name for an already existing variable.</p>
                 <h6>Syntax :</h6>
                 <div class="code-box"><code>type &name = var;</code></div>
@@ -1242,7 +1245,7 @@ string &meal = food;</code></pre>
             </div>
 
             <div class="sections" id="functions">
-                <h4 class="heading"># Functions</h4>
+                <h4 class="heading">Functions</h4>
                 <p>Functions are blocks of statements that perform a specific task. It is reusable code that can be called anywhere in the program.</p>
                 <h6>Syntax :</h6>
                 <h6>Function Declaration (prototype) :</h6>
@@ -1457,7 +1460,7 @@ int main(){
             </div>
 
             <div class="sections" id="enum">
-                <h4 class="heading"># Enumeration</h4>
+                <h4 class="heading">Enumeration</h4>
                 <p>An enumeration is a user-defined data type that consists of integral constants. Default values are 0, 1, 2, and so on. To define an enumeration, the keyword <code>enum</code> is used.</p>
                 <h6>Syntax :</h6>
                 <div class="code-box">enum EnumName { list_of_names } var_list;</div>
@@ -1479,7 +1482,7 @@ int main(){
             </div>
 
             <div class="sections" id="struct">
-                <h4 class="heading"># Structures</h4>
+                <h4 class="heading">Structures</h4>
                 <p>Structures (also called structs) are a way to group several related variables into one place. Each variable in the structure is referred to as a member of the structure. A structure can contain many different data types (int, string, bool, etc.). To access members of a structure, the member access operator (<code>.</code>) is used. We can't assign a character array (a string) to a structure, but we can copy it.</p>
                 <h6>Syntax :</h6>
                 <pre class="code-box"><code>struct Name {
@@ -1627,7 +1630,7 @@ int main(){
             </div>
 
             <div class="sections" id="class-objects">
-                <h4 class="heading"># Class &amp; Objects</h4>
+                <h4 class="heading">Class &amp; Objects</h4>
                 <div>
                     <h5>&bull; Class :</h5>
                     <p>A class is a blueprint or template for creating objects that define a set of properties and methods that are common to all objects of that type. It serves as a blueprint that defines the characteristics and behaviours of objects.</p>
@@ -1871,7 +1874,7 @@ int main(){
             </div>
 
             <div class="sections" id="constructor-destructor">
-                <h4 class="heading"># Constructor &amp; Destructor</h4>
+                <h4 class="heading">Constructor &amp; Destructor</h4>
                 <div>
                     <h5>&bull; Constructor :</h5>
                     <p>It is a special method that is automatically called when an object of a class is created. The constructor has the same name as the class, it is always public, and it does not have any return value.</p>
@@ -2046,7 +2049,7 @@ int main(){
             </div>
 
             <div class="sections" id="inheritance">
-                <h4 class="heading"># Inheritance</h4>
+                <h4 class="heading">Inheritance</h4>
                 <p>Inheritance is a feature or a process in which new classes are created from existing ones. The new class created is called a "derived class" or "child class," and the existing class is known as the "base class" or "parent class." The derived class is now said to be inherited from the base class. The inherited class acquires all the properties and behaviours of the parent class. This allows programmers to reuse, extend, or modify the attributes and behaviours of existing classes. The private members of the base class are never inherited.</p>
                 <div>
                     <h6> &bull; Visibility of Inherited Members :</h6>
@@ -2407,7 +2410,7 @@ int main(){
             </div>
 
             <div class="sections" id="polymorphism">
-                <h4 class="heading"># Polymorphism</h4>
+                <h4 class="heading">Polymorphism</h4>
                 <p>The word "polymorphism" means having many forms. That is, the same entity (function or operator) behaves differently in different scenarios, so a single action can be performed in different ways.</p>
                 <h6>Types of polymorphism :</h6>
                 <ol>
@@ -2625,7 +2628,7 @@ int main(){
             </div>
 
             <div class="sections" id="abstract-class">
-                <h4 class="heading"># Abstract Classes</h4>
+                <h4 class="heading">Abstract Classes</h4>
                 <p>An abstract class is a class that cannot be instantiated but can be inherited to provide an interface or blueprint for other classes. An abstract class contains at least one pure virtual function. A pure virtual function (or abstract function) is one that can be overridden in the derived class but cannot be defined in its base class, as there is no meaningful definition you could give for the function in the base class. A virtual function can be declared "pure" by using the operator <code>=0</code> at the end, indicating that it has no implementation and must be overridden by any class that inherits from it.<br>
                 Any class that implements an abstract class must provide an implementation for all of the pure virtual functions declared in it. If the pure virtual function is not defined in its derived class, then the derived class also becomes an abstract class. Abstract classes can have both abstract and non-abstract methods. The non-abstract methods have a default implementation in the abstract class and can be used by the subclasses as is, or overridden if necessary.</p>
                 <pre class="code-box code-box-color"><code>// Abstract Class :
@@ -2726,7 +2729,7 @@ int main(){
             </div>
 
             <div class="sections" id="abstraction">
-                <h4 class="heading"># Abstraction</h4>
+                <h4 class="heading">Abstraction</h4>
                 <p>Abstraction is a feature of OOP; it shows only the necessary details to the user by hiding the actual implementation. Abstraction in C++ is achieved through classes, header files, and access specifiers. It is implemented by using abstract classes and interfaces. In abstraction, problems are solved at the design or interface level. It avoids code duplication and increases code reusability. In a nutshell, abstraction hides implementation with the help of abstract classes and interfaces.</p>
                 <h6>Types of abstraction :</h6>
                 <ul>
@@ -2780,7 +2783,7 @@ int main(){
             </div>
 
             <div class="sections" id="encapsulation">
-                <h4 class="heading"># Encapsulation</h4>
+                <h4 class="heading">Encapsulation</h4>
                 <p>The wrapping or binding of fields (state) and methods (behaviour) together into a single unit is called encapsulation. This keeps data safe from outside interference and misuse. Encapsulation means restricting direct access to certain components of an object so that users can’t access the state values for all variables and helps in data hiding. Encapsulation is implemented using an access modifier, i.e., private, protected, and public. During encapsulation, problems are solved at the implementation level. In a nutshell, encapsulation is hiding the data with the help of getter and setter.</p>
                 <h6>Ex : Below is an example of data hiding using access modifiers.</h6>
                 <p>In this program, the variable salary is made private so that it can be accessed and manipulated only by using the getter and setter methods that are present within the class. Therefore, we can say that the variable salary and the getter as well as setter methods have been bound together, which is nothing but encapsulation.</p>
@@ -2808,7 +2811,7 @@ int main(){
             </div>
 
             <div class="sections" id="exception-handling">
-                <h4 class="heading"># Exception Handling</h4>
+                <h4 class="heading">Exception Handling</h4>
                 <p>An exception is an error that arises during the execution of a program. Exception handling is the process of handling errors at runtime so that the normal flow of a program can be maintained. C++ exception handling is built upon three keywords: <code>try</code>, <code>catch</code>, and <code>throw</code>.</p>
                 <ul class="justify">
                     <li><code>try</code> : a try block is used to place code that may result in an exception.</li>
@@ -2890,7 +2893,7 @@ int main(){
             </div>
 
             <div class="sections" id="file-streams">
-                <h4 class="heading"># Files & Streams</h4>
+                <h4 class="heading">Files & Streams</h4>
                 <p>A standard C++ library called fstream is used to read and write from a file.</p>
                 <div class="table-responsive">
                     <table class="table table-sm table-bordered table-striped">
@@ -3048,7 +3051,7 @@ int main(){
             </div>
 
             <div class="sections" id="dynamic-memory">
-                <h4 class="heading"># Dynamic Memory</h4>
+                <h4 class="heading">Dynamic Memory</h4>
                 <p>Memory allocated during runtime is called dynamic memory, and the process of allocating memory at the time of execution is called dynamic memory allocation. C++ allows us to allocate the memory at run time. This is known as dynamic memory allocation. In C++, the memory is allocated and then deallocated dynamically using the <code>new</code> and <code>delete</code> operators.</p>
                 <ul>
                     <li>
@@ -3115,7 +3118,7 @@ int main(){
             </div>
 
             <div class="sections" id="template">
-                <h4 class="heading"># Templates</h4>
+                <h4 class="heading">Templates</h4>
                 <p>Templates are the foundation of generic programming, which involves writing code in a way that is independent of any particular type. A template is a blueprint or formula for creating a generic class or function. The library containers like iterators and algorithms are examples of generic programming and have been developed using the template concept.</p>
                 <h6>There are two ways we can implement templates:</h6>
                 <ol>
@@ -3240,7 +3243,7 @@ int main(){
             </div>
 
             <div class="sections" id="namespaces">
-                <h4 class="heading"># Namespaces</h4>
+                <h4 class="heading">Namespaces</h4>
                 <p>A namespace is a collection of related names or identifiers (such as variables, functions, classes, etc.) under a single name. It helps to separate identifiers with the same name in other namespaces or the global namespace. A namespace defines a scope. A namespace definition begins with the keyword <code>namespace</code>, followed by the namespace name. To call the namespace-enabled version of either function or variable, prepend the scope resolution operator (<code>::</code>) and the namespace name. Namespaces can be nested.</p>
                 <pre class="code-box code-box-color"><code>#include&lt;iostream&gt;
 using namespace std;
@@ -3306,7 +3309,7 @@ int main(){
             </div>
 
             <div class="sections" id="preprocessor">
-                <h4 class="heading"># Preprocessor</h4>
+                <h4 class="heading">Preprocessor</h4>
                 <p>The preprocessors are the directives, which give instructions to the compiler to preprocess the information before actual compilation starts. The preprocessor directives are preceded by a hash sign (<code>#</code>), and no semicolon (<code>;</code>) is expected at the end of a preprocessor directive as it is not a program statement.</p>
                 <h6>Types of preprocessor directives:</h6>
                 <ul>
@@ -3510,6 +3513,6 @@ int main(){
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>

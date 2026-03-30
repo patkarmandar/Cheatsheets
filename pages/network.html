@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
 
             <h3 class="title">Networking</h3>
             
@@ -47,7 +50,7 @@
             </div>
 
             <div class="sections" id="network">
-                <h4 class="heading"># Network</h4>
+                <h4 class="heading">Network</h4>
                 <div class="content">
                     <p>A network is a system of interconnected devices (such as computers, servers, routers, and other hardware) that communicate and share resources using established protocols over wired or wireless connections.</p>
                     <h6>Types of Networks -</h6>
@@ -78,7 +81,7 @@
             </div>
 
             <div class="sections" id="network-node">
-                <h4 class="heading"># Networking Nodes</h4>
+                <h4 class="heading">Networking Nodes</h4>
                 <div class="content">
                     <p>A node in a network is a point where data can be received, sent, created, or stored. It needs identification like an IP address for access and can be any device that processes and shares information with other nodes.</p>
                     <ul>
@@ -144,7 +147,7 @@
             </div>
 
             <div class="sections" id="mac">
-                <h4 class="heading"># MAC Address</h4>
+                <h4 class="heading">MAC Address</h4>
                 <div class="content">
                     <p>A MAC (Media Access Control) address is a unique identifier assigned to a network interface controller (NIC) for communication at the data link layer of a network segment.</p>
                     <ul class="justify">
@@ -160,7 +163,7 @@
             </div>
 
             <div class="sections" id="ip">
-                <h4 class="heading"># IP Address</h4>
+                <h4 class="heading">IP Address</h4>
                 <div class="content">
                     <p>An Internet Protocol (IP) address is a unique numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.</p>
                     <ul class="justify">
@@ -184,7 +187,7 @@
             </div>
 
             <div class="sections" id="port">
-                <h4 class="heading"># Port Address</h4>
+                <h4 class="heading">Port Address</h4>
                 <div class="content">
                     <p>A port address is a logical identifier (numeric value) for a specific process or service used to uniquely identify different communication endpoints in a network.</p>
                     <ul class="justify">
@@ -198,7 +201,7 @@
             </div>
 
             <div class="sections" id="dns">
-                <h4 class="heading"># DNS</h4>
+                <h4 class="heading">DNS</h4>
                 <div class="content">
                     <p>The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like google.com. Web browsers interact through IP addresses. DNS translates domain names to IP addresses so browsers can load Internet resources. DNS servers eliminate the need for humans to memorize IP addresses such as <code>192.168.1.1</code> (in IPv4).</p>
                     <ul class="justify">
@@ -233,7 +236,7 @@
             </div>
 
             <div class="sections" id="url">
-                <h4 class="heading"># URL</h4>
+                <h4 class="heading">URL</h4>
                 <div class="content">
                     <p>A URL (or Uniform Resource Locator) is predominantly an instruction on how to access a resource on the internet.</p>
                     <h6>Ex :</h6>
@@ -251,7 +254,7 @@
             </div>
 
             <div class="sections" id="osi-model">
-                <h4 class="heading"># OSI Model</h4>
+                <h4 class="heading">OSI Model</h4>
                 <div class="content">
                     <p>The Open Systems Interconnection (OSI) model is a reference model from the International Organization for Standardization (ISO) that provides a common basis for the coordination of standards development for the purpose of systems interconnection. In the OSI reference model, the communications between systems are split into seven different abstraction layers that computer systems use to communicate over a network. The modern Internet is not based on OSI but on the simpler TCP/IP model.</p>
                     <ul>
@@ -288,7 +291,7 @@
             </div>
 
             <div class="sections" id="tcp-ip-model">
-                <h4 class="heading"># TCP/IP Model</h4>
+                <h4 class="heading">TCP/IP Model</h4>
                 <div class="content">
                     <p>The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria. The foundational protocols in the suite are the Transmission Control Protocol (TCP), the User Datagram Protocol (UDP), and the Internet Protocol (IP). The Internet protocol suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received. This functionality is organized into four abstraction layers, which classify all related protocols according to each protocol's scope of networking.</p>
                     <ul>
@@ -313,7 +316,7 @@
             </div>
 
             <div class="sections" id="protocol">
-                <h4 class="heading"># Protocols</h4>
+                <h4 class="heading">Protocols</h4>
                 <div class="content">
                     <p>In computer networking, protocols are a set of rules or conventions that govern how data is transmitted between devices on a network.<br>
                     There are numerous protocols at different layers of the networking stack, such as -</p>
@@ -497,7 +500,7 @@
             </div>
 
             <div class="sections" id="torrent">
-                <h4 class="heading"># BitTorrent</h4>
+                <h4 class="heading">BitTorrent</h4>
                 <div class="content">
                     <p>BitTorrent is a peer-to-peer (P2P) file-sharing protocol used for distributing large amounts of data over the internet. Instead of downloading a file from a single server, BitTorrent breaks the file into smaller pieces and distributes them across a network of computers (peers) that share parts of the file. These peers download and upload pieces of the file to each other, enabling faster and more efficient transfers. It is used to efficiently share large files, reduce server load, enable faster downloads, and improve scalability and fault tolerance.</p>
                     <h6>Key Concepts :</h6>
@@ -514,7 +517,7 @@
             </div>
 
             <div class="sections" id="http-protocol">
-                <h4 class="heading"># HTTP Protocol</h4>
+                <h4 class="heading">HTTP Protocol</h4>
                 <div class="content">
                     <p>The HTTP (Hypertext Transfer Protocol) is an application layer protocol used for transferring hypermedia documents, such as HTML files, on the World Wide Web.</p>
 
@@ -674,7 +677,7 @@
             </div>
 
             <div class="sections" id="web-socket">
-                <h4 class="heading"># Web Socket</h4>
+                <h4 class="heading">Web Socket</h4>
                 <div class="content">
                     <p>A Web Socket is a communication protocol that provides full-duplex communication and persistent connection channels over a single TCP connection between a client (a web browser) and a server.</p>
                     <ul>
@@ -687,7 +690,7 @@
             </div>
 
             <div class="sections" id="ssl-tls">
-                <h4 class="heading"># SSL/TLS</h4>
+                <h4 class="heading">SSL/TLS</h4>
                 <div class="content">
                     <p>SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols that provide secure communication over a computer network. They are commonly used to ensure data confidentiality, integrity, and authentication between clients (like web browsers) and servers (web servers, email servers, etc.).</p>
                     <ul class="justify">
@@ -701,7 +704,7 @@
             </div>
 
             <div class="sections" id="handshake">
-                <h4 class="heading"># Handshake</h4>
+                <h4 class="heading">Handshake</h4>
                 <div class="content">
                     <p>Handshake is a process of establishing communication between two devices or systems to ensure they are ready to exchange data. It involves the exchange of control messages to agree on connection parameters, protocols, or synchronization details.</p>
                     <h6>Types of Handshakes -</h6>
@@ -718,7 +721,7 @@
             </div>
 
             <div class="sections" id="vpn">
-                <h4 class="heading"># VPN</h4>
+                <h4 class="heading">VPN</h4>
                 <div class="content">
                     <p>VPN, or Virtual Private Network, is a technique used to create a secure and encrypted connection over the internet between two or more devices or networks. VPN works by routing a device's internet connection through a secure, encrypted server that hides the IP address and location. VPNs use encryption and tunneling protocols to ensure that data transmitted over the internet is secure and protected from unauthorized access.</p>
                     <ul class="justify">
@@ -729,7 +732,7 @@
             </div>
 
             <div class="sections" id="proxy">
-                <h4 class="heading"># Proxy</h4>
+                <h4 class="heading">Proxy</h4>
                 <div class="content">
                     <p>A proxy or proxy server acts as an intermediary between a client and the server. It forwards client requests to the destination server and returns the server's responses to the client. A proxy provides anonymity, content filtering, caching, and access control. Proxies can block or filter certain content based on predefined rules, policies, or access controls.</p>
                     <ul class="justify">
@@ -747,7 +750,7 @@
             </div>
 
             <div class="sections" id="firewall">
-                <h4 class="heading"># Firewall</h4>
+                <h4 class="heading">Firewall</h4>
                 <div class="content">
                     <p>A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. It acts as a barrier between a trusted internal network and untrusted external networks, such as the internet. These rules can be configured to permit or deny traffic based on factors such as IP address, port number, protocol, or specific applications. Firewalls can be hardware devices, software programs, or a combination of both. Firewalls use a variety of techniques to control and monitor network traffic, including packet filtering, stateful inspection, and application-level filtering. It blocks unauthorized access and filters out malicious traffic.</p>
 
@@ -760,7 +763,7 @@
             </div>
 
             <div class="sections" id="tor">
-                <h4 class="heading"># TOR</h4>
+                <h4 class="heading">TOR</h4>
                 <div class="content">
                     <p>TOR stands for The Onion Router, a free, open-source software that enables anonymous communication over the internet. It is designed to protect users' privacy and security by routing internet traffic through a series of volunteer-operated servers, known as nodes or relays, that encrypt and re-encrypt the data multiple times, making it very difficult to trace back to the original user.</p>
                     <ul class="justify">
@@ -781,6 +784,6 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>

@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
 
             <h3 class="title">Markdown</h3>
 
@@ -40,7 +43,7 @@
             </div>
 
             <div class="sections" id="heading">
-                <h4 class="heading"># Heading</h4>
+                <h4 class="heading">Heading</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -79,7 +82,7 @@ This is [title](https://example.com/#title-1).</code></pre>
             </div>
 
             <div class="sections" id="text-format">
-                <h4 class="heading"># Text Formatting</h4>
+                <h4 class="heading">Text Formatting</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped text-center">
@@ -120,7 +123,7 @@ This is [title](https://example.com/#title-1).</code></pre>
             </div>
 
             <div class="sections" id="list">
-                <h4 class="heading"># Lists</h4>
+                <h4 class="heading">Lists</h4>
                 <div class="content">
                     <h5>&bull; Ordered List :</h5>
                     <pre class="code-box"><code>1. Item
@@ -134,7 +137,7 @@ This is [title](https://example.com/#title-1).</code></pre>
             </div>
 
             <div class="sections" id="links">
-                <h4 class="heading"># Links</h4>
+                <h4 class="heading">Links</h4>
                 <div class="content">
                     <div class="code-box"><code>[Example](http://www.example.com/)</code></div>
                     <h6>Link with title :</h6>
@@ -143,7 +146,7 @@ This is [title](https://example.com/#title-1).</code></pre>
             </div>
 
             <div class="sections" id="table">
-                <h4 class="heading"># Tables</h4>
+                <h4 class="heading">Tables</h4>
                 <div class="content">
                     <pre class="code-box"><code>|  Item  | Cost | Stock |
 | ------ | ---- | ----- |
@@ -161,7 +164,7 @@ This is [title](https://example.com/#title-1).</code></pre>
             </div>
 
             <div class="sections" id="images">
-                <h4 class="heading"># Images</h4>
+                <h4 class="heading">Images</h4>
                 <div class="content">
                     <div class="code-box"><code>![Example Image](http://www.example.com/example.png)</code></div>
                     <h6>Image with title :</h6>
@@ -170,7 +173,7 @@ This is [title](https://example.com/#title-1).</code></pre>
             </div>
 
             <div class="sections" id="code-block">
-                <h4 class="heading"># Code Block</h4>
+                <h4 class="heading">Code Block</h4>
                 <div class="content">
                     <div class="code-box"><code>`$var = "text";`</code></div>
                     <pre class="code-box"><code>```
@@ -183,7 +186,7 @@ print($num1 + $num2);
             </div>
 
             <div class="sections" id="blockquote">
-                <h4 class="heading"># Blockquote</h4>
+                <h4 class="heading">Blockquote</h4>
                 <div class="content">
                     <pre class="code-box"><code>> This is blockquote.
 
@@ -197,7 +200,7 @@ print($num1 + $num2);
             </div>
 
             <div class="sections" id="tasklist">
-                <h4 class="heading"># Task List</h4>
+                <h4 class="heading">Task List</h4>
                 <div class="content">
                     <pre class="code-box"><code>- [x] Task Checked
 - [ ] Task
@@ -206,7 +209,7 @@ print($num1 + $num2);
             </div>
 
             <div class="sections" id="definition-list">
-                <h4 class="heading"># Definition List</h4>
+                <h4 class="heading">Definition List</h4>
                 <div class="content">
                     <pre class="code-box"><code>Term
 : Term definition 1
@@ -215,7 +218,7 @@ print($num1 + $num2);
             </div>
 
             <div class="sections" id="footnote">
-                <h4 class="heading"># Footnote</h4>
+                <h4 class="heading">Footnote</h4>
                 <div class="content">
                     <pre class="code-box"><code>This is a new project. [^1]
 
@@ -224,7 +227,7 @@ print($num1 + $num2);
             </div>
 
             <div class="sections" id="horizontal-line">
-                <h4 class="heading"># Horizontal Line</h4>
+                <h4 class="heading">Horizontal Line</h4>
                 <div class="content">
                     <div class="code-box"><code>---</code></div>
                 </div>
@@ -238,6 +241,6 @@ print($num1 + $num2);
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>

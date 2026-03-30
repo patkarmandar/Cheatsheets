@@ -1,0 +1,244 @@
+/* ===== Fonts ===== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@500;700&display=swap");
+
+:root {
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Roboto Slab', serif;
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --card-glow: rgba(88, 166, 255, 0.08);
+    --card-hover-border: rgba(88, 166, 255, 0.4);
+    --transition: 0.3s ease;
+}
+
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 680px;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+/* ===== Title ===== */
+.title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 50%, #a5d8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #58a6ff, #79c0ff);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== Grid ===== */
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* ===== Card Items ===== */
+.list-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.list-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--card-glow);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.list-block:hover {
+    border-color: var(--card-hover-border);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(88, 166, 255, 0.1);
+}
+
+.list-block:hover::before {
+    opacity: 1;
+}
+
+.list-block i {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    transition: color var(--transition);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+}
+
+.list-block:hover i {
+    color: var(--accent);
+}
+
+.list-block span {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.list-block {
+    animation: fadeInUp 0.4s ease forwards;
+    opacity: 0;
+}
+
+.list-block:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.list-block:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.list-block:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.list-block:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.list-block:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.list-block:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+.list-block:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.list-block:nth-child(8) {
+    animation-delay: 0.40s;
+}
+
+.list-block:nth-child(9) {
+    animation-delay: 0.45s;
+}
+
+.list-block:nth-child(10) {
+    animation-delay: 0.50s;
+}
+
+.list-block:nth-child(11) {
+    animation-delay: 0.55s;
+}
+
+.list-block:nth-child(12) {
+    animation-delay: 0.60s;
+}
+
+/* ===== Responsiveness ===== */
+@media only screen and (max-width: 520px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .title {
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .list-block {
+        padding: 12px 16px;
+        font-size: 0.88rem;
+    }
+}
+
+@media only screen and (min-width: 521px) and (max-width: 680px) {
+    .list {
+        gap: 10px;
+    }
+
+    .list-block {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+    }
+}

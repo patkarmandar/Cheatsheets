@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
 
             <h3 class="title">GIT</h3>
 
@@ -43,7 +46,7 @@
             </div>
 
             <div class="sections" id="initial-setup">
-                <h4 class="heading"># Initial Setup</h4>
+                <h4 class="heading">Initial Setup</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -82,7 +85,7 @@
             </div>
 
             <div class="sections" id="git-ignore-file">
-                <h4 class="heading"># Git Ignore File</h4>
+                <h4 class="heading">Git Ignore File</h4>
                 <div class="content">
                     <ul class="justify">
                         <li>It is a special config file. Any files added to it will be excluded from the git repo.</li>
@@ -103,7 +106,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="setting-repo">
-                <h4 class="heading"># Setting Repo</h4>
+                <h4 class="heading">Setting Repo</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -137,7 +140,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="view-and-inspect-changes">
-                <h4 class="heading"># View and Inspect Changes</h4>
+                <h4 class="heading">View and Inspect Changes</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -220,7 +223,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="staging-and-unstaging">
-                <h4 class="heading"># Staging and Unstaging</h4>
+                <h4 class="heading">Staging and Unstaging</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -279,7 +282,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="commit-and-rebase">
-                <h4 class="heading"># Commit and Rebase</h4>
+                <h4 class="heading">Commit and Rebase</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -334,7 +337,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="reset">
-                <h4 class="heading"># Reset</h4>
+                <h4 class="heading">Reset</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -378,7 +381,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="push">
-                <h4 class="heading"># Push</h4>
+                <h4 class="heading">Push</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -424,7 +427,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="fetch-merge-and-pull">
-                <h4 class="heading"># Fetch Merge and Pull</h4>
+                <h4 class="heading">Fetch Merge and Pull</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -474,7 +477,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="branch">
-                <h4 class="heading"># Branch</h4>
+                <h4 class="heading">Branch</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -553,7 +556,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="remote">
-                <h4 class="heading"># Remote</h4>
+                <h4 class="heading">Remote</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -603,7 +606,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="stash">
-                <h4 class="heading"># Stash</h4>
+                <h4 class="heading">Stash</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -666,7 +669,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="reflog">
-                <h4 class="heading"># Reflog</h4>
+                <h4 class="heading">Reflog</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -693,7 +696,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="tags">
-                <h4 class="heading"># Tags</h4>
+                <h4 class="heading">Tags</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -727,7 +730,7 @@ bin/</code></pre>
             </div>
 
             <div class="sections" id="tips">
-                <h4 class="heading"># Tips</h4>
+                <h4 class="heading">Tips</h4>
                 <div class="content">
                     <h5>&bull; Undo recent commit :</h5>
                     <p>Undo or delete the most recent remote commit.</p>
@@ -753,6 +756,6 @@ $ git push --set-upstream origin main</code></pre>
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>

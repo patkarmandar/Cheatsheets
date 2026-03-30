@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
 
             <h3 class="title">Laravel</h3>
 
@@ -35,7 +38,7 @@
             </div>
 
             <div class="sections" id="laravel-framework">
-                <h4 class="heading"># Laravel Framework</h4>
+                <h4 class="heading">Laravel Framework</h4>
                 <div class="content">
                     <p>Laravel is an open-source PHP web framework used for building web applications, based on the Model-View-Controller (MVC) architectural pattern. Laravel offers a wide range of features, including routing, middleware, authentication, sessions, caching, database management (with Eloquent ORM), and templating with Blade.</p>
                     <p>A web framework provides a structure, foundation and starting point for creating application, allowing to focus on creating application. It includes a collection of pre-written code, libraries, APIs, and tools that developers can use to build applications more efficiently.</p>
@@ -43,7 +46,7 @@
             </div>
 
             <div class="sections" id="folder-structure">
-                <h4 class="heading"># Folder Structure</h4>
+                <h4 class="heading">Folder Structure</h4>
                 <div class="content">
                     <ul>
                         <li>
@@ -114,7 +117,7 @@
             </div>
 
             <div class="sections" id="route">
-                <h4 class="heading"># Routes</h4>
+                <h4 class="heading">Routes</h4>
                 <div class="content">
                     <p>A route is a way of mapping HTTP request URIs to a specific controller action or a closure.</p>
                     <pre class="code-box"><code>Route::get('/view/{id}', function(string $id){
@@ -174,7 +177,7 @@
             </div>
 
             <div class="sections" id="blade">
-                <h4 class="heading"># Blades</h4>
+                <h4 class="heading">Blades</h4>
                 <div class="content">
                     <p>Blade is the simple yet powerful templating engine that is included with Laravel. All Blade templates are compiled into plain PHP code and cached until they are modified, meaning Blade adds essentially zero overhead to the application. Blade template files use the <code>.blade.php</code> file extension and are typically stored in the <code>resources/views</code> directory.</p>
 
@@ -339,7 +342,7 @@
             </div>
 
             <div class="sections" id="composer">
-                <h4 class="heading"># Composer</h4>
+                <h4 class="heading">Composer</h4>
                 <div class="content">
                     <p>Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on, and it will manage (install or update) them for you. Composer is not a package manager; it is a dependency manager.</p>
                     <h5>Composer Commands :</h5>
@@ -361,7 +364,7 @@
             </div>
 
             <div class="sections" id="artisan">
-                <h4 class="heading"># Artisan</h4>
+                <h4 class="heading">Artisan</h4>
                 <div class="content">
                     <p>Artisan is the command-line interface included with Laravel. Artisan exists at the root of your application as the artisan script and provides a number of helpful commands that can assist in building the application.</p>
                     <h5>Artisan Commands :</h5>
@@ -417,7 +420,7 @@
             </div>
 
             <div class="sections" id="database">
-                <h4 class="heading"># Database</h4>
+                <h4 class="heading">Database</h4>
                 <div class="content">
                     <p>Laravel provides two main approaches for interacting with databases: the query builder and the ORM (Object-Relational Mapping) called Eloquent. The configuration for Laravel's database services is located in the application's <code>config/database.php</code> configuration file.</p>
 
@@ -476,6 +479,6 @@ $user->delete();</code></pre>
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>

@@ -4,29 +4,123 @@ permalink: /404.html
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Page Not Found</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d1117">
 
-        <style>
-            .container {
-                margin-top: 4rem;
-                text-align: center;
-                word-spacing: 4px;
+    <title>Page Not Found</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Slab:wght@700&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .error-container {
+            max-width: 480px;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-family: 'Roboto Slab', serif;
+            font-size: 7rem;
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, #f87171 0%, #fb923c 50%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .error-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #e6edf3;
+            margin-bottom: 0.75rem;
+        }
+
+        .error-message {
+            font-size: 0.95rem;
+            color: #8b949e;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: #161b22;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            border-color: rgba(88, 166, 255, 0.4);
+            background: rgba(88, 166, 255, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(88, 166, 255, 0.1);
+        }
+
+        .home-btn i {
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            .mesg {
-                font-size: 1.15rem;
-            }
-        </style>
-    </head>
 
-    <body>
-        <div class="container">
-            <p class="mesg">ERROR 404!<br>Page Not Found</p>
-            <p><a href="/">Home</a></p>
-        </div>
-    </body>
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-container {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
+        <a href="/Cheatsheets" class="home-btn">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            All Cheatsheets
+        </a>
+    </div>
+</body>
+
 </html>

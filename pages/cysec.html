@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
 
             <h3 class="title">Cyber Security</h3>
 
@@ -40,7 +43,7 @@
             </div>
 
             <div class="sections" id="governance">
-                <h4 class="heading"># Governance Elements</h4>
+                <h4 class="heading">Governance Elements</h4>
                 <div class="content">
                     <p>Governance elements refer to the foundational components and frameworks that guide an organization's approach to managing and protecting its information systems.</p>
                     <ul class="justify">
@@ -66,7 +69,7 @@
             </div>
 
             <div class="sections" id="risk">
-                <h4 class="heading"># Risk Management</h4>
+                <h4 class="heading">Risk Management</h4>
                 <div class="content">
                     <p>Risk management is the process of identifying, assessing, and mitigating potential risks to an organization's digital assets, systems, and information. It includes risk assessments and audits, vulnerability scanning, implementing preventive measures such as firewalls, encryption, or multi-factor authentication, and developing risk management frameworks and policies.</p>
                     <h5>Incident Response :</h5>
@@ -90,7 +93,7 @@
             </div>
 
             <div class="sections" id="cia">
-                <h4 class="heading"># CIA Triad</h4>
+                <h4 class="heading">CIA Triad</h4>
                 <div class="content">
                     <p>The CIA Triad serves as the foundation of information security, and all three aspects must be addressed to ensure comprehensive cybersecurity.</p>
                     <ul>
@@ -119,7 +122,7 @@
             </div>
 
             <div class="sections" id="access-control">
-                <h4 class="heading"># Access Control</h4>
+                <h4 class="heading">Access Control</h4>
                 <div class="content">
                     <p>Access control is the process and mechanism that restrict and manage access to systems, data, or resources within an organization. It limits the visibility, access, and use of resources in a computing environment. This ensures that only authorized users can access information, resources, and systems while preventing unauthorized access that could lead to data breaches, system vulnerabilities, or cyberattacks.</p>
                     <h6>Types of Access Control Models -</h6>
@@ -157,7 +160,7 @@
             </div>
 
             <div class="sections" id="cryptography">
-                <h4 class="heading"># Cryptography</h4>
+                <h4 class="heading">Cryptography</h4>
                 <div class="content">
                     <p>Cryptography is the practice and study of techniques for securing communication and data from third parties. It involves the creation of mathematical algorithms and protocols that ensure confidentiality, integrity, authenticity, and non-repudiation of information.</p>
                     <ul>
@@ -186,7 +189,7 @@
             </div>
 
             <div class="sections" id="encryption">
-                <h4 class="heading"># Encryption</h4>
+                <h4 class="heading">Encryption</h4>
                 <div class="content">
                     <p>Encryption is the process of transforming readable plaintext into unreadable ciphertext to mask sensitive information from unauthorized users. Encryption is used to protect sensitive data from unauthorized access and data breaches. Encryption works by using encryption algorithms to encrypt data into an indecipherable format. Only authorized parties with the right secret key, known as the decryption key, can decrypt the data.</p>
                     <ul class="justify">
@@ -203,7 +206,7 @@
             </div>
 
             <div class="sections" id="Hash">
-                <h4 class="heading"># Hashing</h4>
+                <h4 class="heading">Hashing</h4>
                 <div class="content">
                     <p>Hashing is a method of converting data (message, file, or password) into a fixed-size string of characters, which typically represents a "fingerprint" of the original data. This converted hash value is called digest. Hashes are used for data integrity checks, ensuring that data has not been altered. Hashing is often used in file fingerprinting and storing passwords securely. Instead of storing the password itself, systems store the hash of the password.</p>
                     <ul class="justify">
@@ -222,7 +225,7 @@
             </div>
 
             <div class="sections" id="digital-sign">
-                <h4 class="heading"># Digital Signature</h4>
+                <h4 class="heading">Digital Signature</h4>
                 <div class="content">
                     <p>A digital signature is a cryptographic technique used to verify the authenticity and integrity of digital messages or documents. It serves as a virtual equivalent of a handwritten signature or a stamped seal, but with much more security. Digital signatures are based on asymmetric cryptography (also called public-key cryptography). It is used in email signing, software distribution, legal documents (contracts, agreements, and other legally binding documents), and blockchain.</p>
                     <h6>Digital Signatures Working -</h6>
@@ -255,7 +258,7 @@
             </div>
 
             <div class="sections" id="pki">
-                <h4 class="heading"># Public Key Infrastructure</h4>
+                <h4 class="heading">Public Key Infrastructure</h4>
                 <div class="content">
                     <p>Public Key Infrastructure (PKI) is a framework that manages digital keys and certificates, enabling secure communication and data exchange over untrusted networks (like the internet). PKI ensures that public keys are properly distributed, authenticated, and managed so that secure transactions and communications can occur between parties. PKI involves a set of hardware, software, policies, and standards that work together to provide services such as encryption, authentication, and digital signatures using public key cryptography.</p>
                     <h6>Key Components of PKI -</h6>
@@ -287,7 +290,7 @@
             </div>
 
             <div class="sections" id="secops">
-                <h4 class="heading"># Security Operations</h4>
+                <h4 class="heading">Security Operations</h4>
                 <div class="content">
                     <p>SecOps (Security Operations) is a crucial discipline in cybersecurity that focuses on the integration of security practices and IT operations to ensure the continuous protection, monitoring, and management of an organization's infrastructure, networks, and data.</p>
                     <h5>Logging and Monitoring :</h5>
@@ -339,7 +342,7 @@
             </div>
 
             <div class="sections" id="attacks">
-                <h4 class="heading"># Attacks</h4>
+                <h4 class="heading">Attacks</h4>
                 <div class="content">
                     <p>Attacks refer to any deliberate action or attempt to compromise the confidentiality, integrity, or availability of systems, networks, or data, with the intention of altering, stealing, destroying, or exposing information. These attacks can be perpetrated by individuals, groups, or even nation-states. The goal of a cyberattack can range from stealing sensitive information to disrupting the functioning of a system or causing financial, operational, or reputational harm.</p>
                     <h6>Types of Attacks -</h6>
@@ -411,7 +414,7 @@
             </div>
 
              <div class="sections" id="vulns">
-                <h4 class="heading"># Vulnerabilities</h4>
+                <h4 class="heading">Vulnerabilities</h4>
                 <div class="content">
                     <p>A vulnerability is a weakness in an information system, security procedures, internal controls, or implementation that could be exploited or triggered by a threat source.</p>
                     <h6>Types of Vulnerabilities -</h6>
@@ -477,6 +480,6 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>

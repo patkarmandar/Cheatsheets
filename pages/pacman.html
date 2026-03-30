@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
 
             <h3 class="title">Arch Pacman</h3>
 
@@ -32,7 +35,7 @@
             </div>
 
             <div class="sections" id="install">
-                <h4 class="heading"># Install Package</h4>
+                <h4 class="heading">Install Package</h4>
                 <div class="content">
                     <h6>Full System Upgrade</h6>
                     <div class="code-box"><code>pacman -Syu</code></div>
@@ -53,7 +56,7 @@
             </div>
 
             <div class="sections" id="query">
-                <h4 class="heading"># Query Package</h4>
+                <h4 class="heading">Query Package</h4>
                 <div class="content">
                     <h6>Search Package</h6>
                     <div class="code-box"><code>pacman -Ss [package]</code></div>
@@ -76,7 +79,7 @@
             </div>
 
             <div class="sections" id="remove">
-                <h4 class="heading"># Remove Package</h4>
+                <h4 class="heading">Remove Package</h4>
                 <div class="content">
                     <h6>Remove Package</h6>
                     <div class="code-box"><code>pacman -R [package]</code></div>
@@ -90,7 +93,7 @@
             </div>
 
             <div class="sections" id="clean">
-                <h4 class="heading"># Clean System</h4>
+                <h4 class="heading">Clean System</h4>
                 <div class="content">
                     <h6>List Orphan/Obsolete Packages</h6>
                     <div class="code-box"><code>pacman -Qtdq</code></div>
@@ -114,6 +117,6 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>

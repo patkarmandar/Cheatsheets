@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
 
             <h3 class="title">BOOTSTRAP 4</h3>
 
@@ -71,7 +74,7 @@
             </div>
 
             <div class="sections" id="container-classes">
-                <h4 class="heading"># Container Classes</h4>
+                <h4 class="heading">Container Classes</h4>
                 <ul>
                     <li><code>container</code> : add to <code>&lt;div&gt;</code> for fixed width container</li>
                     <li><code>container-fluid</code> : add to <code>&lt;div&gt;</code> for full width container</li>
@@ -83,7 +86,7 @@
             </div>
 
             <div class="sections" id="jumbotron-classes">
-                <h4 class="heading"># Jumbotron Classes</h4>
+                <h4 class="heading">Jumbotron Classes</h4>
                 <ul>
                     <li><code>jumbotron</code> : add to <code>&lt;div&gt;</code> for indicate big grey box for calling extra attention</li>
                     <li><code>jumbotron-fluid</code> : add to <code>&lt;div&gt;</code> for full-width jumbotron without rounded borders</li>
@@ -104,7 +107,7 @@
             </div>
 
             <div class="sections" id="heading-classes">
-                <h4 class="heading"># Heading Classes</h4>
+                <h4 class="heading">Heading Classes</h4>
                 <ul>
                     <li><code>display-1|2|3|4</code> : define header for element</li>
                 </ul>
@@ -114,7 +117,7 @@
             </div>
 
             <div class="sections" id="typography-classes">
-                <h4 class="heading"># Typography Classes</h4>
+                <h4 class="heading">Typography Classes</h4>
                 <div>
                     <h5>Font Style :</h5>
                     <ul>
@@ -205,7 +208,7 @@
             </div>
 
             <div class="sections" id="float-and-clearfix">
-                <h4 class="heading"># Float and Clearfix</h4>
+                <h4 class="heading">Float and Clearfix</h4>
                 <ul>
                     <li><code>float-left|right</code> : float image to left or right</li>
                     <li><code>clearfix</code> : clear floats</li>
@@ -228,7 +231,7 @@
             </div>
 
             <div class="sections" id="height-and-width">
-                <h4 class="heading"># Height and Width</h4>
+                <h4 class="heading">Height and Width</h4>
                 <ul>
                     <li><code>w-%</code> : set width to %</li>
                     <li><code>mw-%</code> : set max-width to %</li>
@@ -241,7 +244,7 @@
             </div>
 
             <div class="sections" id="margin-and-padding">
-                <h4 class="heading"># Margin and Padding</h4>
+                <h4 class="heading">Margin and Padding</h4>
                 <ul>
                     <li><code>property-size</code> : set margin/padding</li>
                     <li><code>property(side)-size</code> : set specific sides margin/padding</li>
@@ -272,7 +275,7 @@
             </div>
 
             <div class="sections" id="vertical-align">
-                <h4 class="heading"># Vertical Align</h4>
+                <h4 class="heading">Vertical Align</h4>
                 <p>Only for inline elements.</p>
                 <ul>
                     <li><code>align-baseline</code> : align to line</li>
@@ -288,7 +291,7 @@
             </div>
 
             <div class="sections" id="visibility">
-                <h4 class="heading"># Visibility</h4>
+                <h4 class="heading">Visibility</h4>
                 <ul>
                     <li><code>visible</code> : make element visible (visibility:visible)</li>
                     <li><code>invisible</code> : make element invisible (visibility:hidden)</li>
@@ -299,7 +302,7 @@
             </div>
 
             <div class="sections" id="position">
-                <h4 class="heading"># Position</h4>
+                <h4 class="heading">Position</h4>
                 <ul>
                     <li><code>fixed-top|bottom</code> : fixed to top or bottom</li>
                     <li><code>sticky-top</code> : sticks to top on scroll</li>
@@ -311,7 +314,7 @@
             </div>
 
             <div class="sections" id="display-element">
-                <h4 class="heading"># Display Element</h4>
+                <h4 class="heading">Display Element</h4>
                 <ul>
                     <li><code>d-block</code> : add to make element block level</li>
                     <li><code>d-sm|md|lg|xl-block</code> : make block level depends on screen width</li>
@@ -374,7 +377,7 @@
             </div>
 
             <div class="sections" id="color-classes">
-                <h4 class="heading"># Color Classes</h4>
+                <h4 class="heading">Color Classes</h4>
                 <div>
                     <h5>Text Color Classes :</h5>
                     <ul>
@@ -416,7 +419,7 @@
             </div>
 
             <div class="sections" id="screenreaders">
-                <h4 class="heading"># Screenreaders</h4>
+                <h4 class="heading">Screenreaders</h4>
                 <ul>
                     <li><code>sr-only</code> : to hide element on all devices, except screen readers</li>
                 </ul>
@@ -426,7 +429,7 @@
             </div>
 
             <div class="sections" id="responsive-embeds">
-                <h4 class="heading"># Responsive Embeds</h4>
+                <h4 class="heading">Responsive Embeds</h4>
                 <ul>
                     <li><code>embed-responsive-aspectRatio</code> : add to parent element of video/iframe (div/span)</li>
                     <li><code>embed-responsive-item</code> : add to <code>&lt;video&gt;/&lt;iframe&gt;</code></li>
@@ -440,7 +443,7 @@
             </div>
 
             <div class="sections" id="border">
-                <h4 class="heading"># Border</h4>
+                <h4 class="heading">Border</h4>
                 <ul>
                     <li><code>border</code> : add default border to element</li>
                     <li><code>border-0</code> : set border width to 0</li>
@@ -485,7 +488,7 @@
             </div>
 
             <div class="sections" id="shadow">
-                <h4 class="heading"># Shadow</h4>
+                <h4 class="heading">Shadow</h4>
                 <ul>
                     <li><code>shadow</code> : add default shadow to element</li>
                     <li><code>shadow-none</code> : no shadow</li>
@@ -498,7 +501,7 @@
             </div>
 
             <div class="sections" id="tables-classes">
-                <h4 class="heading"># Tables Classes</h4>
+                <h4 class="heading">Tables Classes</h4>
                 <ul>
                     <li><code>table</code> : add to <code>&lt;table&gt;</code> for basic table style</li>
                 </ul>
@@ -616,7 +619,7 @@
             </div>
 
             <div class="sections" id="image-classes">
-                <h4 class="heading"># Image Classes</h4>
+                <h4 class="heading">Image Classes</h4>
                 <ul>
                     <li><code>rounded</code> : add rounded corners to image</li>
                     <li><code>rounded-circle</code> : shape image to circle</li>
@@ -637,7 +640,7 @@
             </div>
 
             <div class="sections" id="alert-box-classes">
-                <h4 class="heading"># Alert Box Classes</h4>
+                <h4 class="heading">Alert Box Classes</h4>
                 <ul>
                     <li><code>alert</code> : default alert</li>
                 </ul>
@@ -702,7 +705,7 @@
             </div>
 
             <div class="sections" id="button-classes">
-                <h4 class="heading"># Button Classes</h4>
+                <h4 class="heading">Button Classes</h4>
                 <ul>
                     <li><code>btn</code> : add to <code>&lt;button&gt;/&lt;input&gt;/&lt;a&gt;</code> for basic button style</li>
                 </ul>
@@ -843,7 +846,7 @@
             </div>
 
             <div class="sections" id="badges">
-                <h4 class="heading"># Badges</h4>
+                <h4 class="heading">Badges</h4>
                 <ul>
                     <li><code>badge</code> : add badge to <code>&lt;span&gt;</code></li>
                 </ul>
@@ -878,7 +881,7 @@
             </div>
 
             <div class="sections" id="progress-bar">
-                <h4 class="heading"># Progress Bar</h4>
+                <h4 class="heading">Progress Bar</h4>
                 <ul>
                     <li><code>progress</code> : add progress to parent <code>&lt;div&gt;</code></li>
                     <li><code>progress-bar</code> : add progress-bar inside of parent progress for progress status</li>
@@ -923,7 +926,7 @@
             </div>
 
             <div class="sections" id="spinners">
-                <h4 class="heading"># Spinners</h4>
+                <h4 class="heading">Spinners</h4>
                 <ul>
                     <li><code>spinner-border</code> : add to <code>&lt;div&gt;/&lt;span&gt;</code> for spinner of spinning border</li>
                 </ul>
@@ -954,7 +957,7 @@
             </div>
 
             <div class="sections" id="pagination">
-                <h4 class="heading"># Pagination</h4>
+                <h4 class="heading">Pagination</h4>
                 <ul>
                     <li><code>pagination</code> : add class to <code>&lt;ul&gt;</code></li>
                     <li><code>page-item</code> : add to each <code>&lt;li&gt;</code> inside <code>&lt;ul&gt;</code></li>
@@ -1021,7 +1024,7 @@
             </div>
 
             <div class="sections" id="list-groups">
-                <h4 class="heading"># List Groups</h4>
+                <h4 class="heading">List Groups</h4>
                 <ul>
                     <li><code>list-group</code> : add to <code>&lt;ul&gt;</code></li>
                     <li><code>list-group-item</code> : add to each <code>&lt;li&gt;</code></li>
@@ -1112,7 +1115,7 @@
             </div>
 
             <div class="sections" id="cards">
-                <h4 class="heading"># Cards</h4>
+                <h4 class="heading">Cards</h4>
                 <ul>
                     <li><code>card</code> : add to parent <code>&lt;div&gt;</code> for basic card</li>
                 </ul>
@@ -1268,7 +1271,7 @@
             </div>
 
             <div class="sections" id="dropdown">
-                <h4 class="heading"># Dropdown</h4>
+                <h4 class="heading">Dropdown</h4>
                 <ul>
                     <li><code>dropdown</code> : add to <code>&lt;div&gt;</code> element for dropdown menu</li>
                     <li><code>dropdown-menu</code> : add to <code>&lt;div&gt;</code> inside dropdown for menu for dropdown</li>
@@ -1453,7 +1456,7 @@
             </div>
 
             <div class="sections" id="collapse">
-                <h4 class="heading"># Collapse</h4>
+                <h4 class="heading">Collapse</h4>
                 <ul>
                     <li><code>collapse</code> : add to <code>&lt;div&gt;</code> to make collapsible element</li>
                 </ul>
@@ -1508,7 +1511,7 @@
             </div>
 
             <div class="sections" id="navs">
-                <h4 class="heading"># Navs</h4>
+                <h4 class="heading">Navs</h4>
                 <ul>
                     <li><code>nav</code> : add to <code>&lt;ul&gt;</code> to create horiz nav</li>
                     <li><code>nav-item</code> : add to each <code>&lt;li&gt;</code> for nav items</li>
@@ -1672,7 +1675,7 @@
             </div>
 
             <div class="sections" id="navbar">
-                <h4 class="heading"># Navbar</h4>
+                <h4 class="heading">Navbar</h4>
                 <ul>
                     <li><code>navbar</code> : add to <code>&lt;nav&gt;</code> to create navbar</li>
                     <li><code>navbar-expand-sm|md|lg|xl</code> : responsive expandable bar, stacks vertically on sm screens</li>
@@ -1833,7 +1836,7 @@
             </div>
 
             <div class="sections" id="carousel">
-                <h4 class="heading"># Carousel</h4>
+                <h4 class="heading">Carousel</h4>
                 <p>Slideshow sliding through elements.</p>
                 <ul>
                     <li><code>carousel</code> : add to <code>&lt;div&gt;</code> for creating carousel of image</li>
@@ -1914,7 +1917,7 @@
             </div>
 
             <div class="sections" id="modal">
-                <h4 class="heading"># Modal</h4>
+                <h4 class="heading">Modal</h4>
                 <ul>
                     <li><code>modal</code> : add to <code>&lt;div&gt;</code> to create modal</li>
                     <li><code>modal-dialog</code> : add to <code>&lt;div&gt;</code> inside .modal for modal elements</li>
@@ -1996,7 +1999,7 @@
             </div>
 
             <div class="sections" id="tooltip">
-                <h4 class="heading"># Tooltip</h4>
+                <h4 class="heading">Tooltip</h4>
                 <ul>
                     <li><code>data-toggle=&quot;tooltip&quot;</code> : add attribute to element to create tooltip</li>
                     <li><code>title=&quot;Hover Text&quot;</code> : add attribute to element for hover text</li>
@@ -2017,7 +2020,7 @@ $(document).ready(function(){
             </div>
 
             <div class="sections" id="popover">
-                <h4 class="heading"># Popover</h4>
+                <h4 class="heading">Popover</h4>
                 <ul>
                     <li><code>data-toggle=&quot;popover&quot;</code> : add attribute to element to create popover</li>
                     <li><code>title=&quot;text&quot;</code> : add attribute to element for popover header text</li>
@@ -2045,7 +2048,7 @@ $(document).ready(function(){
             </div>
 
             <div class="sections" id="toast">
-                <h4 class="heading"># Toast</h4>
+                <h4 class="heading">Toast</h4>
                 <ul>
                     <li><code>toast</code> : add to element <code>(&lt;div&gt;)</code> to create toast</li>
                     <li><code>toast-header</code> : add to element <code>(&lt;div&gt;)</code> inside <code>.toast</code> for toast header</li>
@@ -2084,7 +2087,7 @@ $(document).ready(function(){
             </div>
 
             <div class="sections" id="scrollspy">
-                <h4 class="heading"># Scrollspy</h4>
+                <h4 class="heading">Scrollspy</h4>
                 <ul>
                     <li><code>data-spy=&quot;scroll&quot;</code> : add attribute to scrollable element Ex. <code>&lt;body&gt;</code></li>
                     <li><code>data-target=&quot;#id|.class&quot;</code> : add attribute to target navigation bar and set class/id</li>
@@ -2165,7 +2168,7 @@ $(document).ready(function(){
             </div>
 
             <div class="sections" id="media-objects">
-                <h4 class="heading"># Media Objects</h4>
+                <h4 class="heading">Media Objects</h4>
                 <ul>
                     <li><code>media</code> : add to <code>&lt;div&gt;</code> element for creating media &amp; must be add inside container</li>
                     <li><code>media-body</code> : add to <code>&lt;div&gt;</code> inside <code>.media</code> for adding content</li>
@@ -2241,7 +2244,7 @@ $(document).ready(function(){
             </div>
 
             <div class="sections" id="forms">
-                <h4 class="heading"># Forms</h4>
+                <h4 class="heading">Forms</h4>
                 <ul>
                     <li><code>form-group</code> : add wrapper <code>&lt;div&gt;</code> with this class to each form&#39;s element for full width stacked form</li>
                 </ul>
@@ -2377,7 +2380,7 @@ $(document).ready(function(){
             </div>
 
             <div class="sections" id="form-inputs">
-                <h4 class="heading"># Form Inputs</h4>
+                <h4 class="heading">Form Inputs</h4>
                 <ul>
                     <li><code>form-control</code> : add to <code>&lt;input&gt;</code> to style inputs with full-width &amp; proper padding</li>
                 </ul>
@@ -2542,7 +2545,7 @@ $(document).ready(function(){
             </div>
 
             <div class="sections" id="input-group">
-                <h4 class="heading"># Input Group</h4>
+                <h4 class="heading">Input Group</h4>
                 <ul>
                     <li><code>input-group</code> : add to wrapper <code>&lt;div&gt;</code> container to enhance input by adding icon/text/button in front/behind input field as help text</li>
                     <li><code>input-group-prepend</code> : add to <code>&lt;div&gt;</code> for help text front of input</li>
@@ -2687,7 +2690,7 @@ $(document).ready(function(){
             </div>
 
             <div class="sections" id="custom-forms">
-                <h4 class="heading"># Custom Forms</h4>
+                <h4 class="heading">Custom Forms</h4>
                 <ul>
                     <li><code>custom-control</code> : add to wrapper <code>&lt;div&gt;</code> around <code>&lt;input&gt;</code> to create custom forms</li>
                     <li><code>custom-control-inline</code> : add with <code>.custom-control</code> to create inline custom form element</li>
@@ -2812,7 +2815,7 @@ $(&quot;.custom-file-input&quot;).on(&quot;change&quot;, function() {
             </div>
 
             <div class="sections" id="flexbox">
-                <h4 class="heading"># Flexbox</h4>
+                <h4 class="heading">Flexbox</h4>
                 <ul>
                     <li><code>d-flex</code> : add it to <code>&lt;div&gt;</code> to create flexbox container &amp; transforms direct children into flex items</li>
                     <li><code>d-md|sm|lg|xl-flex</code> : add it to <code>&lt;div&gt;</code> to create flexbox container on specific screen size</li>
@@ -3061,7 +3064,7 @@ $(&quot;.custom-file-input&quot;).on(&quot;change&quot;, function() {
             </div>
 
             <div class="sections" id="grid">
-                <h4 class="heading"># Grid</h4>
+                <h4 class="heading">Grid</h4>
                 <ul>
                     <li><code>row</code> : add to <code>&lt;div&gt;</code> to create horizontal groups of columns</li>
                     <li><code>col</code> : add to <code>&lt;div&gt;</code> inside <code>.row</code> to create column (must be immediate childs of row)</li>
@@ -3239,6 +3242,6 @@ $(&quot;.custom-file-input&quot;).on(&quot;change&quot;, function() {
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>

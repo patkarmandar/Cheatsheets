@@ -12,13 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
-    <body data-theme="light">
+    <body data-theme="dark">
         <div class="container">
-            <!-- Theme Toggle -->
-            <div class="button float-end"><i class="bi bi-circle-half"></i></div>
+                        <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
 
             <h3 class="title">LINUX & BASH</h3>
 
@@ -55,7 +58,7 @@
             </div>
 
             <div class="sections" id="linux-basics">
-                <h4 class="heading"># Linux Basics</h4>
+                <h4 class="heading">Linux Basics</h4>
                 <div class="content">
                     <h5>&bull; Shell :</h5>
                     <div class="table-responsive">
@@ -484,7 +487,7 @@
             </div>
 
             <div class="sections" id="bash-scripts">
-                <h4 class="heading"># Bash Scripts</h4>
+                <h4 class="heading">Bash Scripts</h4>
                 <div class="content">
                     <p>A Bash script is a plain text file that contains a series of commands that are executed in sequence. Scripts have <code>.sh</code> extension (for example: <code>script.sh</code>). Shell scripts begin with the shebang (<code>#!/bin/sh</code>), which tells the system which shell interpreter to use to run the script.</p>
                     <h6>Ex :</h6>
@@ -509,7 +512,7 @@ bash script.sh</code></pre>
             </div>
 
             <div class="sections" id="variables">
-                <h4 class="heading"># Variables</h4>
+                <h4 class="heading">Variables</h4>
                 <div class="content">
                     <h6>Declaring :</h6>
                     <pre class="code-box"><code>greet="Hello World"
@@ -527,7 +530,7 @@ echo "Number is ${num}"</code></pre>
             </div>
 
             <div class="sections" id="strings">
-                <h4 class="heading"># Strings</h4>
+                <h4 class="heading">Strings</h4>
                 <div class="content">
                     <h6>Declaring :</h6>
                     <div class="code-box"><code>greet="Hello World"</code></div>
@@ -544,7 +547,7 @@ echo "After: $greet"</code></pre>
             </div>
 
             <div class="sections" id="arrays">
-                <h4 class="heading"># Arrays</h4>
+                <h4 class="heading">Arrays</h4>
                 <div class="content">
                     <h6>Declaring Indexed Array :</h6>
                     <div class="code-box"><code>declare -a fruits=("apple" "mango" "banana" "orange")</code></div>
@@ -568,7 +571,7 @@ declare -A capital=(["India"]="New Delhi", ["Nepal"]="Kathmandu", ["Bhutan"]="Th
             </div>
 
             <div class="sections" id="input">
-                <h4 class="heading"># Input</h4>
+                <h4 class="heading">Input</h4>
                 <div class="content">
                     <h6>Input (STDIN) :</h6>
                     <div class="code-box"><code>read [var]</code></div>
@@ -584,7 +587,7 @@ declare -A capital=(["India"]="New Delhi", ["Nepal"]="Kathmandu", ["Bhutan"]="Th
             </div>
 
             <div class="sections" id="output">
-                <h4 class="heading"># Output</h4>
+                <h4 class="heading">Output</h4>
                 <div class="content">
                     <h6>Print (STDOUT) :</h6>
                     <p>The <code>echo</code> prints output followed by a new line character.</p>
@@ -604,7 +607,7 @@ echo "Hii, ${msg}"</code></pre>
             </div>
 
             <div class="sections" id="operators">
-                <h4 class="heading"># Operators</h4>
+                <h4 class="heading">Operators</h4>
                 <div class="content">
                     <h5>&bull; Arithmetic Operator :</h5>
                     <div class="table-responsive">
@@ -849,7 +852,7 @@ fi</code></pre>
             </div>
 
             <div class="sections" id="escape-sequence">
-                <h4 class="heading"># Escape Sequence</h4>
+                <h4 class="heading">Escape Sequence</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -903,7 +906,7 @@ fi</code></pre>
             </div>
 
             <div class="sections" id="variable-substitution">
-                <h4 class="heading"># Variable Substitution</h4>
+                <h4 class="heading">Variable Substitution</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -941,7 +944,7 @@ fi</code></pre>
             </div>
 
             <div class="sections" id="command-substitution">
-                <h4 class="heading"># Command Substitution</h4>
+                <h4 class="heading">Command Substitution</h4>
                 <div class="content">
                     <p>Command substitution allows the output of a command to replace the command itself. Using a backquote is old-style; instead, the second form is recommended.</p>
                     <h5>&bull; Back-Quote :</h5>
@@ -972,7 +975,7 @@ done</code></pre>
             </div>
 
             <div class="sections" id="decision">
-                <h4 class="heading"># Decision Making</h4>
+                <h4 class="heading">Decision Making</h4>
                 <div class="content">
                     <h5>&bull; If Statement :</h5>
                     <h6>Syntax :</h6>
@@ -1092,7 +1095,7 @@ esac</code></pre>
             </div>
 
             <div class="sections" id="loops">
-                <h4 class="heading"># Loops</h4>
+                <h4 class="heading">Loops</h4>
                 <div class="content">
                     <h5>&bull; While Loop :</h5>
                     <h6>Syntax :</h6>
@@ -1296,7 +1299,7 @@ done</code></pre>
             </div>
 
             <div class="sections" id="functions">
-                <h4 class="heading"># Functions</h4>
+                <h4 class="heading">Functions</h4>
                 <div class="content">
                     <h6>Syntax :</h6>
                     <pre class="code-box"><code>function(){
@@ -1338,7 +1341,7 @@ printf "\nA = $a\nb = $b"</code></pre>
             </div>
 
             <div class="sections" id="command-line-arguments">
-                <h4 class="heading"># Command Line Arguments</h4>
+                <h4 class="heading">Command Line Arguments</h4>
                 <div class="content">
                     <p>Also called shell script parameters.</p>
                     <div class="table-responsive">
@@ -1401,7 +1404,7 @@ printf "\nA = $a\nb = $b"</code></pre>
             </div>
 
             <div class="sections" id="output-redirection">
-                <h4 class="heading"># Output Redirection</h4>
+                <h4 class="heading">Output Redirection</h4>
                 <div class="content">
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered table-striped">
@@ -1505,7 +1508,7 @@ $ exec 3&gt;&-</code></pre>
             </div>
 
             <div class="sections" id="piping">
-                <h4 class="heading"># Piping</h4>
+                <h4 class="heading">Piping</h4>
                 <div class="content">
                     <p>Pipelines or pipes (<code>|</code>) are used as a funnel to pass the output of one command to another command as an input or parameter.</p>
                     <h6>Syntax :</h6>
@@ -1527,7 +1530,7 @@ grep -l index * | sort</code></pre>
             </div>
 
             <div class="sections" id="bash-aliases">
-                <h4 class="heading"># Bash Aliases</h4>
+                <h4 class="heading">Bash Aliases</h4>
                 <div class="content">
                     <p>Redefine aliases by assigning commands to words or short-names as substitutions.</p>
                     <h6>Synatx :</h6>
@@ -1541,7 +1544,7 @@ grep -l index * | sort</code></pre>
             </div>
 
             <div class="sections" id="brace-expansion">
-                <h4 class="heading"># Brace Expansion</h4>
+                <h4 class="heading">Brace Expansion</h4>
                 <div class="content">
                     <ul>
                         <li><code>echo {1,2,3}</code> : 1 2 3</li>
@@ -1560,7 +1563,7 @@ grep -l index * | sort</code></pre>
             </div>
 
             <div class="sections" id="regex">
-                <h4 class="heading"># RegEx</h4>
+                <h4 class="heading">RegEx</h4>
                 <div class="content">
                     <p>A regular expression (shortened as regex) is a sequence of characters that defines a search pattern for use in pattern matching to find, match, or replace text.</p>
                     <ul>
@@ -1581,7 +1584,7 @@ grep -l index * | sort</code></pre>
             </div>
 
             <div class="sections" id="grep">
-                <h4 class="heading"># Grep</h4>
+                <h4 class="heading">Grep</h4>
                 <div class="content">
                     <p>Global regular expression print (grep) prints lines that match patterns from text or files.</p>
                     <h6>Syntax :</h6>
@@ -1601,7 +1604,7 @@ grep -l index * | sort</code></pre>
             </div>
 
             <div class="sections" id="tr">
-                <h4 class="heading"># Tr</h4>
+                <h4 class="heading">Tr</h4>
                 <div class="content">
                     <p>Translate, squeeze, and/or delete characters from standard input and write them to standard output.</p>
                     <h6>Syntax :</h6>
@@ -1698,7 +1701,7 @@ grep -l index * | sort</code></pre>
             </div>
 
             <div class="sections" id="find">
-                <h4 class="heading"># Find</h4>
+                <h4 class="heading">Find</h4>
                 <div class="content">
                     <p>It searches for files and directories in the directory hierarchy.</p>
                     <h6>Syntax :</h6>
@@ -1717,7 +1720,7 @@ grep -l index * | sort</code></pre>
             </div>
 
             <div class="sections" id="eval">
-                <h4 class="heading"># Eval</h4>
+                <h4 class="heading">Eval</h4>
                 <div class="content">
                     <p>Eval evaluates the specified parameters as a command.</p>
                     <h6>Syntax :</h6>
@@ -1729,7 +1732,7 @@ grep -l index * | sort</code></pre>
             </div>
 
             <div class="sections" id="expr">
-                <h4 class="heading"># Expr</h4>
+                <h4 class="heading">Expr</h4>
                 <div class="content">
                     <p>Expr evaluates a given expression and prints it to standard output.</p>
                     <h6>Syntax :</h6>
@@ -1772,7 +1775,7 @@ echo $c</code></pre>
             </div>
 
             <div class="sections" id="file-permissions">
-                <h4 class="heading"># File Permissions</h4>
+                <h4 class="heading">File Permissions</h4>
                 <div class="content">
                     <p>Modifies file permissions.</p>
                     <h6>Syntax :</h6>
@@ -1912,9 +1915,9 @@ echo $c</code></pre>
             </div>
 
             <div class="sections" id="linux-filesystem-hierarchy">
-                <h4 class="heading"># Linux Filesystem Hierarchy</h4>
+                <h4 class="heading">Linux Filesystem Hierarchy</h4>
                 <div class="content">
-                    <img src="assets/linux-filesystem.png" alt="linux filesystem" class="img">
+                    <img src="../assets/img/linux-filesystem.png" alt="linux filesystem" class="img">
                 </div>
             </div>
 
@@ -1926,6 +1929,6 @@ echo $c</code></pre>
         </div>
 
         <!-- JavaScript -->
-        <script src="assets/script.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
 </html>
