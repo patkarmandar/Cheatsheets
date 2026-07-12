@@ -40,6 +40,7 @@
                     <li><a href="#stash">Stash</a></li>
                     <li><a href="#reflog">Reflog</a></li>
                     <li><a href="#tags">Tags</a></li>
+                    <li><a href="#conventional-commits">Conventional Commits</a></li>
                     <li><a href="#tips">Tips</a></li>
                 </ul>
             </div>
@@ -52,7 +53,7 @@
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,7 +93,7 @@
                         <li>File name: <code>.gitignore</code></li>
                         <li><a href="https://github.com/github/gitignore">Collection of useful .gitignore templates</a></li>
                     </ul>
-                    <h6>Ex :</h6>
+                    <h6>Example:</h6>
                     <pre class="code-box code-box-color"><code># setup.txt will be excluded
 setup.txt
 
@@ -112,7 +113,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -146,7 +147,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -184,7 +185,7 @@ bin/</code></pre>
                                 </tr>
                                 <tr>
                                     <td><code>git log [commit]</code></td>
-                                    <td>show info of commit</td>
+                                    <td>show Description of commit</td>
                                 </tr>
                                 <tr>
                                     <td><code>git log [branch] [commit]</code></td>
@@ -229,7 +230,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -288,7 +289,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -343,7 +344,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -387,7 +388,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -433,7 +434,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -483,7 +484,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -562,7 +563,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -576,7 +577,7 @@ bin/</code></pre>
                                 </tr>
                                 <tr>
                                     <td><code>git remote show [remote]</code></td>
-                                    <td>show info about remote</td>
+                                    <td>show Description about remote</td>
                                 </tr>
                                 <tr>
                                     <td><code>git remote add origin [path-to-repo]</code></td>
@@ -612,7 +613,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -675,13 +676,13 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>git reflog</code></td>
-                                    <td>manage reflog information</td>
+                                    <td>manage reflog Descriptionrmation</td>
                                 </tr>
                                 <tr>
                                     <td><code>git branch [branch-name] [commit]</code></td>
@@ -702,7 +703,7 @@ bin/</code></pre>
                             <thead>
                                 <tr>
                                     <th>Command</th>
-                                    <th>Info</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -726,6 +727,87 @@ bin/</code></pre>
                         </table>
                     </div>
                 </div>
+            </div>
+
+            <div class="sections" id="conventional-commits">
+                <h4 class="heading">Conventional Commits</h4>
+                <div class="content">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Common types</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>feat</code></td>
+                                    <td>a new feature</td>
+                                </tr>
+                                <tr>
+                                    <td><code>fix</code></td>
+                                    <td>a bug fix</td>
+                                </tr>
+                                <tr>
+                                    <td><code>docs</code></td>
+                                    <td>documentation only changes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>style</code></td>
+                                    <td>Code style changes such as formatting, whitespace, missing semicolons, etc. (no logic changes)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>refactor</code></td>
+                                    <td>code change that's neither a fix nor a feature</td>
+                                </tr>
+                                <tr>
+                                    <td><code>perf</code></td>
+                                    <td>performance improvements</td>
+                                </tr>
+                                <tr>
+                                    <td><code>test</code></td>
+                                    <td>adding or fixing tests</td>
+                                </tr>
+                                <tr>
+                                    <td><code>chore</code></td>
+                                    <td>maintenance tasks (build config, dependencies, tooling)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>ci</code></td>
+                                    <td>CI configuration changes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>build</code></td>
+                                    <td>changes that affect the build system or dependencies</td>
+                                </tr>
+                                <tr>
+                                    <td><code>revert</code></td>
+                                    <td>reverts a previous commit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <pre class="code-box code-box-color"><code>[type]([optional scope]): [description]
+
+[optional body]
+
+[optional footer]</code></pre>
+                <p>
+                    Scope (optional, in parentheses) narrows down where the change happened, e.g. <code>feat(api): add pagination</code>.
+                    <h6>Why people use it:</h6>
+                    <ul>
+                        <li>Makes git history skimmable at a glance</li>
+                        <li>Enables tools to auto-generate changelogs</li>
+                        <li>Can drive automatic semantic versioning i.e. a <code>fix:</code> bumps a patch version, <code>feat:</code> bumps a minor version, and a <code>BREAKING CHANGE:</code> footer (or <code>!</code> after the type, like <code>feat!:</code>) bumps a major version</li>
+                    </ul>
+                </p>
+                <h6>Example:</h6>
+                <pre class="code-box code-box-color"><code>feat: add database schema
+fix(auth): correct token expiry check
+docs: update README with setup instructions
+chore: bump eslint to v9</code></pre>
             </div>
 
             <div class="sections" id="tips">
