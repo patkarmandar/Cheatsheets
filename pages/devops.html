@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>DevOps Cheatsheet</title>
+
+        <!-- Bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+
+    <body data-theme="dark">
+        <div class="container">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
+
+            <h3 class="title">DevOps</h3>
+
+            <div class="section-list">
+                <ul>
+                    <li><a href="#devops">DevOps</a></li>
+                    <li><a href="#version-control">Version Control &amp; Workflows</a></li>
+                    <li><a href="#build">Build Systems &amp; Tooling</a></li>
+                    <li><a href="#testing">Automated Testing</a></li>
+                    <li><a href="#cicd">CI/CD</a></li>
+                    <li><a href="#containerization">Containerization</a></li>
+                    <li><a href="#orchestration">Orchestration</a></li>
+                    <li><a href="#deployment">Deployment Strategies</a></li>
+                    <li><a href="#monitoring">Monitoring &amp; Observability</a></li>
+                </ul>
+            </div>
+
+            <div class="sections" id="devops">
+                <h4 class="heading">DevOps</h4>
+                <div class="content">
+                    <p>DevOps is a culture and set of practices that combines software development (Dev) and IT operations (Ops) so that teams can build, test, and release software faster and more reliably. Instead of developers writing code and "throwing it over the wall" to an operations team, one team owns the whole cycle: writing, shipping, and running the software. The core ideas are automation of everything repeatable, small frequent releases instead of big risky ones, and fast feedback from production back to development.</p>
+                    <h6>The DevOps Lifecycle -</h6>
+                    <p>DevOps is usually drawn as an infinite loop: <code>Plan → Code → Build → Test → Release → Deploy → Operate → Monitor</code>, and back to Plan. Each stage feeds the next, and monitoring feeds what to plan next.</p>
+                    <ul class="justify">
+                        <li><b>Building :</b> Turning source code into a runnable artifact (a bundle, binary, or container image).</li>
+                        <li><b>Testing :</b> Automatically verifying that changes work and nothing existing broke.</li>
+                        <li><b>Tooling :</b> The chain of tools that automates each stage, from version control to monitoring.</li>
+                        <li><b>Deployment :</b> Getting the built and tested artifact running in production safely.</li>
+                    </ul>
+                    <ul class="justify">
+                        <li><b>DevSecOps :</b> Extends DevOps by adding security checks (dependency scanning, secret detection, code analysis) into the same automated pipeline instead of leaving security for the end.</li>
+                        <li><b>SRE :</b> Site Reliability Engineering is a related discipline that applies software engineering to operations, using SLOs and error budgets to balance reliability against release speed.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="version-control">
+                <h4 class="heading">Version Control &amp; Workflows</h4>
+                <div class="content">
+                    <p>Version control records every change to the codebase, who made it, and why, so teams can work on the same code in parallel, review changes, and roll back mistakes. It is the foundation of DevOps: every automation pipeline starts from a change pushed to version control.</p>
+                    <ul class="justify">
+                        <li><b>Git :</b> The standard distributed version control system. Every developer has a full copy of the repository, and work happens on branches that are merged after review. (See the Git cheatsheet for commands.)</li>
+                        <li><b>Hosting Platforms :</b> GitHub, GitLab, and Bitbucket host repositories and add pull/merge requests, code review, issue tracking, and built-in CI/CD.</li>
+                        <li><b>Pull Request (PR) :</b> A proposal to merge a branch, where teammates review the changes and automated checks run before the merge is allowed.</li>
+                    </ul>
+                    <h6>Common Workflows -</h6>
+                    <ul class="justify">
+                        <li><b>Feature Branch Workflow :</b> Every feature or fix gets its own branch off the main branch and is merged back through a pull request. The most common workflow.</li>
+                        <li><b>Trunk-Based Development :</b> Everyone merges small changes into the main branch frequently, often daily, with unfinished work hidden behind feature flags. Pairs best with CI/CD.</li>
+                        <li><b>GitFlow :</b> A heavier model with long-lived <code>develop</code> and <code>main</code> branches plus release and hotfix branches. Suits products with scheduled, versioned releases.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="build">
+                <h4 class="heading">Build Systems &amp; Tooling</h4>
+                <div class="content">
+                    <p>A build system turns source code into something runnable: it resolves dependencies, compiles or transpiles code, runs tools like linters, and produces an artifact (a bundle, binary, package, or container image). Builds must be repeatable, so the same input always produces the same output on any machine.</p>
+                    <ul class="justify">
+                        <li><b>Package Managers :</b> Install and lock project dependencies: npm/pnpm/yarn (JavaScript), pip/poetry (Python), Maven/Gradle (Java), Cargo (Rust). Lock files pin exact versions so every build uses the same dependencies.</li>
+                        <li><b>Bundlers :</b> Combine many source files and dependencies into optimized files for the browser, with minification, tree shaking (dropping unused code), and code splitting.</li>
+                        <li><b>Compilers / Transpilers :</b> Convert code from one form to another, such as TypeScript to JavaScript (tsc), modern JS to older JS (Babel), or source to binary (Go, Rust).</li>
+                        <li><b>Task Runners / Build Tools :</b> Orchestrate build steps: Make, Gradle, and the <code>scripts</code> section of <code>package.json</code>.</li>
+                    </ul>
+                    <h6>Webpack vs Vite -</h6>
+                    <ul class="justify">
+                        <li><b>Webpack :</b> The long-standing standard bundler. Extremely configurable through loaders and plugins, but configuration is complex and dev rebuilds get slow on large projects.</li>
+                        <li><b>Vite :</b> The modern default. Serves source files natively over ES modules in development (near-instant startup and hot reload) and bundles with Rollup for production. Minimal configuration.</li>
+                        <li>Others: esbuild and SWC (very fast, used inside other tools), Rollup (libraries), Turbopack (Next.js).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="testing">
+                <h4 class="heading">Automated Testing</h4>
+                <div class="content">
+                    <p>Automated testing means code that verifies other code, running the same checks on every change without human effort. In DevOps, tests are the safety net that makes frequent releases possible: if the tests pass, the change is considered safe to ship.</p>
+                    <h6>The Test Pyramid -</h6>
+                    <ul class="justify">
+                        <li><b>Unit Tests :</b> Test one function or class in isolation. Fast and cheap, so you write many. Tools: Jest, Vitest (JavaScript), pytest (Python), JUnit (Java).</li>
+                        <li><b>Integration Tests :</b> Test that components work together, such as an API endpoint talking to a real database. Slower, so fewer.</li>
+                        <li><b>End-to-End (E2E) Tests :</b> Drive the real application like a user (open browser, click, type, assert). Slowest and most fragile, so fewest. Tools: Playwright, Cypress, Selenium.</li>
+                    </ul>
+                    <ul class="justify">
+                        <li><b>Static Analysis :</b> Linters (ESLint) and type checkers (TypeScript) catch errors without running the code, usually as the first pipeline step.</li>
+                        <li><b>Code Coverage :</b> Measures how much of the code the tests execute. Useful as a signal, but 100% coverage does not mean bug-free.</li>
+                        <li><b>Shift Left :</b> The practice of testing as early as possible (on every commit) rather than at the end of a release cycle.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="cicd">
+                <h4 class="heading">CI/CD</h4>
+                <div class="content">
+                    <p>CI/CD automates the path from a code change to running software. It is implemented as a pipeline: an automated sequence of steps that runs every time code is pushed.</p>
+                    <ul class="justify">
+                        <li><b>Continuous Integration (CI) :</b> Every push is automatically built and tested. Broken changes are caught in minutes, and the main branch stays releasable at all times.</li>
+                        <li><b>Continuous Delivery (CD) :</b> Every change that passes CI is automatically prepared for release; deploying to production is one manual approval away.</li>
+                        <li><b>Continuous Deployment :</b> Goes one step further; every passing change deploys to production automatically with no human step.</li>
+                    </ul>
+                    <h6>Pipeline Stages -</h6>
+                    <p>A typical pipeline: <code>Push → Lint → Build → Test → Package → Deploy to staging → Deploy to production</code>. If any stage fails, the pipeline stops and the team is notified. Pipelines are defined in code (usually YAML) and versioned with the project.</p>
+                    <div class="code-box code-box-color"><code># .github/workflows/ci.yml
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm test
+      - run: npm run build</code></div>
+                    <h6>CI/CD Tools -</h6>
+                    <ul class="justify">
+                        <li><b>GitHub Actions :</b> CI/CD built into GitHub. Workflows are YAML files in <code>.github/workflows/</code> triggered by events like push, pull request, or a schedule. A marketplace of reusable actions covers most tasks.</li>
+                        <li><b>Jenkins :</b> The veteran self-hosted automation server. Highly flexible with a huge plugin ecosystem and pipelines defined in a <code>Jenkinsfile</code>, but you maintain the server yourself. Common in enterprises.</li>
+                        <li><b>Others :</b> GitLab CI (built into GitLab), CircleCI, Azure DevOps Pipelines, and ArgoCD (GitOps-style deployment for Kubernetes, where the cluster syncs itself to what the repo declares).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="containerization">
+                <h4 class="heading">Containerization</h4>
+                <div class="content">
+                    <p>Containerization packages an application together with its dependencies into a container: a lightweight, isolated unit that runs the same on any machine with a container runtime. Containers share the host OS kernel instead of carrying a full guest OS, so they start in seconds and use far fewer resources than virtual machines. They solve the classic "works on my machine" problem.</p>
+                    <h5>Docker :</h5>
+                    <p>Docker is the standard tool for building and running containers.</p>
+                    <ul class="justify">
+                        <li><b>Dockerfile :</b> A text file of instructions that describes how to build an image: base image, files to copy, commands to run, and what to execute on start.</li>
+                        <li><b>Image :</b> The built, immutable package (app + dependencies + runtime). Images are layered, so unchanged layers are reused between builds.</li>
+                        <li><b>Container :</b> A running instance of an image. Many containers can run from the same image.</li>
+                        <li><b>Registry :</b> Where images are stored and shared: Docker Hub, GitHub Container Registry, AWS ECR.</li>
+                        <li><b>Docker Compose :</b> Defines multi-container setups (app + database + cache) in one <code>docker-compose.yml</code> file, started together with <code>docker compose up</code>.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code># Dockerfile
+FROM node:22-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+CMD ["node", "server.js"]</code></div>
+                    <p>Typical flow: <code>docker build -t myapp .</code> builds the image, <code>docker run -p 3000:3000 myapp</code> runs it, and <code>docker push</code> publishes it to a registry for servers to pull.</p>
+                </div>
+            </div>
+
+            <div class="sections" id="orchestration">
+                <h4 class="heading">Orchestration</h4>
+                <div class="content">
+                    <p>One container is easy; hundreds across many servers are not. An orchestrator manages containers at scale: it decides which machine runs each container, restarts crashed ones, scales the count up and down, rolls out new versions gradually, and routes traffic to healthy instances.</p>
+                    <h5>Kubernetes (K8s) :</h5>
+                    <p>Kubernetes is the industry-standard orchestrator, originally created by Google. You declare the desired state in YAML ("run 3 replicas of this image") and Kubernetes continuously works to make reality match it, which is what enables self-healing.</p>
+                    <ul class="justify">
+                        <li><b>Cluster :</b> The whole system: a control plane that makes decisions plus worker nodes (machines) that run the workloads.</li>
+                        <li><b>Pod :</b> The smallest deployable unit, usually one container. Pods are disposable; they are replaced, not repaired.</li>
+                        <li><b>Deployment :</b> Declares how many replicas of a pod should run and manages rolling updates and rollbacks.</li>
+                        <li><b>Service :</b> A stable network address that load balances traffic across a set of pods, since individual pods come and go.</li>
+                        <li><b>Ingress :</b> Routes external HTTP traffic into the cluster based on host or path.</li>
+                        <li><b>ConfigMap &amp; Secret :</b> Inject configuration and sensitive values into pods without baking them into the image.</li>
+                    </ul>
+                    <ul class="justify">
+                        <li><b>Managed Kubernetes :</b> Cloud providers run the control plane for you: AWS EKS, Google GKE, Azure AKS.</li>
+                        <li><b>Alternatives :</b> Docker Swarm (simpler, less used), HashiCorp Nomad, or managed container services like AWS ECS and Google Cloud Run when full Kubernetes is overkill.</li>
+                        <li><b>Helm :</b> The package manager for Kubernetes; installs and upgrades whole applications as versioned charts.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="deployment">
+                <h4 class="heading">Deployment Strategies</h4>
+                <div class="content">
+                    <p>A deployment strategy defines how a new version replaces the old one in production while minimizing downtime and risk.</p>
+                    <ul class="justify">
+                        <li><b>Rolling Deployment :</b> Instances are updated a few at a time until all run the new version. No downtime and no extra infrastructure, but two versions run side by side during the rollout. The Kubernetes default.</li>
+                        <li><b>Blue-Green Deployment :</b> Two identical environments: blue (live) and green (new version). Traffic switches to green in one step, and switching back is an instant rollback. Costs double the infrastructure during the deploy.</li>
+                        <li><b>Canary Deployment :</b> The new version first receives a small slice of traffic (say 5%). If metrics stay healthy, traffic shifts gradually to 100%; if not, the canary is rolled back and only a few users were affected.</li>
+                        <li><b>Feature Flags :</b> Deploy code with new features switched off, then enable them per user, per region, or gradually, without redeploying. Separates deployment from release.</li>
+                        <li><b>Rollback :</b> Every strategy needs a fast way back: redeploy the previous image, switch traffic back, or flip the flag off.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="monitoring">
+                <h4 class="heading">Monitoring &amp; Observability</h4>
+                <div class="content">
+                    <p>Deployment is not the end of the pipeline; you need to know how the software behaves in production. Observability is built on three pillars, and its output feeds the next development cycle, closing the DevOps loop.</p>
+                    <ul class="justify">
+                        <li><b>Metrics :</b> Numeric time-series data such as request rate, error rate, latency, CPU, and memory. Collected by Prometheus, visualized in Grafana dashboards.</li>
+                        <li><b>Logs :</b> Timestamped event records from applications and infrastructure, centralized and searchable with the ELK stack (Elasticsearch, Logstash, Kibana) or Grafana Loki.</li>
+                        <li><b>Traces :</b> Follow a single request across services to find where time was spent or where it failed. Tools: Jaeger, OpenTelemetry.</li>
+                        <li><b>Alerting :</b> Rules that page a human when something crosses a threshold, such as error rate above 1% for 5 minutes. Alert on symptoms users feel, not on every internal blip.</li>
+                        <li><b>Health Checks :</b> Endpoints like <code>/health</code> that load balancers and orchestrators probe to decide whether an instance should receive traffic.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav>
+                <a href="/Cheatsheets"><i class="bi bi-arrow-left-square-fill"></i></a>
+                <a href="#" ><i class="bi bi-arrow-up-square-fill"></i></a>
+            </nav>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
