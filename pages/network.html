@@ -28,6 +28,7 @@
                 <ul>
                     <li><a href="#network">Network</a></li>
                     <li><a href="#network-node">Networking Nodes</a></li>
+                    <li><a href="#gateway">Gateway</a></li>
                     <li><a href="#mac">MAC Address</a></li>
                     <li><a href="#ip">IP Address</a></li>
                     <li><a href="#port">Port Address</a></li>
@@ -38,6 +39,9 @@
                     <li><a href="#protocol">Protocols</a></li>
                     <li><a href="#torrent">BitTorrent</a></li>
                     <li><a href="#http-protocol">HTTP Protocol</a></li>
+                    <li><a href="#web-server">Web Server</a></li>
+                    <li><a href="#load-balancer">Load Balancer</a></li>
+                    <li><a href="#cdn">CDN &amp; Edge Network</a></li>
                     <li><a href="#web-socket">Web Socket</a></li>
                     <li><a href="#ssl-tls">SSL/TLS</a></li>
                     <li><a href="#handshake">Handshake</a></li>
@@ -141,6 +145,26 @@
                                 <li>Uses IP address to communicate.</li>
                             </ul>
                         </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="gateway">
+                <h4 class="heading">Gateway</h4>
+                <div class="content">
+                    <p>A gateway is a network node that acts as an entry and exit point between two different networks, especially networks that use different protocols or architectures. While a router forwards packets between similar networks, a gateway can also translate between different protocols, data formats, or addressing schemes so that the two sides can communicate. A gateway can be a dedicated hardware device, a router with gateway features, or software running on a server.</p>
+                    <ul class="justify">
+                        <li>A gateway operates at any layer of the OSI model depending on its purpose, but protocol-translating gateways typically work at the higher layers.</li>
+                        <li>In a home network, the router provided by the ISP acts as the gateway between the local network and the internet.</li>
+                        <li>The gateway address is configured on every device on the network, usually assigned automatically through DHCP.</li>
+                    </ul>
+                    <h6>Types of Gateways -</h6>
+                    <ul class="justify">
+                        <li><b>Default Gateway :</b> The node a device sends traffic to when the destination is outside its own subnet. It is usually the local router's IP address, such as <code>192.168.1.1</code>. If a device cannot reach the internet but can reach local devices, a wrong default gateway is a common cause.</li>
+                        <li><b>Network / Protocol Gateway :</b> Connects networks that use different protocols by translating between them, for example connecting a legacy industrial network to a modern IP network.</li>
+                        <li><b>NAT Gateway :</b> Performs Network Address Translation so that devices with private IP addresses can share one public IP address to access the internet. Cloud providers offer this as a managed service, such as an AWS NAT Gateway that lets instances in a private subnet reach the internet without being reachable from it.</li>
+                        <li><b>API Gateway :</b> An application-level gateway that sits in front of backend APIs and acts as a single entry point for clients. It handles routing to the right service, authentication, rate limiting, and response caching. Examples: AWS API Gateway, Kong, NGINX used as an API gateway in front of microservices.</li>
+                        <li><b>VoIP / Media Gateway :</b> Converts voice traffic between the traditional telephone network (PSTN) and an IP network.</li>
                     </ul>
                 </div>
             </div>
@@ -672,6 +696,63 @@
 
                     <h5>Cookies :</h5>
                     <p>A cookie is a small piece of data that is stored on a user's computer by a web browser. Cookies are set by the "Set-Cookie" header received from a web server. Cookies are used for session management, tracking and analytics, advertising, etc.</p>
+                </div>
+            </div>
+
+            <div class="sections" id="web-server">
+                <h4 class="heading">Web Server</h4>
+                <div class="content">
+                    <p>A web server is software (and the machine running it) that listens for HTTP/HTTPS requests from clients, usually browsers, and responds with web content such as HTML pages, images, CSS, and JavaScript files. When a browser requests a URL, the web server locates the resource, applies its configuration rules, and sends back the response along with a status code and headers. Examples: Apache HTTP Server, NGINX, Microsoft IIS, LiteSpeed, and Caddy.</p>
+                    <ul class="justify">
+                        <li><b>Static Content :</b> Files served exactly as stored on disk, such as HTML, images, and stylesheets. Web servers are extremely fast at this.</li>
+                        <li><b>Dynamic Content :</b> Content generated per request. The web server passes the request to an application server or runtime (PHP-FPM, Node.js, Python WSGI servers like Gunicorn) and returns the generated response to the client.</li>
+                        <li><b>Web Server vs Application Server :</b> A web server handles HTTP itself: accepting connections, TLS, serving files, and routing. An application server runs the business logic of an application. In practice they are often combined, with the web server in front acting as a reverse proxy to the application server, for example NGINX in front of a Node.js or Django app.</li>
+                        <li><b>Common Features :</b> Virtual hosting (serving multiple websites from one server), TLS/SSL termination, compression (gzip, Brotli), caching, access logs, URL rewriting, and directory access control.</li>
+                        <li>Web servers listen on port 80 for HTTP and port 443 for HTTPS by default.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="load-balancer">
+                <h4 class="heading">Load Balancer</h4>
+                <div class="content">
+                    <p>A load balancer is a device or software that distributes incoming network traffic across multiple backend servers so that no single server becomes a bottleneck or a single point of failure. It sits between clients and the server pool, forwards each request to a healthy server, and removes servers from rotation when health checks fail. This improves availability, scalability, and performance. Examples: NGINX, HAProxy, AWS Elastic Load Balancer, Cloudflare Load Balancing.</p>
+                    <h6>Types of Load Balancers -</h6>
+                    <ul class="justify">
+                        <li><b>Layer 4 (Transport Level) :</b> Balances traffic based on IP address and TCP/UDP port without looking at the content. It is very fast and protocol-agnostic. Example: AWS Network Load Balancer.</li>
+                        <li><b>Layer 7 (Application Level) :</b> Understands HTTP and can route based on the URL path, hostname, headers, or cookies. This enables smarter routing, such as sending <code>/api</code> traffic to one server group and <code>/images</code> to another. Example: AWS Application Load Balancer, NGINX.</li>
+                        <li><b>Hardware vs Software :</b> Hardware load balancers are dedicated appliances (F5, Citrix ADC), while software load balancers run on standard servers or as cloud services.</li>
+                    </ul>
+                    <h6>Load Balancing Algorithms -</h6>
+                    <ul class="justify">
+                        <li><b>Round Robin :</b> Requests are distributed to servers one after another in order. Simple and effective when servers are equal.</li>
+                        <li><b>Weighted Round Robin :</b> Like round robin, but stronger servers receive proportionally more requests.</li>
+                        <li><b>Least Connections :</b> Each new request goes to the server with the fewest active connections. Useful when request durations vary.</li>
+                        <li><b>IP Hash :</b> The client's IP address determines which server it lands on, so the same client keeps hitting the same server. This provides basic session persistence (sticky sessions).</li>
+                    </ul>
+                    <ul class="justify">
+                        <li><b>Health Checks :</b> The load balancer periodically probes each server (for example, requesting <code>/health</code>). Servers that fail are taken out of rotation until they recover.</li>
+                        <li><b>Failover &amp; High Availability :</b> With servers in multiple zones behind a load balancer, traffic automatically shifts away from a failed server or zone. Application: A website running 3 identical app servers behind an NGINX load balancer, where a deploy restarts one server at a time and users never notice.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="cdn">
+                <h4 class="heading">CDN &amp; Edge Network</h4>
+                <div class="content">
+                    <p>A Content Delivery Network (CDN) is a globally distributed network of servers that delivers content to users from a location geographically close to them instead of from the origin server. Each CDN location is called a Point of Presence (PoP) and contains edge servers that cache copies of content. When a user requests a file, DNS directs them to the nearest PoP, which serves the cached copy. This reduces latency, cuts load on the origin server, and absorbs traffic spikes and DDoS attacks. Examples: Cloudflare, Akamai, Fastly, Amazon CloudFront.</p>
+                    <ul class="justify">
+                        <li><b>Caching :</b> Edge servers store static assets (images, CSS, JavaScript, videos) based on cache headers like <code>Cache-Control</code>. On a cache miss, the edge fetches the file from the origin, serves it, and keeps a copy for the next visitor.</li>
+                        <li><b>Cache Invalidation / Purge :</b> When content changes, cached copies must be refreshed. This is done through TTL expiry, versioned file names (<code>app.v2.js</code>), or an explicit purge request to the CDN.</li>
+                        <li><b>Reverse Proxy Model :</b> A CDN works as a large distributed reverse proxy. The domain's DNS points at the CDN, all traffic enters through it, and the CDN forwards only what it cannot serve from cache to the origin.</li>
+                        <li><b>Security Role :</b> Because all traffic passes through it, a CDN commonly provides TLS termination, DDoS protection, a web application firewall (WAF), and bot filtering at the edge.</li>
+                    </ul>
+                    <h6>Edge Network &amp; Edge Computing -</h6>
+                    <ul class="justify">
+                        <li><b>Edge Network :</b> The layer of servers closest to end users (the CDN's PoPs). "The edge" simply means computing that happens near the user rather than in a central data center.</li>
+                        <li><b>Edge Computing / Edge Functions :</b> Modern CDNs can run code at their edge locations, not just serve cached files. This is used for redirects, A/B testing, authentication checks, and personalization with very low latency. Examples: Cloudflare Workers, AWS Lambda@Edge, Vercel Edge Functions.</li>
+                        <li>Application: A news site puts Cloudflare in front of its origin. Readers in India, Europe, and the US each load images and scripts from a nearby PoP, the origin only renders the articles, and a traffic spike on a breaking story is served almost entirely from cache.</li>
+                    </ul>
                 </div>
             </div>
 
