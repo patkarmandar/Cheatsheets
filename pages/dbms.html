@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>DBMS &amp; SQL Cheatsheet</title>
+
+        <!-- Bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+
+    <body data-theme="dark">
+        <div class="container">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
+
+            <h3 class="title">DBMS &amp; SQL</h3>
+
+            <div class="section-list">
+                <ul>
+                    <li><a href="#dbms">Database &amp; DBMS</a></li>
+                    <li><a href="#er-model">ER Model</a></li>
+                    <li><a href="#keys">Keys</a></li>
+                    <li><a href="#constraints">Constraints</a></li>
+                    <li><a href="#fd">Functional Dependency &amp; Decomposition</a></li>
+                    <li><a href="#normalization">Normalization</a></li>
+                    <li><a href="#transactions">Transactions &amp; ACID</a></li>
+                    <li><a href="#schedules">Schedules &amp; Serializability</a></li>
+                    <li><a href="#algebra">Relational Algebra</a></li>
+                    <li><a href="#indexing">Indexing &amp; File Structures</a></li>
+                    <li><a href="#sql">SQL Basics</a></li>
+                    <li><a href="#ddl">DDL Commands</a></li>
+                    <li><a href="#dml">DML Commands</a></li>
+                    <li><a href="#dql">Querying Data</a></li>
+                    <li><a href="#aggregates">Aggregates &amp; Grouping</a></li>
+                    <li><a href="#joins">Joins</a></li>
+                    <li><a href="#set-ops">Set Operations</a></li>
+                    <li><a href="#subqueries">Subqueries &amp; Views</a></li>
+                    <li><a href="#dcl-tcl">DCL &amp; TCL</a></li>
+                </ul>
+            </div>
+
+            <div class="sections" id="dbms">
+                <h4 class="heading">Database &amp; DBMS</h4>
+                <div class="content">
+                    <p>A database is an organized collection of interrelated data representing some aspect of the real world, stored in a format that can be easily accessed. A DBMS (Database Management System) is the software used to create, manage, and query databases while handling security, concurrency, and recovery. Applications request data from the DBMS, and the DBMS retrieves it from storage.</p>
+                    <ul class="justify">
+                        <li><b>RDBMS :</b> A Relational DBMS stores data in tables (relations) made of rows (records/tuples) and columns (attributes), with relationships between tables. Examples: MySQL, PostgreSQL, Oracle, SQL Server.</li>
+                        <li><b>Non-Relational (NoSQL) :</b> Databases that do not store data in tables, such as document, key-value, and graph databases. Example: MongoDB.</li>
+                        <li><b>SQL vs MySQL :</b> SQL is the language used to interact with relational databases; MySQL is one RDBMS that understands SQL. SQL keywords are not case sensitive.</li>
+                    </ul>
+                    <h6>Why DBMS over File Systems -</h6>
+                    <p>DBMSs were developed to solve the problems of storing data in plain files:</p>
+                    <ul class="justify">
+                        <li>Data redundancy and inconsistency (the same data duplicated in multiple files, going out of sync).</li>
+                        <li>Difficulty in accessing data (a new program needed for every new query).</li>
+                        <li>Data isolation (data scattered across multiple files and formats).</li>
+                        <li>Integrity problems (no central place to enforce rules like "balance cannot be negative").</li>
+                        <li>Atomicity of updates (a crash mid-update leaves data half-changed).</li>
+                        <li>No safe concurrent access by multiple users.</li>
+                        <li>Weak security (no fine-grained control over who sees what).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="er-model">
+                <h4 class="heading">ER Model</h4>
+                <div class="content">
+                    <p>An ER (Entity Relationship) diagram is a conceptual model that graphically represents the logical structure of a database: its entities, their attributes, and the relationships and constraints among them. It is drawn before creating the actual tables.</p>
+                    <h6>Entity Sets -</h6>
+                    <ul class="justify">
+                        <li><b>Strong Entity Set :</b> Has enough attributes to uniquely identify each entity, meaning a primary key exists (shown by underlining the key attribute). Example: a Student identified by Roll_no.</li>
+                        <li><b>Weak Entity Set :</b> Cannot uniquely identify its entities on its own; it has no primary key, only a partial key called a discriminator (underlined with a dashed line) and depends on a strong entity set.</li>
+                    </ul>
+                    <h6>Types of Attributes -</h6>
+                    <ul class="justify">
+                        <li><b>Simple :</b> Cannot be divided further. Example: Age.</li>
+                        <li><b>Composite :</b> Composed of several simple attributes. Example: Name (first, last), Address.</li>
+                        <li><b>Multi-Valued :</b> Can hold more than one value for an entity. Example: Mobile No, Email ID.</li>
+                        <li><b>Derived :</b> Can be computed from other attributes. Example: Age derived from DOB.</li>
+                        <li><b>Key :</b> Uniquely identifies an entity in the set. Example: Roll No.</li>
+                    </ul>
+                    <h6>Relationships -</h6>
+                    <p>A relationship is an association among entities. Based on how many entity sets participate: unary (one), binary (two, the most common), ternary (three), and n-ary (n entity sets).</p>
+                    <h6>Cardinality Constraints -</h6>
+                    <ul class="justify">
+                        <li><b>One-to-One :</b> An entity in A relates to at most one entity in B, and vice versa. Example: person and passport.</li>
+                        <li><b>One-to-Many :</b> An entity in A can relate to many entities in B, but each entity in B relates to at most one in A. Example: department and employees.</li>
+                        <li><b>Many-to-One :</b> The reverse of one-to-many. Example: many students to one city.</li>
+                        <li><b>Many-to-Many :</b> Entities on both sides can relate to any number on the other side. Example: students and courses.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="keys">
+                <h4 class="heading">Keys</h4>
+                <div class="content">
+                    <p>A key is a set of attributes that can identify each tuple (row) uniquely in a relation (table).</p>
+                    <ul class="justify">
+                        <li><b>Super Key :</b> Any set of attributes that uniquely identifies each tuple. It may contain extra, unnecessary attributes.</li>
+                        <li><b>Candidate Key :</b> A minimal super key: remove any attribute and it stops being unique. A relation can have several candidate keys.</li>
+                        <li><b>Primary Key :</b> The candidate key the designer chooses to identify rows. It must be unique and NOT NULL, and there is only one per table.</li>
+                        <li><b>Alternate Key :</b> The candidate keys left over after choosing the primary key.</li>
+                        <li><b>Foreign Key :</b> A column whose values refer to the primary key of another table, linking the two. The table holding the primary key is the referenced relation; the one holding the foreign key is the referencing relation. Foreign keys can repeat and can be NULL.</li>
+                        <li><b>Composite Key :</b> A primary key made of two or more attributes together.</li>
+                        <li><b>Unique Key :</b> Enforces uniqueness like a primary key but may allow NULL, and a table can have several unique keys.</li>
+                    </ul>
+                    <h6>Cascading for Foreign Keys -</h6>
+                    <ul class="justify">
+                        <li><b>ON DELETE CASCADE :</b> Deleting a parent row automatically deletes the child rows that reference it.</li>
+                        <li><b>ON UPDATE CASCADE :</b> Updating the referenced key automatically updates the referencing rows in the child table.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="constraints">
+                <h4 class="heading">Constraints</h4>
+                <div class="content">
+                    <p>Constraints are rules imposed on the data to keep the database correct and consistent.</p>
+                    <h6>Relational Model Constraints -</h6>
+                    <ul class="justify">
+                        <li><b>Domain Constraint :</b> Every attribute value must be an atomic value from its defined domain (type and allowed range).</li>
+                        <li><b>Tuple Uniqueness Constraint :</b> All tuples in a relation must be unique.</li>
+                        <li><b>Key Constraint :</b> Primary key values must be unique and never NULL.</li>
+                        <li><b>Entity Integrity Constraint :</b> No part of a primary key may be NULL.</li>
+                        <li><b>Referential Integrity Constraint :</b> Every foreign key value must either exist as a primary key value in the referenced relation or be NULL.</li>
+                    </ul>
+                    <h6>SQL Constraints -</h6>
+                    <ul class="justify">
+                        <li><b>NOT NULL :</b> The column cannot store NULL.</li>
+                        <li><b>UNIQUE :</b> All values in the column must be different.</li>
+                        <li><b>PRIMARY KEY :</b> UNIQUE plus NOT NULL; one per table.</li>
+                        <li><b>FOREIGN KEY :</b> Prevents actions that would break links between tables.</li>
+                        <li><b>DEFAULT :</b> Sets a default value when none is provided.</li>
+                        <li><b>CHECK :</b> Limits the values allowed, such as <code>CHECK (age >= 18)</code>.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    salary DECIMAL(10,2) DEFAULT 0,
+    dept_id INT,
+    CHECK (salary >= 0),
+    FOREIGN KEY (dept_id) REFERENCES departments(id)
+);</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="fd">
+                <h4 class="heading">Functional Dependency &amp; Decomposition</h4>
+                <div class="content">
+                    <p>A functional dependency <code>α → β</code> holds in a relation if any two tuples with the same value of attribute set α also have the same value of attribute set β. In other words, α determines β. Example: <code>Roll_no → Name</code>.</p>
+                    <ul class="justify">
+                        <li><b>Trivial FD :</b> <code>X → Y</code> where Y is a subset of X. Always holds. Example: <code>(Roll_no, Name) → Name</code>.</li>
+                        <li><b>Non-Trivial FD :</b> <code>X → Y</code> where at least one attribute of Y is not in X. These are the dependencies that matter for design.</li>
+                        <li><b>Closure of an Attribute Set :</b> The set of all attributes that can be functionally determined from a given attribute set. Used to find candidate keys.</li>
+                    </ul>
+                    <h6>Decomposition -</h6>
+                    <p>Decomposition is breaking one relation into two or more sub-relations, done during normalization. A good decomposition must satisfy two properties:</p>
+                    <ul class="justify">
+                        <li><b>Lossless Join :</b> Joining the sub-relations back gives exactly the original relation, so no information is lost: <code>R1 ⋈ R2 ⋈ ... ⋈ Rn = R</code>. If the join produces extra spurious tuples (<code>⊃ R</code>), the decomposition is lossy.</li>
+                        <li><b>Dependency Preservation :</b> Every functional dependency of the original relation still holds in (or can be checked from) the sub-relations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="normalization">
+                <h4 class="heading">Normalization</h4>
+                <div class="content">
+                    <p>Normalization is the process of organizing a database to reduce redundancy and ensure data integrity through lossless decomposition. Each normal form builds on the previous one.</p>
+                    <ul class="justify">
+                        <li><b>First Normal Form (1NF) :</b> Every cell holds a single atomic value; no multi-valued or repeating attributes. A column like "Phone1, Phone2" in one cell violates 1NF.</li>
+                        <li><b>Second Normal Form (2NF) :</b> In 1NF, plus no partial dependency: no non-prime attribute may depend on only a part of a candidate key. Only relevant when the key is composite.</li>
+                        <li><b>Third Normal Form (3NF) :</b> In 2NF, plus no transitive dependency: a non-prime attribute must not depend on another non-prime attribute (<code>A → B</code> where A is not a super key and B is non-prime).</li>
+                        <li><b>Boyce-Codd Normal Form (BCNF) :</b> In 3NF, plus for every non-trivial dependency <code>A → B</code>, A must be a super key. The stricter version of 3NF.</li>
+                    </ul>
+                    <p>Memory aid: every non-key attribute must depend on "the key (1NF), the whole key (2NF), and nothing but the key (3NF)".</p>
+                </div>
+            </div>
+
+            <div class="sections" id="transactions">
+                <h4 class="heading">Transactions &amp; ACID</h4>
+                <div class="content">
+                    <p>A transaction is a single logical unit of work made of a set of operations, such as transferring money (debit one account, credit another). Its basic operations are Read(A), which loads a value into the main-memory buffer, and Write(A), which writes the updated value from the buffer back to the database.</p>
+                    <h6>Transaction States -</h6>
+                    <ul class="justify">
+                        <li><b>Active :</b> Instructions are executing; changes live only in the buffer.</li>
+                        <li><b>Partially Committed :</b> The last instruction has executed, but changes are still in the buffer, not yet on disk.</li>
+                        <li><b>Committed :</b> All changes are safely stored in the database; the transaction is final.</li>
+                        <li><b>Failed :</b> A failure occurred during execution and the transaction cannot continue.</li>
+                        <li><b>Aborted :</b> All changes made by the failed transaction have been rolled back.</li>
+                        <li><b>Terminated :</b> The end of the life cycle, reached after commit or abort.</li>
+                    </ul>
+                    <h6>ACID Properties -</h6>
+                    <ul class="justify">
+                        <li><b>Atomicity :</b> A transaction happens completely or not at all; never partially.</li>
+                        <li><b>Consistency :</b> Integrity constraints hold before and after the transaction, so the database moves from one valid state to another.</li>
+                        <li><b>Isolation :</b> Concurrent transactions do not interfere; the result is the same as if they ran one after another.</li>
+                        <li><b>Durability :</b> Once committed, changes are permanent on disk and survive any failure.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="schedules">
+                <h4 class="heading">Schedules &amp; Serializability</h4>
+                <div class="content">
+                    <p>A schedule is the order in which the operations of multiple transactions execute.</p>
+                    <ul class="justify">
+                        <li><b>Serial Schedule :</b> Transactions run one after another with no overlap. Always consistent, recoverable, cascadeless, and strict, but slow.</li>
+                        <li><b>Non-Serial Schedule :</b> Operations of transactions are interleaved for concurrency. Faster, but not guaranteed to be consistent or recoverable.</li>
+                    </ul>
+                    <h6>Serializability -</h6>
+                    <p>A non-serial schedule is serializable if it is equivalent to some serial schedule, which guarantees it keeps the database consistent.</p>
+                    <ul class="justify">
+                        <li><b>Conflict Serializable :</b> The schedule can be converted to a serial one by swapping its non-conflicting operations.</li>
+                        <li><b>View Serializable :</b> The schedule is view-equivalent to some serial schedule (a weaker, broader condition).</li>
+                    </ul>
+                    <h6>Recoverability -</h6>
+                    <ul class="justify">
+                        <li><b>Irrecoverable Schedule :</b> A transaction dirty-reads from an uncommitted transaction and commits before it; if the source then rolls back, the damage cannot be undone.</li>
+                        <li><b>Recoverable Schedule :</b> The reader's commit is delayed until the transaction it read from commits or rolls back.</li>
+                        <li><b>Cascading Schedule :</b> One transaction's failure forces a chain of dependent transactions to roll back.</li>
+                        <li><b>Cascadeless Schedule :</b> A transaction may not read a value until the transaction that wrote it has committed or aborted, preventing cascading rollbacks.</li>
+                        <li><b>Strict Schedule :</b> A transaction may neither read nor write a value until the last writer has committed or aborted. The safest and most common in practice.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="algebra">
+                <h4 class="heading">Relational Algebra</h4>
+                <div class="content">
+                    <p>Relational algebra is a procedural query language that takes relations as input and produces a relation as output. It is the theoretical foundation of SQL. For two relations with m and n rows:</p>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Name</th>
+                                    <th>Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">σ</td>
+                                    <td>Selection</td>
+                                    <td>Selects rows that satisfy a condition (like WHERE)</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">∏</td>
+                                    <td>Projection</td>
+                                    <td>Selects specific columns (like SELECT col1, col2)</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">X</td>
+                                    <td>Cross Product</td>
+                                    <td>Pairs every row of R1 with every row of R2, giving m*n rows</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">U</td>
+                                    <td>Union</td>
+                                    <td>Tuples in R1 or R2; rows between max(m,n) and m+n</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">−</td>
+                                    <td>Minus</td>
+                                    <td>Tuples in R1 but not in R2; rows between m-n and m</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">ρ</td>
+                                    <td>Rename</td>
+                                    <td>Renames a relation or its attributes</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">∩</td>
+                                    <td>Intersection</td>
+                                    <td>Tuples in both R1 and R2; at most min(m,n) rows</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">⋈c</td>
+                                    <td>Conditional Join</td>
+                                    <td>Cross product followed by selection on a condition</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">⋈</td>
+                                    <td>Equi Join</td>
+                                    <td>Conditional join using only equality conditions</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">⋈</td>
+                                    <td>Natural Join</td>
+                                    <td>Equi join on all common attributes, duplicates removed. With no common attribute it equals the cross product</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">⟕</td>
+                                    <td>Left Outer Join</td>
+                                    <td>All tuples of R kept; unmatched ones get NULL for S's attributes</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">⟖</td>
+                                    <td>Right Outer Join</td>
+                                    <td>All tuples of S kept; unmatched ones get NULL for R's attributes</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">⟗</td>
+                                    <td>Full Outer Join</td>
+                                    <td>All tuples of both R and S kept, with NULLs where unmatched</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">/</td>
+                                    <td>Division</td>
+                                    <td>A/B returns tuples of A associated with every tuple of B (attributes of B must be a proper subset of A's)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sections" id="indexing">
+                <h4 class="heading">Indexing &amp; File Structures</h4>
+                <div class="content">
+                    <p>An index is an ordered auxiliary structure that speeds up data retrieval, like the index of a book: instead of scanning every block, the DBMS looks up the key and follows a pointer to the data block.</p>
+                    <h6>Types of Indexes -</h6>
+                    <ul class="justify">
+                        <li><b>Primary Index :</b> An ordered file of fixed-length records with two fields: the primary key of the data file and a pointer to its data block. Average block accesses with the index are about <code>log2(Bi) + 1</code>, where Bi is the number of index blocks.</li>
+                        <li><b>Clustering Index :</b> Created on a data file that is physically ordered on a non-key field (the clustering field).</li>
+                        <li><b>Secondary Index :</b> Provides an additional access path on a field for which primary access already exists.</li>
+                    </ul>
+                    <h6>B-Trees and B+ Trees -</h6>
+                    <ul class="justify">
+                        <li><b>B-Tree :</b> A balanced multi-way search tree where every node stores keys along with data pointers (to a block or record). For a tree of order P (the maximum number of children): the root has between 2 and P children, internal nodes have between ⌈P/2⌉ and P children, and internal nodes hold between ⌈P/2⌉-1 and P-1 keys.</li>
+                        <li><b>B+ Tree :</b> Stores data pointers only in the leaf nodes; internal nodes hold just keys for navigation, so leaf and non-leaf nodes have different orders (non-leaf higher). This makes the tree shallower and searching faster, and the linked leaves make range queries efficient. Most database indexes are B+ trees.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="sql">
+                <h4 class="heading">SQL Basics</h4>
+                <div class="content">
+                    <p>SQL (Structured Query Language) is the standard language for storing, manipulating, and retrieving data in relational databases. It covers the CRUD operations: Create, Read, Update, Delete.</p>
+                    <h6>Types of SQL Commands -</h6>
+                    <ul class="justify">
+                        <li><b>DDL (Data Definition Language) :</b> Defines and changes structure: <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, <code>TRUNCATE</code>, <code>RENAME</code>.</li>
+                        <li><b>DQL (Data Query Language) :</b> Retrieves data: <code>SELECT</code>.</li>
+                        <li><b>DML (Data Manipulation Language) :</b> Modifies data: <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>.</li>
+                        <li><b>DCL (Data Control Language) :</b> Manages permissions: <code>GRANT</code>, <code>REVOKE</code>.</li>
+                        <li><b>TCL (Transaction Control Language) :</b> Manages transactions: <code>COMMIT</code>, <code>ROLLBACK</code>, <code>SAVEPOINT</code>.</li>
+                    </ul>
+                    <h6>Common Data Types -</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Data Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>CHAR(n)</code></td>
+                                    <td>Fixed-length string (0-255 characters)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>VARCHAR(n)</code></td>
+                                    <td>Variable-length string up to n; uses only needed space, generally preferred</td>
+                                </tr>
+                                <tr>
+                                    <td><code>BLOB</code></td>
+                                    <td>Binary large object (files, images)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>TINYINT</code></td>
+                                    <td>Integer, -128 to 127</td>
+                                </tr>
+                                <tr>
+                                    <td><code>INT</code></td>
+                                    <td>Integer, about -2.1 billion to 2.1 billion</td>
+                                </tr>
+                                <tr>
+                                    <td><code>BIGINT</code></td>
+                                    <td>Very large integers</td>
+                                </tr>
+                                <tr>
+                                    <td><code>FLOAT / DOUBLE</code></td>
+                                    <td>Approximate decimal numbers (up to 23 / 53 digits precision)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>DECIMAL(p,s)</code></td>
+                                    <td>Exact decimal, used for money</td>
+                                </tr>
+                                <tr>
+                                    <td><code>BOOLEAN</code></td>
+                                    <td>0 or 1</td>
+                                </tr>
+                                <tr>
+                                    <td><code>DATE</code></td>
+                                    <td>YYYY-MM-DD</td>
+                                </tr>
+                                <tr>
+                                    <td><code>TIME</code></td>
+                                    <td>HH:MM:SS</td>
+                                </tr>
+                                <tr>
+                                    <td><code>YEAR</code></td>
+                                    <td>4-digit year, 1901 to 2155</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Add <code>UNSIGNED</code> to numeric types that only store positive values, which doubles the positive range, e.g., <code>TINYINT UNSIGNED</code> stores 0 to 255.</p>
+                </div>
+            </div>
+
+            <div class="sections" id="ddl">
+                <h4 class="heading">DDL Commands</h4>
+                <div class="content">
+                    <p>DDL commands define and manage the structure of databases and their objects (tables, indexes, constraints).</p>
+                    <h6>Database Level -</h6>
+                    <div class="code-box code-box-color"><code>CREATE DATABASE IF NOT EXISTS db_name;
+DROP DATABASE IF EXISTS db_name;
+SHOW DATABASES;
+USE db_name;
+SHOW TABLES;</code></div>
+                    <h6>Table Level -</h6>
+                    <div class="code-box code-box-color"><code>-- create
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    salary DECIMAL(10,2)
+);
+
+-- delete table with structure
+DROP TABLE employees;
+
+-- delete all data, keep structure
+TRUNCATE TABLE employees;</code></div>
+                    <h6>ALTER TABLE -</h6>
+                    <div class="code-box code-box-color"><code>-- add column
+ALTER TABLE employees ADD COLUMN email VARCHAR(100);
+
+-- drop column
+ALTER TABLE employees DROP COLUMN email;
+
+-- change datatype/constraint
+ALTER TABLE employees MODIFY COLUMN name VARCHAR(80) NOT NULL;
+
+-- rename column (with new definition)
+ALTER TABLE employees CHANGE COLUMN name full_name VARCHAR(80);
+
+-- rename table
+ALTER TABLE employees RENAME TO staff;</code></div>
+                    <h6>Indexes -</h6>
+                    <div class="code-box code-box-color"><code>CREATE INDEX idx_emp_name ON employees (name);
+DROP INDEX idx_emp_name;</code></div>
+                    <ul class="justify">
+                        <li><b>DROP vs TRUNCATE vs DELETE :</b> DROP removes the table itself; TRUNCATE removes all rows but keeps the structure (no WHERE, faster, usually cannot be rolled back); DELETE removes rows one by one, supports WHERE, and can be rolled back.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="dml">
+                <h4 class="heading">DML Commands</h4>
+                <div class="content">
+                    <p>DML commands add, change, and remove the data inside tables.</p>
+                    <h6>INSERT -</h6>
+                    <div class="code-box code-box-color"><code>INSERT INTO employees (name, salary)
+VALUES ('John Doe', 50000),
+       ('Jane Roe', 60000);
+
+-- without column list, values must match column order
+INSERT INTO employees VALUES (1, 'John Doe', 50000);</code></div>
+                    <h6>UPDATE -</h6>
+                    <div class="code-box code-box-color"><code>UPDATE employees
+SET salary = 55000, name = 'John D.'
+WHERE id = 1;</code></div>
+                    <h6>DELETE -</h6>
+                    <div class="code-box code-box-color"><code>DELETE FROM employees WHERE id = 1;
+
+-- without WHERE, deletes ALL rows (structure remains)
+DELETE FROM employees;</code></div>
+                    <p>Always double-check the WHERE clause on UPDATE and DELETE; without it, the change applies to every row in the table. MERGE (upsert) inserts a row or updates it if it already exists.</p>
+                </div>
+            </div>
+
+            <div class="sections" id="dql">
+                <h4 class="heading">Querying Data</h4>
+                <div class="content">
+                    <p>The SELECT statement retrieves data and is the foundation of querying.</p>
+                    <div class="code-box code-box-color"><code>SELECT col1, col2 FROM table_name;   -- specific columns
+SELECT * FROM table_name;            -- all columns
+SELECT DISTINCT country FROM customers;   -- unique values
+SELECT name AS "Full Name" FROM employees; -- rename output column</code></div>
+                    <h6>WHERE Clause -</h6>
+                    <p>Filters rows using conditions built from operators: comparison (<code>=</code>, <code>!=</code> or <code>&lt;&gt;</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>), logical (<code>AND</code>, <code>OR</code>, <code>NOT</code>), and arithmetic.</p>
+                    <div class="code-box code-box-color"><code>SELECT * FROM customers WHERE country = 'Mexico';
+SELECT * FROM customers
+WHERE country = 'Germany' AND (city = 'Berlin' OR city = 'Munich');</code></div>
+                    <ul class="justify">
+                        <li><b>IN :</b> Shorthand for multiple ORs: <code>WHERE country IN ('Germany', 'France', 'UK')</code>. Also works with a subquery.</li>
+                        <li><b>BETWEEN :</b> Inclusive range: <code>WHERE price BETWEEN 10 AND 20</code>. Works with numbers, text, and dates.</li>
+                        <li><b>IS NULL / IS NOT NULL :</b> NULL cannot be tested with <code>=</code>; use <code>WHERE email IS NULL</code>.</li>
+                    </ul>
+                    <h6>LIKE Patterns -</h6>
+                    <p><code>%</code> matches any number of characters (including zero); <code>_</code> matches exactly one character.</p>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Pattern</th>
+                                    <th>Matches</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>LIKE 'a%'</code></td>
+                                    <td>Values starting with "a"</td>
+                                </tr>
+                                <tr>
+                                    <td><code>LIKE '%a'</code></td>
+                                    <td>Values ending with "a"</td>
+                                </tr>
+                                <tr>
+                                    <td><code>LIKE '%or%'</code></td>
+                                    <td>Values containing "or" anywhere</td>
+                                </tr>
+                                <tr>
+                                    <td><code>LIKE '_r%'</code></td>
+                                    <td>"r" in the second position</td>
+                                </tr>
+                                <tr>
+                                    <td><code>LIKE 'a_%'</code></td>
+                                    <td>Starts with "a", at least 2 characters</td>
+                                </tr>
+                                <tr>
+                                    <td><code>LIKE 'a%o'</code></td>
+                                    <td>Starts with "a", ends with "o"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h6>Sorting &amp; Limiting -</h6>
+                    <div class="code-box code-box-color"><code>-- sort (ASC is default; NULLs sort first in ASC)
+SELECT * FROM customers ORDER BY country ASC, name DESC;
+
+-- limit rows (varies by database)
+SELECT * FROM customers LIMIT 3;                  -- MySQL / PostgreSQL
+SELECT TOP 3 * FROM customers;                    -- SQL Server
+SELECT * FROM customers FETCH FIRST 3 ROWS ONLY;  -- standard
+SELECT * FROM customers WHERE ROWNUM &lt;= 3;        -- Oracle</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="aggregates">
+                <h4 class="heading">Aggregates &amp; Grouping</h4>
+                <div class="content">
+                    <p>Aggregate functions perform a calculation over a set of rows and return a single value: <code>COUNT()</code> (number of rows), <code>SUM()</code>, <code>AVG()</code>, <code>MAX()</code>, and <code>MIN()</code>.</p>
+                    <div class="code-box code-box-color"><code>SELECT COUNT(*) FROM products;
+SELECT MIN(price) AS cheapest, MAX(price) AS costliest FROM products;
+SELECT AVG(price) FROM products;
+SELECT SUM(quantity) FROM order_details;</code></div>
+                    <h6>GROUP BY -</h6>
+                    <p>Groups rows that share a value into summary rows, almost always combined with an aggregate function. Grouping by multiple columns creates hierarchical groups.</p>
+                    <div class="code-box code-box-color"><code>-- customers per country
+SELECT country, COUNT(customer_id)
+FROM customers
+GROUP BY country
+ORDER BY COUNT(customer_id) DESC;</code></div>
+                    <h6>HAVING -</h6>
+                    <p>WHERE cannot use aggregate functions, so HAVING exists to filter groups after grouping. WHERE filters rows before grouping and runs first.</p>
+                    <div class="code-box code-box-color"><code>SELECT country, COUNT(customer_id)
+FROM customers
+GROUP BY country
+HAVING COUNT(customer_id) > 5;</code></div>
+                    <h6>General Clause Order -</h6>
+                    <div class="code-box code-box-color"><code>SELECT column(s)
+FROM table_name
+WHERE condition        -- filter rows
+GROUP BY column(s)     -- group them
+HAVING condition       -- filter groups
+ORDER BY column(s)     -- sort result
+LIMIT n;               -- cap result</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="joins">
+                <h4 class="heading">Joins</h4>
+                <div class="content">
+                    <p>A join combines rows from two or more tables based on a related column between them, usually a foreign key matching a primary key.</p>
+                    <ul class="justify">
+                        <li><b>INNER JOIN :</b> Returns only the rows with matching values in both tables. Non-matching rows are dropped.</li>
+                        <li><b>LEFT (OUTER) JOIN :</b> Returns all rows from the left table plus matches from the right; where there is no match, the right table's columns are NULL.</li>
+                        <li><b>RIGHT (OUTER) JOIN :</b> The mirror image: all rows from the right table, NULLs for unmatched left columns.</li>
+                        <li><b>FULL (OUTER) JOIN :</b> All rows from both tables, with NULLs on whichever side has no match. MySQL has no FULL JOIN keyword; emulate it with <code>LEFT JOIN ... UNION ... RIGHT JOIN</code>.</li>
+                        <li><b>CROSS JOIN :</b> Every row of the first table paired with every row of the second (Cartesian product); no join condition, m*n rows.</li>
+                        <li><b>SELF JOIN :</b> A table joined with itself using two aliases, used for hierarchical data such as employees and their managers.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>-- inner join
+SELECT c.customer_name, o.product
+FROM customers c
+INNER JOIN orders o ON c.customer_id = o.customer_id;
+
+-- left join
+SELECT c.customer_name, o.order_id
+FROM customers c
+LEFT JOIN orders o ON c.customer_id = o.customer_id;
+
+-- self join: employee with their manager
+SELECT e1.name AS employee, e2.name AS manager
+FROM employees e1
+JOIN employees e2 ON e1.manager_id = e2.employee_id;</code></div>
+                    <ul class="justify">
+                        <li><b>Exclusive Joins :</b> A left-exclusive join (rows only in the left table) is a LEFT JOIN filtered with <code>WHERE right_table.key IS NULL</code>; the right-exclusive version mirrors it with RIGHT JOIN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="set-ops">
+                <h4 class="heading">Set Operations</h4>
+                <div class="content">
+                    <p>Set operations combine the result sets of two or more SELECT queries, stacking rows vertically. Each SELECT must return the same number of columns, in the same order, with compatible data types (unlike joins, which combine columns side by side based on a condition).</p>
+                    <ul class="justify">
+                        <li><b>UNION :</b> Combines both result sets and removes duplicates.</li>
+                        <li><b>UNION ALL :</b> Same, but keeps duplicates. Faster since no de-duplication happens.</li>
+                        <li><b>INTERSECT :</b> Returns only the rows present in both result sets.</li>
+                        <li><b>EXCEPT (MINUS in Oracle) :</b> Returns rows in the first result set that are not in the second.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>SELECT city FROM customers
+UNION
+SELECT city FROM suppliers
+ORDER BY city;</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="subqueries">
+                <h4 class="heading">Subqueries &amp; Views</h4>
+                <div class="content">
+                    <p>A subquery (nested or inner query) is a query inside another query: the inner query runs first and its result feeds the outer query. Subqueries appear in WHERE, FROM, and HAVING clauses and are used for filtering, comparison, and calculation.</p>
+                    <div class="code-box code-box-color"><code>-- students who scored above the class average
+SELECT name, marks
+FROM students
+WHERE marks > (SELECT AVG(marks) FROM students);
+
+-- with IN
+SELECT * FROM customers
+WHERE country IN (SELECT country FROM suppliers);
+
+-- in FROM: max marks among Delhi students
+SELECT MAX(marks)
+FROM (SELECT * FROM students WHERE city = 'Delhi') AS delhi_students;</code></div>
+                    <ul class="justify">
+                        <li><b>Subqueries vs Joins :</b> Subqueries break a complex task into steps and are easier to read for simple cases; joins are generally more efficient for combining data from multiple tables at scale.</li>
+                    </ul>
+                    <h5>Views :</h5>
+                    <p>A view is a virtual table defined by a stored SELECT statement. It holds no data of its own; the database re-runs the query each time the view is used, so a view always shows up-to-date data. Views simplify complex queries and restrict which columns or rows users can see.</p>
+                    <div class="code-box code-box-color"><code>CREATE VIEW high_earners AS
+SELECT name, salary FROM employees WHERE salary > 80000;
+
+SELECT * FROM high_earners;
+DROP VIEW high_earners;</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="dcl-tcl">
+                <h4 class="heading">DCL &amp; TCL</h4>
+                <div class="content">
+                    <h6>DCL (Data Control Language) -</h6>
+                    <p>DCL manages access rights and permissions, ensuring only authorized users can read or modify data.</p>
+                    <div class="code-box code-box-color"><code>-- give a user SELECT permission on a table
+GRANT SELECT ON employees TO analyst;
+
+-- take it back
+REVOKE SELECT ON employees FROM analyst;</code></div>
+                    <h6>TCL (Transaction Control Language) -</h6>
+                    <p>TCL groups DML statements into transactions so related changes succeed or fail together.</p>
+                    <ul class="justify">
+                        <li><b>COMMIT :</b> Permanently saves all changes made since the transaction began.</li>
+                        <li><b>ROLLBACK :</b> Undoes all changes made in the current transaction, typically after an error.</li>
+                        <li><b>SAVEPOINT :</b> Marks a named point inside a transaction so you can roll back to it without undoing everything before it.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>START TRANSACTION;
+
+UPDATE accounts SET balance = balance - 100 WHERE id = 123;
+SAVEPOINT before_credit;
+
+UPDATE accounts SET balance = balance + 100 WHERE id = 456;
+-- error here?
+ROLLBACK TO before_credit;   -- first update still applied
+
+COMMIT;                      -- make it permanent</code></div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav>
+                <a href="/Cheatsheets"><i class="bi bi-arrow-left-square-fill"></i></a>
+                <a href="#" ><i class="bi bi-arrow-up-square-fill"></i></a>
+            </nav>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
