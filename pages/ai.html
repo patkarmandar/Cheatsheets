@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>AI Cheatsheet</title>
+
+        <!-- Bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+
+    <body data-theme="dark">
+        <div class="container">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
+
+            <h3 class="title">Artificial Intelligence</h3>
+
+            <div class="section-list">
+                <ul>
+                    <li><a href="#ai">Artificial Intelligence</a></li>
+                    <li><a href="#ml">Machine Learning</a></li>
+                    <li><a href="#deep-learning">Deep Learning</a></li>
+                    <li><a href="#models">Models</a></li>
+                    <li><a href="#llm">Generative AI &amp; LLMs</a></li>
+                    <li><a href="#prompting">Prompt Engineering &amp; RAG</a></li>
+                    <li><a href="#agents">AI Agents</a></li>
+                    <li><a href="#mcp">MCP</a></li>
+                </ul>
+            </div>
+
+            <div class="sections" id="ai">
+                <h4 class="heading">Artificial Intelligence</h4>
+                <div class="content">
+                    <p>Artificial Intelligence (AI) is the field of building systems that perform tasks which normally require human intelligence: understanding language, recognizing images, making decisions, and solving problems. Modern AI is not explicitly programmed with rules; it learns patterns from data.</p>
+                    <h6>Types of AI by Capability -</h6>
+                    <ul class="justify">
+                        <li><b>Narrow AI (ANI) :</b> AI built for a specific task, such as spam filtering, face recognition, route navigation, or chatbots. All AI in use today is narrow AI, even the most capable systems.</li>
+                        <li><b>General AI (AGI) :</b> A hypothetical system that matches human intelligence across any task, able to learn and reason about anything a person can. Not achieved yet; it is the stated goal of major AI labs.</li>
+                        <li><b>Super AI (ASI) :</b> A hypothetical system that surpasses human intelligence in all fields. Purely theoretical.</li>
+                    </ul>
+                    <h6>Major Subfields -</h6>
+                    <ul class="justify">
+                        <li><b>Machine Learning (ML) :</b> Systems that learn from data instead of hand-written rules. The engine behind almost all modern AI.</li>
+                        <li><b>Natural Language Processing (NLP) :</b> Understanding and generating human language: translation, summarization, chatbots.</li>
+                        <li><b>Computer Vision :</b> Understanding images and video: object detection, face recognition, medical imaging.</li>
+                        <li><b>Speech :</b> Converting speech to text (recognition) and text to speech (synthesis).</li>
+                        <li><b>Robotics :</b> Combining perception, planning, and control so machines can act in the physical world.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="ml">
+                <h4 class="heading">Machine Learning</h4>
+                <div class="content">
+                    <p>Machine Learning is the practice of training algorithms to find patterns in data and make predictions or decisions without being explicitly programmed for the task. Instead of writing rules ("if the email contains X, mark as spam"), you show the algorithm thousands of examples and it learns the rules itself.</p>
+                    <h6>Key Terms -</h6>
+                    <ul class="justify">
+                        <li><b>Dataset :</b> The collection of examples used for learning, usually split into training data (to learn from) and test data (to check performance on unseen examples).</li>
+                        <li><b>Features :</b> The input variables the model looks at, such as an email's sender, subject, and word counts.</li>
+                        <li><b>Label :</b> The correct answer attached to a training example, such as "spam" or "not spam".</li>
+                        <li><b>Training :</b> The process of adjusting the model using the data until its predictions become accurate.</li>
+                        <li><b>Inference :</b> Using the trained model to make predictions on new, unseen input.</li>
+                    </ul>
+                    <h6>Types of Machine Learning -</h6>
+                    <ul class="justify">
+                        <li><b>Supervised Learning :</b> Learns from labeled examples (input plus correct answer). Used for classification (predicting a category: spam or not, disease or not) and regression (predicting a number: house price, temperature). Examples: linear regression, decision trees, random forests.</li>
+                        <li><b>Unsupervised Learning :</b> Finds structure in unlabeled data on its own. Used for clustering (grouping similar customers), anomaly detection (flagging unusual transactions), and dimensionality reduction. Example: k-means clustering.</li>
+                        <li><b>Semi-Supervised Learning :</b> Trains on a small labeled set plus a large unlabeled set, useful when labeling is expensive.</li>
+                        <li><b>Reinforcement Learning (RL) :</b> An agent learns by acting in an environment and receiving rewards or penalties, improving through trial and error. Used in game-playing AI (AlphaGo), robotics, and for aligning LLM behavior with human preferences (RLHF).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="deep-learning">
+                <h4 class="heading">Deep Learning</h4>
+                <div class="content">
+                    <p>Deep Learning is a branch of machine learning based on neural networks with many layers. Each layer learns increasingly abstract features from the previous one, for example edges, then shapes, then faces. Deep learning powers modern image recognition, speech, and language models, and it scales: more data and more compute keep improving results, which is why training runs on GPU clusters.</p>
+                    <ul class="justify">
+                        <li><b>Neural Network :</b> A network of simple units (neurons) organized in layers. Each connection has a weight, and training adjusts these weights so the network's output moves closer to the correct answer (using backpropagation and gradient descent).</li>
+                    </ul>
+                    <h6>Common Architectures -</h6>
+                    <ul class="justify">
+                        <li><b>CNN (Convolutional Neural Network) :</b> Specialized for grid-like data, mainly images. Used in image classification, object detection, and medical imaging.</li>
+                        <li><b>RNN / LSTM :</b> Processes sequences step by step while keeping memory of earlier steps. Formerly standard for text and time series, now largely replaced by transformers.</li>
+                        <li><b>Transformer :</b> The architecture behind modern AI. Its attention mechanism lets the model weigh how every part of the input relates to every other part, and it processes sequences in parallel, making huge models trainable. Introduced in the 2017 paper "Attention Is All You Need"; the basis of all LLMs.</li>
+                        <li><b>Diffusion Models :</b> Generate images by learning to reverse noise, starting from random noise and refining it into a picture. Used by image generators like Stable Diffusion.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="models">
+                <h4 class="heading">Models</h4>
+                <div class="content">
+                    <p>A model is the trained artifact that comes out of machine learning: a mathematical function with learned parameters (weights) that maps inputs to outputs. The "knowledge" lives in the weights, which are just large arrays of numbers. Model size is measured in parameters; modern LLMs range from a few billion to trillions.</p>
+                    <h6>Model Lifecycle -</h6>
+                    <ul class="justify">
+                        <li><b>Pre-Training :</b> Training from scratch on a massive general dataset. Extremely expensive; done by AI labs, not end users.</li>
+                        <li><b>Fine-Tuning :</b> Taking a pre-trained model and training it further on a smaller, task-specific dataset, such as adapting a general LLM to medical or legal text.</li>
+                        <li><b>Evaluation :</b> Measuring performance on data the model has never seen, using benchmarks and metrics like accuracy.</li>
+                        <li><b>Deployment :</b> Serving the model for inference, either through a provider's API or self-hosted on your own hardware.</li>
+                    </ul>
+                    <h6>Key Concepts -</h6>
+                    <ul class="justify">
+                        <li><b>Overfitting :</b> The model memorizes the training data instead of learning general patterns, so it performs great on training data and poorly on new data. The opposite, underfitting, means the model is too simple to capture the pattern at all.</li>
+                        <li><b>Open vs Closed Weights :</b> Open-weight models (Llama, Mistral, Gemma) can be downloaded and run on your own hardware. Closed models (GPT, Claude, Gemini) are accessed only through the provider's API.</li>
+                        <li><b>Multimodal Models :</b> Models that handle more than text, taking images, audio, or video as input and sometimes producing them as output.</li>
+                        <li><b>Distillation / Quantization :</b> Techniques to shrink models: distillation trains a small model to imitate a large one, and quantization stores weights with fewer bits so the model runs on smaller hardware.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="llm">
+                <h4 class="heading">Generative AI &amp; LLMs</h4>
+                <div class="content">
+                    <p>Generative AI creates new content (text, images, audio, video, code) instead of only classifying or predicting. A Large Language Model (LLM) is a generative model trained on massive amounts of text to predict the next token, and from that single skill emerges the ability to answer questions, write code, summarize, translate, and reason. Examples: GPT (OpenAI), Claude (Anthropic), Gemini (Google), Llama (Meta, open weights), Mistral.</p>
+                    <h6>How LLMs Work -</h6>
+                    <ul class="justify">
+                        <li><b>Tokens :</b> LLMs process text as tokens, chunks of a few characters (roughly 3-4 characters of English per token). Both input and output are measured and billed in tokens.</li>
+                        <li><b>Context Window :</b> The maximum number of tokens a model can consider at once, including the conversation so far. Anything beyond it is forgotten. Modern models range from about 128K to over 1M tokens.</li>
+                        <li><b>Next-Token Prediction :</b> The model repeatedly predicts the most likely next token given everything before it, one token at a time, which is why responses stream word by word.</li>
+                        <li><b>Temperature :</b> A setting that controls randomness. Low values give focused, consistent output (good for code and facts); high values give more creative and varied output.</li>
+                        <li><b>System Prompt :</b> Hidden instructions given to the model before the user's message that set its role, rules, and style.</li>
+                    </ul>
+                    <h6>Limitations -</h6>
+                    <ul class="justify">
+                        <li><b>Hallucination :</b> The model can generate confident but false information, because it predicts plausible text rather than looking up facts.</li>
+                        <li><b>Knowledge Cutoff :</b> The model only knows what was in its training data, which ends at a fixed date. Anything after that requires giving it the information (search, RAG).</li>
+                        <li><b>Context Limits :</b> Long conversations or documents that exceed the context window get truncated or summarized, losing detail.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="prompting">
+                <h4 class="heading">Prompt Engineering &amp; RAG</h4>
+                <div class="content">
+                    <p>Prompt engineering is the craft of writing inputs that get reliable, high-quality output from an LLM. The same model can perform badly or brilliantly depending on how the task is described.</p>
+                    <h6>Core Techniques -</h6>
+                    <ul class="justify">
+                        <li><b>Zero-Shot :</b> Just ask, with a clear task description and no examples. Works for common tasks.</li>
+                        <li><b>Few-Shot :</b> Include 2-5 examples of input and desired output in the prompt; the model imitates the pattern. Best way to control format.</li>
+                        <li><b>Chain of Thought :</b> Ask the model to reason step by step before answering. Improves accuracy on math and logic. Modern "reasoning models" do this internally.</li>
+                        <li><b>Role &amp; Constraints :</b> Give the model a role ("you are a code reviewer"), explicit rules, and a required output format (such as JSON). Structure long prompts with sections or tags.</li>
+                    </ul>
+                    <h5>RAG (Retrieval-Augmented Generation) :</h5>
+                    <p>RAG gives an LLM knowledge it was not trained on by fetching relevant documents at question time and placing them in the prompt. This grounds answers in real sources, reduces hallucination, and lets the model use private or current data without retraining. Application: a support chatbot that answers from your product documentation.</p>
+                    <h6>RAG Pipeline -</h6>
+                    <ul class="justify">
+                        <li><b>Embeddings :</b> Documents are split into chunks and converted into embeddings, numeric vectors where similar meanings land close together.</li>
+                        <li><b>Vector Database :</b> Stores the embeddings and finds the chunks most similar to a query. Examples: Pinecone, Chroma, Qdrant, pgvector.</li>
+                        <li><b>Retrieve &amp; Generate :</b> The user's question is embedded, the closest chunks are retrieved, and the LLM answers using those chunks as context, often citing them.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="agents">
+                <h4 class="heading">AI Agents</h4>
+                <div class="content">
+                    <p>An AI agent is an LLM that does not just answer, but acts: it plans, uses tools, observes the results, and keeps going until a goal is reached. A chatbot answers one message; an agent can take a task like "fix this bug" and edit files, run tests, read the errors, and try again.</p>
+                    <h6>The Agent Loop -</h6>
+                    <p><code>Goal → Reason (decide next step) → Act (call a tool) → Observe (read the result) → repeat until done</code></p>
+                    <ul class="justify">
+                        <li><b>Tool / Function Calling :</b> The model is given a list of tools it may call (search the web, run code, query a database, send an email). It responds with a structured call, the application executes it, and the result is fed back to the model.</li>
+                        <li><b>Memory :</b> Agents keep short-term memory (the conversation and recent results in context) and sometimes long-term memory (notes or vector stores that persist across sessions).</li>
+                        <li><b>Planning :</b> Breaking a large goal into steps, tracking progress, and revising the plan when a step fails.</li>
+                    </ul>
+                    <h6>Types of Agent Systems -</h6>
+                    <ul class="justify">
+                        <li><b>Workflows :</b> Fixed, predefined sequences of LLM calls and tools. Predictable and reliable; best when the steps are known in advance.</li>
+                        <li><b>Autonomous Agents :</b> The LLM decides its own steps and tool calls dynamically. Flexible and powerful for open-ended tasks, but less predictable and needs guardrails.</li>
+                        <li><b>Multi-Agent Systems :</b> Several specialized agents cooperate, such as a planner delegating to coder and reviewer agents, coordinated by an orchestrator.</li>
+                    </ul>
+                    <ul class="justify">
+                        <li><b>Examples :</b> Coding agents (Claude Code, GitHub Copilot agent mode, Cursor), research agents that browse and compile reports, and support agents that resolve tickets end to end.</li>
+                        <li><b>Frameworks :</b> LangChain / LangGraph, Claude Agent SDK, OpenAI Agents SDK, CrewAI.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="mcp">
+                <h4 class="heading">MCP</h4>
+                <div class="content">
+                    <p>The Model Context Protocol (MCP) is an open standard, introduced by Anthropic in 2024, that defines how AI applications connect to external tools and data sources. Instead of writing a custom integration for every app-tool pair, a tool exposes one MCP server and any MCP-capable app can use it, like USB-C for AI integrations.</p>
+                    <h6>Architecture -</h6>
+                    <ul class="justify">
+                        <li><b>Host :</b> The AI application the user interacts with, such as Claude Desktop, Claude Code, or an IDE.</li>
+                        <li><b>Client :</b> The connector inside the host that maintains a connection to one server.</li>
+                        <li><b>Server :</b> A small program that exposes capabilities from some system (GitHub, a database, the filesystem, Slack) over the protocol. Servers run locally or remotely.</li>
+                    </ul>
+                    <h6>What a Server Exposes -</h6>
+                    <ul class="justify">
+                        <li><b>Tools :</b> Actions the model can call, such as <code>create_issue</code> or <code>query_database</code>.</li>
+                        <li><b>Resources :</b> Data the host can read into context, such as files, schemas, or documents.</li>
+                        <li><b>Prompts :</b> Reusable prompt templates the user can invoke.</li>
+                    </ul>
+                    <p>Application: connect a GitHub MCP server and a Postgres MCP server to an AI assistant, and it can read open issues, query the production schema, and open a pull request, all through one standard protocol. SDKs are available in Python, TypeScript, and other languages.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav>
+                <a href="/Cheatsheets"><i class="bi bi-arrow-left-square-fill"></i></a>
+                <a href="#" ><i class="bi bi-arrow-up-square-fill"></i></a>
+            </nav>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
