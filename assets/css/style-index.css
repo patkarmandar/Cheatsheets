@@ -35,7 +35,7 @@ body {
 
 /* ===== Container ===== */
 .container {
-    max-width: 680px;
+    max-width: 860px;
     width: 100%;
     padding: 2rem 1.5rem;
     text-align: center;
@@ -219,7 +219,29 @@ body {
     --i: 14;
 }
 
+.list-block:nth-child(15) {
+    --i: 15;
+}
+
+.list-block:nth-child(16) {
+    --i: 16;
+}
+
+.list-block:nth-child(17) {
+    --i: 17;
+}
+
+.list-block:nth-child(18) {
+    --i: 18;
+}
+
 /* ===== Responsiveness ===== */
+@media only screen and (min-width: 768px) {
+    .list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media only screen and (max-width: 520px) {
     .container {
         padding: 1.5rem 1rem;
