@@ -243,6 +243,10 @@ body {
     --i: 20;
 }
 
+.list-block:nth-child(21) {
+    --i: 21;
+}
+
 /* ===== Responsiveness ===== */
 @media only screen and (min-width: 768px) {
     .list {

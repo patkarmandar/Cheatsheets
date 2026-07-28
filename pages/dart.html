@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Dart Cheatsheet</title>
+
+        <!-- Bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+
+    <body data-theme="dark">
+        <div class="container">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
+
+            <h3 class="title">Dart</h3>
+
+            <div class="section-list">
+                <ul>
+                    <li><a href="#dart">Dart</a></li>
+                    <li><a href="#commands">Setup &amp; Commands</a></li>
+                    <li><a href="#basics">Variables &amp; Types</a></li>
+                    <li><a href="#operators">Operators</a></li>
+                    <li><a href="#null-safety">Null Safety</a></li>
+                    <li><a href="#control-flow">Control Flow</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#functions">Functions</a></li>
+                    <li><a href="#oop">Classes &amp; OOP</a></li>
+                    <li><a href="#async">Async</a></li>
+                    <li><a href="#extras">Generics &amp; Exceptions</a></li>
+                </ul>
+            </div>
+
+            <div class="sections" id="dart">
+                <h4 class="heading">Dart</h4>
+                <div class="content">
+                    <p>Dart is an open-source, general-purpose programming language created by Google in 2011. It is object-oriented, class-based, and type-safe, with a C-style syntax that is easy to pick up. Dart is best known as the language behind Flutter, but it also runs on servers, the command line, and the web.</p>
+                    <h6>Key Features -</h6>
+                    <ul class="justify">
+                        <li><b>Type-Safe :</b> Statically typed with sound null safety, catching many errors before the program runs, while still allowing type inference with <code>var</code>.</li>
+                        <li><b>Object-Oriented :</b> Everything is an object, even numbers and functions; every object is an instance of a class.</li>
+                        <li><b>Compiles Two Ways :</b> JIT (Just-In-Time) compilation gives fast hot reload during development; AOT (Ahead-Of-Time) compiles to fast native machine code for release.</li>
+                        <li><b>Cross-Platform :</b> Runs on mobile, web, desktop, and servers from one codebase.</li>
+                        <li><b>Async Built-In :</b> First-class support for asynchronous programming with Futures, Streams, and <code>async / await</code>.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>// every Dart program starts at main()
+void main() {
+    print('Hello, Dart!');
+}</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="commands">
+                <h4 class="heading">Setup &amp; Commands</h4>
+                <div class="content">
+                    <p>The Dart SDK provides the <code>dart</code> command-line tool for running, compiling, and managing projects. It comes bundled with Flutter, or can be installed on its own.</p>
+                    <div class="code-box code-box-color"><code>dart --version           # check installed version
+dart create my_app       # create a new project
+dart run                 # run the project
+dart run bin/main.dart   # run a specific file
+dart compile exe main.dart   # compile to native executable
+dart analyze             # check code for errors and warnings
+dart format .            # auto-format all files
+dart test                # run tests</code></div>
+                    <h6>Packages (pub) -</h6>
+                    <p>Dart uses <code>pub</code> as its package manager, with dependencies listed in <code>pubspec.yaml</code> and packages hosted on pub.dev.</p>
+                    <div class="code-box code-box-color"><code>dart pub get             # install dependencies from pubspec.yaml
+dart pub add http        # add a package
+dart pub upgrade         # update packages</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="basics">
+                <h4 class="heading">Variables &amp; Types</h4>
+                <div class="content">
+                    <p>Declare variables with an explicit type, or use <code>var</code> to let Dart infer it. Use <code>final</code> and <code>const</code> for values that never change.</p>
+                    <div class="code-box code-box-color"><code>var name = 'Ada';          // inferred as String
+String city = 'London';    // explicit type
+final age = 36;            // set once at runtime, cannot reassign
+const pi = 3.14;           // compile-time constant
+dynamic anything = 5;      // type can change (avoid when possible)</code></div>
+                    <h6>Built-in Types -</h6>
+                    <ul class="justify">
+                        <li><b>int :</b> Whole numbers, e.g. <code>42</code>.</li>
+                        <li><b>double :</b> Floating-point numbers, e.g. <code>3.14</code>. Both int and double are subtypes of <code>num</code>.</li>
+                        <li><b>String :</b> Text in single or double quotes; supports interpolation with <code>$</code>.</li>
+                        <li><b>bool :</b> <code>true</code> or <code>false</code>.</li>
+                        <li><b>List :</b> An ordered collection (array).</li>
+                        <li><b>Map :</b> Key-value pairs.</li>
+                        <li><b>Set :</b> An unordered collection of unique values.</li>
+                    </ul>
+                    <h6>String Interpolation -</h6>
+                    <div class="code-box code-box-color"><code>var name = 'Ada';
+print('Hello, $name');              // simple variable
+print('Name has ${name.length} letters');   // expression in ${}</code></div>
+                    <ul class="justify">
+                        <li><b>final vs const :</b> <code>final</code> is set once when the code runs; <code>const</code> must be known at compile time and is a fixed constant.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="operators">
+                <h4 class="heading">Operators</h4>
+                <div class="content">
+                    <ul class="justify">
+                        <li><b>Arithmetic :</b> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> (double result), <code>~/</code> (integer division), <code>%</code> (remainder).</li>
+                        <li><b>Comparison :</b> <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li>
+                        <li><b>Logical :</b> <code>&amp;&amp;</code> (and), <code>||</code> (or), <code>!</code> (not).</li>
+                        <li><b>Assignment :</b> <code>=</code>, <code>+=</code>, <code>-=</code>, and <code>??=</code> (assign only if currently null).</li>
+                    </ul>
+                    <h6>Null-Aware Operators -</h6>
+                    <ul class="justify">
+                        <li><b>?. :</b> Call a member only if the object is not null: <code>user?.name</code>.</li>
+                        <li><b>?? :</b> Provide a fallback when a value is null: <code>name ?? 'Guest'</code>.</li>
+                        <li><b>! :</b> Assert a value is not null (use carefully): <code>value!</code>.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>int? a;                       // nullable, currently null
+int b = a ?? 0;               // b = 0 because a is null
+a ??= 10;                     // a becomes 10 (was null)
+print(a?.isEven);             // safe call, prints true</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="null-safety">
+                <h4 class="heading">Null Safety</h4>
+                <div class="content">
+                    <p>Dart has sound null safety: variables cannot hold <code>null</code> unless you explicitly allow it with a <code>?</code>. This eliminates a whole class of "null reference" crashes by catching them at compile time.</p>
+                    <ul class="justify">
+                        <li><b>Non-Nullable (default) :</b> <code>String name</code> can never be null and must be initialized.</li>
+                        <li><b>Nullable :</b> <code>String? name</code> may hold a value or null.</li>
+                        <li><b>late :</b> Promises to set a non-nullable variable before it is used, useful for values initialized after declaration.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>String name = 'Ada';    // must have a value
+String? nickname;       // allowed to be null
+late String id;         // will be assigned before first use
+
+nickname = null;        // OK, it is nullable
+print(nickname?.length ?? 0);   // 0 when null</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="control-flow">
+                <h4 class="heading">Control Flow</h4>
+                <div class="content">
+                    <div class="code-box code-box-color"><code>// if / else
+if (score &gt;= 90) {
+    print('A');
+} else if (score &gt;= 60) {
+    print('Pass');
+} else {
+    print('Fail');
+}
+
+// switch
+switch (day) {
+    case 'Sat':
+    case 'Sun':
+        print('Weekend');
+        break;
+    default:
+        print('Weekday');
+}
+
+// loops
+for (var i = 0; i &lt; 3; i++) print(i);
+for (var item in items) print(item);   // for-in
+while (n &gt; 0) n--;</code></div>
+                    <ul class="justify">
+                        <li><b>Ternary :</b> <code>var result = score &gt;= 60 ? 'Pass' : 'Fail';</code></li>
+                        <li><b>break / continue :</b> Exit a loop early or skip to the next iteration.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="collections">
+                <h4 class="heading">Collections</h4>
+                <div class="content">
+                    <div class="code-box code-box-color"><code>// List (ordered)
+var nums = [1, 2, 3];
+nums.add(4);
+print(nums[0]);            // 1
+
+// Set (unique, unordered)
+var tags = {'a', 'b', 'a'};   // {a, b}
+
+// Map (key-value)
+var user = {'name': 'Ada', 'age': 36};
+print(user['name']);       // Ada</code></div>
+                    <h6>Useful Methods -</h6>
+                    <ul class="justify">
+                        <li><b>map :</b> Transform each element: <code>nums.map((n) =&gt; n * 2)</code>.</li>
+                        <li><b>where :</b> Filter elements: <code>nums.where((n) =&gt; n.isEven)</code>.</li>
+                        <li><b>forEach :</b> Run code for each element.</li>
+                        <li><b>reduce / fold :</b> Combine elements into one value.</li>
+                    </ul>
+                    <h6>Spread &amp; Collection-If -</h6>
+                    <div class="code-box code-box-color"><code>var a = [1, 2];
+var b = [0, ...a, 3];          // [0, 1, 2, 3]  spread
+var list = [
+    'always',
+    if (isAdmin) 'admin',       // collection-if
+    for (var n in a) 'item$n',  // collection-for
+];</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="functions">
+                <h4 class="heading">Functions</h4>
+                <div class="content">
+                    <div class="code-box code-box-color"><code>// standard function
+int add(int a, int b) {
+    return a + b;
+}
+
+// arrow function (single expression)
+int square(int x) =&gt; x * x;</code></div>
+                    <h6>Parameters -</h6>
+                    <ul class="justify">
+                        <li><b>Positional :</b> Passed in order, like <code>add(2, 3)</code>.</li>
+                        <li><b>Named :</b> Wrapped in <code>{ }</code>, passed by name for clarity. Mark required ones with <code>required</code>.</li>
+                        <li><b>Optional Positional :</b> Wrapped in <code>[ ]</code>, can be left out.</li>
+                        <li><b>Default Values :</b> Give a fallback: <code>greet({String name = 'Guest'})</code>.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>// named parameters
+String greet({required String name, String greeting = 'Hi'}) {
+    return '$greeting, $name';
+}
+greet(name: 'Ada');            // "Hi, Ada"
+greet(name: 'Ada', greeting: 'Hello');</code></div>
+                    <ul class="justify">
+                        <li><b>First-Class Functions :</b> Functions can be stored in variables, passed as arguments, and returned. Anonymous functions (lambdas) use <code>(x) { ... }</code> or arrow syntax.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="oop">
+                <h4 class="heading">Classes &amp; OOP</h4>
+                <div class="content">
+                    <p>Dart is fully object-oriented. Classes bundle data (fields) and behavior (methods), and support inheritance, interfaces, and mixins.</p>
+                    <div class="code-box code-box-color"><code>class Person {
+    String name;
+    int age;
+
+    // constructor (shorthand assigns to fields)
+    Person(this.name, this.age);
+
+    // named constructor
+    Person.guest() : name = 'Guest', age = 0;
+
+    // method
+    void greet() =&gt; print('Hi, I am $name');
+}
+
+var p = Person('Ada', 36);
+p.greet();</code></div>
+                    <h6>OOP Concepts -</h6>
+                    <ul class="justify">
+                        <li><b>Inheritance :</b> <code>extends</code> a parent class; use <code>super</code> to call its constructor and <code>@override</code> to replace a method.</li>
+                        <li><b>Abstract Class :</b> A base class that cannot be instantiated and may declare methods without bodies.</li>
+                        <li><b>Interface :</b> Any class can be an interface via <code>implements</code>, which forces the class to define all its members.</li>
+                        <li><b>Mixin :</b> Reuse methods across unrelated classes with <code>with</code>, without inheritance.</li>
+                        <li><b>Getters / Setters :</b> Custom property access with <code>get</code> and <code>set</code>.</li>
+                        <li><b>Encapsulation :</b> A leading underscore (<code>_field</code>) makes a member private to its file (library).</li>
+                        <li><b>static :</b> Members that belong to the class itself, not to instances.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>class Student extends Person {
+    String school;
+    Student(String name, int age, this.school) : super(name, age);
+
+    @override
+    void greet() =&gt; print('$name studies at $school');
+}</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="async">
+                <h4 class="heading">Async</h4>
+                <div class="content">
+                    <p>Dart handles operations that take time (network calls, file reads) without blocking, using Futures and async/await.</p>
+                    <ul class="justify">
+                        <li><b>Future :</b> A value that will be available later, like a JavaScript promise. It is either completed with a value or an error.</li>
+                        <li><b>async / await :</b> Mark a function <code>async</code> and use <code>await</code> to pause until a Future completes, writing async code that reads like synchronous code.</li>
+                        <li><b>Stream :</b> A sequence of async values over time (like multiple Futures), consumed with <code>await for</code> or <code>.listen()</code>. Used for things like user events or live data.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>Future&lt;String&gt; fetchUser() async {
+    await Future.delayed(Duration(seconds: 1));   // simulate delay
+    return 'Ada';
+}
+
+void main() async {
+    print('Loading...');
+    var user = await fetchUser();
+    print('Got: $user');
+}</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="extras">
+                <h4 class="heading">Generics &amp; Exceptions</h4>
+                <div class="content">
+                    <h6>Generics -</h6>
+                    <p>Generics let a class or function work with any type while staying type-safe, using a type parameter like <code>&lt;T&gt;</code>. Built-in collections use them: <code>List&lt;int&gt;</code>, <code>Map&lt;String, int&gt;</code>.</p>
+                    <div class="code-box code-box-color"><code>T first&lt;T&gt;(List&lt;T&gt; items) =&gt; items[0];
+
+first&lt;int&gt;([1, 2, 3]);        // 1
+first(['a', 'b']);            // 'a', type inferred</code></div>
+                    <h6>Exceptions -</h6>
+                    <p>Handle errors with <code>try / catch</code>, optionally <code>finally</code> for cleanup that always runs. Throw errors with <code>throw</code>.</p>
+                    <div class="code-box code-box-color"><code>try {
+    var result = 10 ~/ 0;         // throws
+} on IntegerDivisionByZeroException {
+    print('Cannot divide by zero');
+} catch (e) {
+    print('Error: $e');
+} finally {
+    print('Always runs');
+}
+
+throw Exception('Something went wrong');</code></div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav>
+                <a href="/Cheatsheets"><i class="bi bi-arrow-left-square-fill"></i></a>
+                <a href="#" ><i class="bi bi-arrow-up-square-fill"></i></a>
+            </nav>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
