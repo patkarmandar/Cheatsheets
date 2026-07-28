@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Flutter Cheatsheet</title>
+
+        <!-- Bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+
+    <body data-theme="dark">
+        <div class="container">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
+
+            <h3 class="title">Flutter</h3>
+
+            <div class="section-list">
+                <ul>
+                    <li><a href="#flutter">Flutter</a></li>
+                    <li><a href="#how-it-works">How Flutter Works</a></li>
+                    <li><a href="#commands">Setup &amp; Commands</a></li>
+                    <li><a href="#structure">Project Structure</a></li>
+                    <li><a href="#widgets">Widgets</a></li>
+                    <li><a href="#layout">Layout Widgets</a></li>
+                    <li><a href="#state">State &amp; StatefulWidget</a></li>
+                    <li><a href="#state-mgmt">State Management</a></li>
+                    <li><a href="#navigation">Navigation</a></li>
+                    <li><a href="#network">Networking &amp; Async</a></li>
+                    <li><a href="#packages">Packages &amp; Uses</a></li>
+                </ul>
+            </div>
+
+            <div class="sections" id="flutter">
+                <h4 class="heading">Flutter</h4>
+                <div class="content">
+                    <p>Flutter is an open-source UI toolkit from Google, released in 2017, for building natively compiled apps for mobile, web, and desktop from a single codebase. It is written in the Dart language (see the Dart cheatsheet for language basics). Instead of using the platform's native UI controls, Flutter draws every pixel itself with its own rendering engine, so the app looks and behaves the same on every platform.</p>
+                    <h6>Key Features -</h6>
+                    <ul class="justify">
+                        <li><b>Single Codebase :</b> One Dart codebase compiles to Android, iOS, web, Windows, macOS, and Linux.</li>
+                        <li><b>Everything Is a Widget :</b> The entire UI is built from widgets, small building blocks composed into a tree.</li>
+                        <li><b>Hot Reload :</b> See code changes in the running app in under a second, without losing the app's current state. This makes UI development very fast.</li>
+                        <li><b>Own Rendering Engine :</b> Flutter paints the UI with its Skia/Impeller engine rather than relying on native components, giving pixel-perfect consistency and smooth 60/120fps animations.</li>
+                        <li><b>Native Performance :</b> Dart compiles ahead-of-time to native machine code for release builds.</li>
+                        <li><b>Rich Widget Sets :</b> Material Design (Android style) and Cupertino (iOS style) widgets are built in.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="how-it-works">
+                <h4 class="heading">How Flutter Works</h4>
+                <div class="content">
+                    <p>Flutter builds the UI as a tree of widgets. When data changes, the affected widgets are rebuilt, and Flutter efficiently updates only what changed on screen, much like React's virtual DOM.</p>
+                    <h6>The Build Process -</h6>
+                    <ul class="justify">
+                        <li><b>1. Widget Tree :</b> Your UI is a nested tree of widgets that describe what the interface should look like.</li>
+                        <li><b>2. build() :</b> Each widget has a <code>build()</code> method that returns its child widgets. Flutter calls it to construct the UI.</li>
+                        <li><b>3. Three Trees :</b> Flutter keeps a Widget tree (the config), an Element tree (the live instances), and a Render tree (what gets painted). Widgets are cheap and thrown away often; elements persist.</li>
+                        <li><b>4. setState / Rebuild :</b> When state changes, the affected widgets rebuild, producing a new widget tree.</li>
+                        <li><b>5. Diff &amp; Paint :</b> Flutter compares the new tree to the old one and repaints only the parts that actually changed.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>void main() =&gt; runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return MaterialApp(
+            home: Scaffold(
+                appBar: AppBar(title: Text('Hello Flutter')),
+                body: Center(child: Text('Welcome!')),
+            ),
+        );
+    }
+}</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="commands">
+                <h4 class="heading">Setup &amp; Commands</h4>
+                <div class="content">
+                    <p>The Flutter SDK includes Dart and the <code>flutter</code> command-line tool. You also need a device or emulator to run the app.</p>
+                    <div class="code-box code-box-color"><code>flutter --version        # check version
+flutter doctor           # check setup and missing dependencies
+flutter create my_app    # create a new project
+cd my_app
+flutter devices          # list connected devices/emulators
+flutter run              # run the app (press r = hot reload, R = restart)
+flutter build apk        # build Android APK
+flutter build ios        # build for iOS
+flutter build web        # build for web</code></div>
+                    <h6>Packages (pub) -</h6>
+                    <p>Dependencies live in <code>pubspec.yaml</code> and come from pub.dev, Dart and Flutter's package registry.</p>
+                    <div class="code-box code-box-color"><code>flutter pub get          # install dependencies
+flutter pub add http     # add a package
+flutter pub upgrade      # update packages</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="structure">
+                <h4 class="heading">Project Structure</h4>
+                <div class="content">
+                    <p>A Flutter project keeps your Dart code in <code>lib/</code> and has separate folders for each target platform.</p>
+                    <div class="code-box code-box-color"><code>my_app/
+├── lib/
+│   ├── main.dart          # entry point, runs the app
+│   ├── screens/           # full-page widgets
+│   ├── widgets/           # reusable UI pieces
+│   ├── models/            # data classes
+│   └── services/          # API calls, business logic
+├── android/               # Android-specific files
+├── ios/                   # iOS-specific files
+├── web/                   # web-specific files
+├── assets/                # images, fonts (declared in pubspec)
+├── test/                  # test files
+└── pubspec.yaml           # dependencies, assets, project config</code></div>
+                    <ul class="justify">
+                        <li><b>main.dart :</b> Contains <code>main()</code>, which calls <code>runApp()</code> with the root widget.</li>
+                        <li><b>pubspec.yaml :</b> The manifest: lists packages, assets, fonts, and the app version.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="widgets">
+                <h4 class="heading">Widgets</h4>
+                <div class="content">
+                    <p>In Flutter, everything on screen is a widget: text, buttons, padding, layout, and even the app itself. Widgets are immutable descriptions of part of the UI, composed into a tree. There are two fundamental kinds.</p>
+                    <ul class="justify">
+                        <li><b>StatelessWidget :</b> Has no internal state that changes; it looks the same once built (unless its inputs change). Example: an icon, a label. It only needs a <code>build()</code> method.</li>
+                        <li><b>StatefulWidget :</b> Holds mutable state that can change over time, triggering rebuilds. Example: a checkbox, a counter, a form.</li>
+                    </ul>
+                    <h6>Common Widgets -</h6>
+                    <ul class="justify">
+                        <li><b>Text :</b> Displays a string, styled with <code>TextStyle</code>.</li>
+                        <li><b>Image :</b> Shows images from assets, network, or files.</li>
+                        <li><b>Icon :</b> A Material or Cupertino icon.</li>
+                        <li><b>Container :</b> A box for styling: padding, margin, color, borders, size.</li>
+                        <li><b>ElevatedButton / TextButton / IconButton :</b> Tappable buttons with an <code>onPressed</code> callback.</li>
+                        <li><b>Scaffold :</b> The basic page layout providing app bar, body, drawer, and bottom navigation.</li>
+                        <li><b>AppBar :</b> The top bar with title and actions.</li>
+                        <li><b>MaterialApp :</b> The root widget that sets up theming, routing, and Material Design.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="layout">
+                <h4 class="heading">Layout Widgets</h4>
+                <div class="content">
+                    <p>Layout in Flutter is done by nesting widgets, mainly rows, columns, and boxes, rather than by writing CSS.</p>
+                    <ul class="justify">
+                        <li><b>Column :</b> Arranges children vertically.</li>
+                        <li><b>Row :</b> Arranges children horizontally.</li>
+                        <li><b>Stack :</b> Layers children on top of each other (for overlays and badges).</li>
+                        <li><b>Container :</b> A single child with padding, margin, decoration, and sizing.</li>
+                        <li><b>Padding :</b> Adds space around its child.</li>
+                        <li><b>Center :</b> Centers its child.</li>
+                        <li><b>Expanded / Flexible :</b> Make a child fill available space inside a Row or Column.</li>
+                        <li><b>SizedBox :</b> A fixed-size box, also used as a spacer.</li>
+                        <li><b>ListView :</b> A scrollable list, with <code>ListView.builder</code> for long or dynamic lists.</li>
+                        <li><b>GridView :</b> A scrollable grid of items.</li>
+                    </ul>
+                    <h6>Alignment -</h6>
+                    <ul class="justify">
+                        <li><b>mainAxisAlignment :</b> Positions children along the main axis (vertical for Column, horizontal for Row).</li>
+                        <li><b>crossAxisAlignment :</b> Positions children along the other axis.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+        Text('Title'),
+        SizedBox(height: 10),        // spacer
+        Row(
+            children: [
+                Icon(Icons.star),
+                Expanded(child: Text('fills the rest')),
+            ],
+        ),
+    ],
+)</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="state">
+                <h4 class="heading">State &amp; StatefulWidget</h4>
+                <div class="content">
+                    <p>State is data that can change while the app runs and affects what is shown. A StatefulWidget pairs with a State class that holds the data; calling <code>setState()</code> tells Flutter to rebuild the widget with the new values.</p>
+                    <div class="code-box code-box-color"><code>class Counter extends StatefulWidget {
+    @override
+    State&lt;Counter&gt; createState() =&gt; _CounterState();
+}
+
+class _CounterState extends State&lt;Counter&gt; {
+    int count = 0;                      // the state
+
+    void increment() {
+        setState(() {                   // triggers a rebuild
+            count++;
+        });
+    }
+
+    @override
+    Widget build(BuildContext context) {
+        return ElevatedButton(
+            onPressed: increment,
+            child: Text('Count: $count'),
+        );
+    }
+}</code></div>
+                    <ul class="justify">
+                        <li><b>setState :</b> Always change state inside <code>setState()</code>, or the UI will not update.</li>
+                        <li><b>Lifecycle :</b> <code>initState()</code> runs once when the widget is created (good for setup), and <code>dispose()</code> runs when it is removed (good for cleanup).</li>
+                        <li><b>BuildContext :</b> A handle to the widget's location in the tree, used to access theme, navigation, and inherited data.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="state-mgmt">
+                <h4 class="heading">State Management</h4>
+                <div class="content">
+                    <p><code>setState</code> works within a single widget, but sharing state across many screens needs a state management solution, so data does not have to be passed down manually through every widget.</p>
+                    <ul class="justify">
+                        <li><b>Provider :</b> The long-recommended, beginner-friendly option built on InheritedWidget. Exposes shared state to the widget tree.</li>
+                        <li><b>Riverpod :</b> A modern, more flexible evolution of Provider, compile-safe and not tied to the widget tree. Popular for new apps.</li>
+                        <li><b>Bloc / Cubit :</b> A structured pattern separating events, business logic, and state. Favored for large, complex apps.</li>
+                        <li><b>GetX :</b> An all-in-one package combining state management, navigation, and dependency injection with minimal code.</li>
+                        <li><b>InheritedWidget :</b> The low-level Flutter mechanism the above tools build on, passing data down the tree efficiently.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="navigation">
+                <h4 class="heading">Navigation</h4>
+                <div class="content">
+                    <p>Flutter manages screens as a stack of routes. You push a new screen onto the stack to navigate forward and pop it to go back.</p>
+                    <div class="code-box code-box-color"><code>// go to a new screen
+Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) =&gt; DetailScreen()),
+);
+
+// return to the previous screen
+Navigator.pop(context);</code></div>
+                    <ul class="justify">
+                        <li><b>Named Routes :</b> Define routes by name in <code>MaterialApp</code> and navigate with <code>Navigator.pushNamed(context, '/details')</code>, cleaner for larger apps.</li>
+                        <li><b>Passing Data :</b> Send data through the screen's constructor, and return data by awaiting the result of <code>push</code>.</li>
+                        <li><b>go_router :</b> The recommended package for advanced, URL-based routing, especially for web and deep linking.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="network">
+                <h4 class="heading">Networking &amp; Async</h4>
+                <div class="content">
+                    <p>Flutter apps fetch data from APIs using Dart's async features (Future, async/await) and an HTTP package. Because the UI runs on a single thread, network calls must be asynchronous so the app stays responsive.</p>
+                    <div class="code-box code-box-color"><code>import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+Future&lt;List&gt; fetchUsers() async {
+    final res = await http.get(Uri.parse('https://api.example.com/users'));
+    if (res.statusCode == 200) {
+        return jsonDecode(res.body);
+    }
+    throw Exception('Failed to load');
+}</code></div>
+                    <ul class="justify">
+                        <li><b>http / dio :</b> <code>http</code> is the simple official package; <code>dio</code> adds interceptors, timeouts, and more for bigger apps.</li>
+                        <li><b>FutureBuilder :</b> A widget that builds UI based on a Future, showing loading, error, and data states automatically.</li>
+                        <li><b>StreamBuilder :</b> The equivalent for a Stream of values, rebuilding as new data arrives.</li>
+                        <li><b>JSON :</b> Parse responses with <code>jsonDecode</code>, usually into model classes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="packages">
+                <h4 class="heading">Packages &amp; Uses</h4>
+                <div class="content">
+                    <p>Flutter's functionality is extended with packages from pub.dev. A few commonly used ones:</p>
+                    <ul class="justify">
+                        <li><b>http / dio :</b> Networking and API calls.</li>
+                        <li><b>provider / riverpod / flutter_bloc :</b> State management.</li>
+                        <li><b>shared_preferences :</b> Store simple key-value data on the device.</li>
+                        <li><b>sqflite / hive / isar :</b> Local databases for structured data.</li>
+                        <li><b>go_router :</b> Declarative routing.</li>
+                        <li><b>firebase_core / cloud_firestore :</b> Firebase backend (auth, database, storage).</li>
+                        <li><b>cached_network_image :</b> Load and cache images from the network.</li>
+                        <li><b>intl :</b> Formatting dates, numbers, and localization.</li>
+                    </ul>
+                    <h6>What Flutter Is Used For -</h6>
+                    <ul class="justify">
+                        <li><b>Cross-Platform Mobile Apps :</b> Its main use, building Android and iOS apps from one codebase.</li>
+                        <li><b>Web &amp; Desktop :</b> The same code can target the browser, Windows, macOS, and Linux.</li>
+                        <li><b>MVPs &amp; Startups :</b> Fast development and hot reload make it ideal for shipping quickly.</li>
+                        <li><b>Rich, Custom UIs :</b> Because Flutter draws everything itself, highly branded and animated interfaces are easy.</li>
+                    </ul>
+                    <h6>Flutter vs React Native -</h6>
+                    <p>Both build cross-platform apps from one codebase. Flutter uses Dart and draws its own widgets for consistent results and strong performance. React Native uses JavaScript and renders real native components, which feels more platform-native but can be less consistent across devices.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav>
+                <a href="/Cheatsheets"><i class="bi bi-arrow-left-square-fill"></i></a>
+                <a href="#" ><i class="bi bi-arrow-up-square-fill"></i></a>
+            </nav>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
