@@ -158,97 +158,10 @@ body {
 }
 
 .list-block {
+    /* --i (stagger index) is set per-card by JS in index.html */
     animation: fadeInUp 0.4s ease forwards;
     animation-delay: calc(var(--i, 0) * 0.05s);
     opacity: 0;
-}
-
-.list-block:nth-child(1) {
-    --i: 1;
-}
-
-.list-block:nth-child(2) {
-    --i: 2;
-}
-
-.list-block:nth-child(3) {
-    --i: 3;
-}
-
-.list-block:nth-child(4) {
-    --i: 4;
-}
-
-.list-block:nth-child(5) {
-    --i: 5;
-}
-
-.list-block:nth-child(6) {
-    --i: 6;
-}
-
-.list-block:nth-child(7) {
-    --i: 7;
-}
-
-.list-block:nth-child(8) {
-    --i: 8;
-}
-
-.list-block:nth-child(9) {
-    --i: 9;
-}
-
-.list-block:nth-child(10) {
-    --i: 10;
-}
-
-.list-block:nth-child(11) {
-    --i: 11;
-}
-
-.list-block:nth-child(12) {
-    --i: 12;
-}
-
-.list-block:nth-child(13) {
-    --i: 13;
-}
-
-.list-block:nth-child(14) {
-    --i: 14;
-}
-
-.list-block:nth-child(15) {
-    --i: 15;
-}
-
-.list-block:nth-child(16) {
-    --i: 16;
-}
-
-.list-block:nth-child(17) {
-    --i: 17;
-}
-
-.list-block:nth-child(18) {
-    --i: 18;
-}
-
-.list-block:nth-child(19) {
-    --i: 19;
-}
-
-.list-block:nth-child(20) {
-    --i: 20;
-}
-
-.list-block:nth-child(21) {
-    --i: 21;
-}
-
-.list-block:nth-child(22) {
-    --i: 22;
 }
 
 /* ===== Responsiveness ===== */

@@ -114,6 +114,13 @@
             </a>
         </div>
     </div>
+
+    <!-- Stagger each card's fade-in based on its position -->
+    <script>
+        document.querySelectorAll('.list-block').forEach((card, i) => {
+            card.style.setProperty('--i', i + 1);
+        });
+    </script>
 </body>
 
 </html>
