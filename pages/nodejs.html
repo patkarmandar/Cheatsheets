@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Node.js Cheatsheet</title>
+
+        <!-- Bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+
+    <body data-theme="dark">
+        <div class="container">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
+
+            <h3 class="title">Node.js</h3>
+
+            <div class="section-list">
+                <ul>
+                    <li><a href="#nodejs">Node.js</a></li>
+                    <li><a href="#how-it-works">How Node Works</a></li>
+                    <li><a href="#event-loop">Event Loop &amp; Async</a></li>
+                    <li><a href="#commands">Node Commands</a></li>
+                    <li><a href="#modules">Modules</a></li>
+                    <li><a href="#core-modules">Core Modules</a></li>
+                    <li><a href="#globals">Globals &amp; Environment</a></li>
+                    <li><a href="#structure">Project Structure</a></li>
+                    <li><a href="#package-managers">Package Managers</a></li>
+                    <li><a href="#package-json">package.json</a></li>
+                    <li><a href="#frameworks">Frameworks</a></li>
+                    <li><a href="#runtimes">Node vs Other Runtimes</a></li>
+                    <li><a href="#uses">Uses</a></li>
+                </ul>
+            </div>
+
+            <div class="sections" id="nodejs">
+                <h4 class="heading">Node.js</h4>
+                <div class="content">
+                    <p>Node.js is a runtime that lets JavaScript run outside the browser, on servers and the command line. Before Node, JavaScript could only run inside a web browser; Node took Google Chrome's V8 engine and wrapped it with APIs for files, networking, and the operating system, so the same language can now power backends, tools, and desktop apps. It was created by Ryan Dahl in 2009.</p>
+                    <h6>Key Features -</h6>
+                    <ul class="justify">
+                        <li><b>V8 Engine :</b> The core that compiles JavaScript straight to machine code, the same engine used in Chrome. Node adds a C++ layer (libuv) on top for I/O.</li>
+                        <li><b>Single-Threaded :</b> Node runs your JavaScript on one main thread, unlike traditional servers that spawn a new thread per request.</li>
+                        <li><b>Non-Blocking &amp; Event-Driven :</b> Instead of waiting for slow operations (reading a file, a database query) to finish, Node starts them, continues with other work, and handles the result later through callbacks. This is what lets one thread serve thousands of connections.</li>
+                        <li><b>Asynchronous :</b> I/O operations run in the background and notify your code when done, so the server is never idle while waiting.</li>
+                        <li><b>Fast :</b> V8 plus non-blocking I/O makes Node very fast for network and I/O work.</li>
+                        <li><b>Huge Ecosystem :</b> The npm registry offers over a million ready-to-use packages.</li>
+                        <li><b>One Language, Full Stack :</b> The same JavaScript runs on both the front end and back end.</li>
+                        <li><b>Cross-Platform :</b> The same code runs on Windows, macOS, and Linux.</li>
+                        <li><b>Scalable :</b> The event-driven model handles many concurrent connections with little memory.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>// hello.js  -> run with: node hello.js
+console.log("Hello from Node.js");
+console.log("Node version:", process.version);</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="how-it-works">
+                <h4 class="heading">How Node Works</h4>
+                <div class="content">
+                    <p>Node handles a request by moving it through a pipeline: it takes user input, processes it, reads or writes storage as needed, and sends output back, all without blocking the single thread. The slow parts (database, files) run in the background while the thread serves other requests.</p>
+                    <h6>Request to Response Flow -</h6>
+                    <ul class="justify">
+                        <li><b>1. Input :</b> A client (browser, mobile app) sends an HTTP request to the server, for example <code>POST /users</code> with a JSON body.</li>
+                        <li><b>2. Event Queue :</b> Node receives the request and places it on the event queue instead of handling it immediately.</li>
+                        <li><b>3. Event Loop :</b> The event loop picks up the request. Simple work runs on the main thread; slow I/O (database, file) is handed off to libuv's background thread pool.</li>
+                        <li><b>4. Processing :</b> Your code runs: routing decides which handler responds, middleware checks auth and validates the input, and business logic prepares the work.</li>
+                        <li><b>5. Store / Retrieve :</b> If data is needed, Node queries a database or reads a file asynchronously. The thread does not wait; it serves other requests until the result arrives.</li>
+                        <li><b>6. Callback :</b> When the I/O finishes, its callback (or resolved promise) is queued and the event loop resumes that request where it left off.</li>
+                        <li><b>7. Output :</b> The handler builds a response (usually JSON) and sends it back to the client, completing the cycle.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>Client Request
+   -> Event Queue
+      -> Event Loop  --(slow I/O)-->  Thread Pool (libuv)
+         -> Process (routing, middleware, logic)
+            -> Database / File  (store or retrieve)
+               -> Callback / Promise resolves
+                  -> Response back to Client</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="event-loop">
+                <h4 class="heading">Event Loop &amp; Async</h4>
+                <div class="content">
+                    <p>The event loop is the heart of Node. Because JavaScript is single-threaded, Node cannot afford to sit and wait for slow I/O. It hands those operations off to the system, keeps running other code, and picks up the results when they are ready. This is why Node is excellent for I/O-heavy work but poor for heavy CPU computation, which would block the single thread.</p>
+                    <ul class="justify">
+                        <li><b>Blocking vs Non-Blocking :</b> A blocking call stops everything until it finishes; a non-blocking call returns immediately and notifies you later. Node's APIs are non-blocking by default.</li>
+                        <li><b>Callbacks :</b> The original async pattern: pass a function that runs when the operation completes. Nesting many callbacks leads to hard-to-read "callback hell".</li>
+                        <li><b>Promises :</b> An object representing a future value, chained with <code>.then()</code> and <code>.catch()</code>, which flattens nested callbacks.</li>
+                        <li><b>async / await :</b> Modern syntax that makes asynchronous code read like synchronous code, built on top of promises.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>import { readFile } from "fs/promises";
+
+async function load() {
+    try {
+        const data = await readFile("data.txt", "utf-8");
+        console.log(data);
+    } catch (err) {
+        console.error("Failed:", err.message);
+    }
+}
+load();</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="commands">
+                <h4 class="heading">Node Commands</h4>
+                <div class="content">
+                    <p>Node ships with the <code>node</code> CLI for running scripts and an interactive REPL for quick experiments.</p>
+                    <h6>Running Code -</h6>
+                    <div class="code-box code-box-color"><code>node app.js            # run a script
+node                   # open the REPL (interactive shell)
+node --watch app.js    # auto-restart on file changes (Node 18+)
+node --version         # print installed version (also: node -v)
+node -e "console.log(2+2)"   # run inline code
+node --inspect app.js  # start with the debugger attached</code></div>
+                    <h6>REPL -</h6>
+                    <p>The REPL (Read-Eval-Print Loop) runs JavaScript line by line for testing snippets. Useful commands inside it: <code>.help</code>, <code>.exit</code> (or Ctrl+C twice), <code>.save file.js</code>, and <code>.load file.js</code>.</p>
+                    <h6>Environment &amp; Scripts -</h6>
+                    <div class="code-box code-box-color"><code>node index.js arg1 arg2      # args read via process.argv
+NODE_ENV=production node app.js   # set an env variable (Linux/macOS)
+npm run dev                  # run a package.json script
+npx nodemon app.js           # run a package without installing it</code></div>
+                    <ul class="justify">
+                        <li><b>nodemon :</b> A popular dev tool that watches files and restarts the app on every change, so you do not stop and rerun manually.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="modules">
+                <h4 class="heading">Modules</h4>
+                <div class="content">
+                    <p>A module is a reusable piece of code in its own file. Node splits a program into modules and lets them share code through imports and exports. There are two module systems:</p>
+                    <ul class="justify">
+                        <li><b>CommonJS (CJS) :</b> Node's original system. Uses <code>require()</code> to import and <code>module.exports</code> to export. Loaded synchronously; still the default for many packages.</li>
+                        <li><b>ES Modules (ESM) :</b> The modern JavaScript standard, the same syntax used in browsers. Uses <code>import</code> and <code>export</code>. Enabled by setting <code>"type": "module"</code> in package.json or using the <code>.mjs</code> extension.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>// CommonJS
+const fs = require("fs");
+module.exports = { add };
+
+// ES Modules
+import fs from "fs";
+export function add(a, b) { return a + b; }</code></div>
+                    <ul class="justify">
+                        <li><b>Local Modules :</b> Your own files, imported by relative path (<code>./utils.js</code>).</li>
+                        <li><b>Built-in / Core Modules :</b> Shipped with Node, imported by name (<code>fs</code>, <code>http</code>).</li>
+                        <li><b>Third-Party Modules :</b> Installed from npm into <code>node_modules</code>, imported by package name (<code>express</code>).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="core-modules">
+                <h4 class="heading">Core Modules</h4>
+                <div class="content">
+                    <p>Node ships with built-in modules that need no installation, covering the essentials of server-side work.</p>
+                    <ul class="justify">
+                        <li><b>fs :</b> Read, write, and manage files and directories.</li>
+                        <li><b>http / https :</b> Create web servers and make HTTP requests.</li>
+                        <li><b>path :</b> Work with file and directory paths across operating systems.</li>
+                        <li><b>os :</b> Get information about the operating system (CPU, memory, platform).</li>
+                        <li><b>events :</b> The EventEmitter class for building event-driven code.</li>
+                        <li><b>crypto :</b> Hashing, encryption, and generating secure random values.</li>
+                        <li><b>stream :</b> Process data piece by piece instead of loading it all into memory, ideal for large files.</li>
+                        <li><b>url / querystring :</b> Parse and build URLs and query parameters.</li>
+                        <li><b>process :</b> Info and control over the running Node process (environment variables, arguments, exit).</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>import http from "http";
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Hello World");
+});
+server.listen(3000, () => console.log("Running on port 3000"));</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="globals">
+                <h4 class="heading">Globals &amp; Environment</h4>
+                <div class="content">
+                    <p>Node provides global objects available everywhere without importing, and a standard way to read configuration from the environment.</p>
+                    <h6>Global Objects -</h6>
+                    <ul class="justify">
+                        <li><b>global :</b> The top-level object, like <code>window</code> in the browser.</li>
+                        <li><b>process :</b> The running Node process: <code>process.argv</code> (command-line arguments), <code>process.env</code> (environment variables), <code>process.exit()</code>, and <code>process.cwd()</code> (current directory).</li>
+                        <li><b>__dirname / __filename :</b> The absolute path of the current folder and file (available in CommonJS).</li>
+                        <li><b>console :</b> Logging: <code>log</code>, <code>error</code>, <code>warn</code>, <code>table</code>.</li>
+                        <li><b>Buffer :</b> Handles raw binary data, used with files and network streams.</li>
+                        <li><b>setTimeout / setInterval / setImmediate :</b> Schedule code to run later.</li>
+                    </ul>
+                    <h6>Environment Variables -</h6>
+                    <p>Secrets and config (database URLs, API keys, ports) are kept out of the code in environment variables, read through <code>process.env</code>. A <code>.env</code> file holds them locally and is loaded by the <code>dotenv</code> package (or Node's built-in <code>--env-file</code> flag). The <code>.env</code> file is never committed to Git.</p>
+                    <div class="code-box code-box-color"><code># .env
+PORT=3000
+DB_URL=postgres://localhost/mydb
+
+// app.js
+import "dotenv/config";
+const port = process.env.PORT || 3000;</code></div>
+                    <h6>Error Handling -</h6>
+                    <ul class="justify">
+                        <li>Wrap <code>await</code> calls in <code>try / catch</code>, and use <code>.catch()</code> on promises.</li>
+                        <li>In Express, pass errors to <code>next(err)</code> so a central error-handling middleware responds.</li>
+                        <li>Catch process-level crashes with <code>process.on("uncaughtException")</code> and <code>process.on("unhandledRejection")</code>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="structure">
+                <h4 class="heading">Project Structure</h4>
+                <div class="content">
+                    <p>Small scripts can be a single file, but real projects follow a layered structure that separates routing, business logic, and data access, so the codebase stays maintainable as it grows.</p>
+                    <div class="code-box code-box-color"><code>my-app/
+├── node_modules/        # installed packages (never committed)
+├── src/
+│   ├── controllers/     # handle requests, build responses
+│   ├── routes/          # map URLs to controllers
+│   ├── models/          # data shapes / database schemas
+│   ├── services/        # business logic
+│   ├── middleware/      # auth, logging, validation
+│   ├── config/          # database and app configuration
+│   └── app.js           # sets up the server
+├── tests/               # test files
+├── public/              # static assets (images, css)
+├── .env                 # environment variables (not committed)
+├── .gitignore           # lists node_modules, .env, etc.
+├── package.json         # manifest and scripts
+├── package-lock.json    # exact dependency versions
+└── index.js             # entry point that starts the app</code></div>
+                    <ul class="justify">
+                        <li><b>Separation of Concerns :</b> Routes decide "where", controllers decide "what to do", services hold the actual logic, and models describe the data. Keeping them apart makes code easier to test and change.</li>
+                        <li><b>.gitignore :</b> Always excludes <code>node_modules</code> (recreated from the lock file) and <code>.env</code> (holds secrets).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="package-managers">
+                <h4 class="heading">Package Managers</h4>
+                <div class="content">
+                    <p>A package manager downloads and manages the third-party libraries (packages) your project depends on, resolving their sub-dependencies and recording exact versions in a lock file so every install is reproducible. Packages live in the npm registry, the world's largest software registry.</p>
+                    <ul class="justify">
+                        <li><b>npm :</b> The default package manager, bundled with Node. Reliable and universal. Uses <code>package-lock.json</code>.</li>
+                        <li><b>Yarn :</b> Created by Meta to fix npm's early speed and reliability gaps. Introduced lock files and offline caching; still popular, especially Yarn's modern "Berry" versions.</li>
+                        <li><b>pnpm :</b> The efficient modern choice. Stores each package version once on disk and links it into projects, saving huge amounts of space and installing very fast. Strict about dependency access.</li>
+                        <li><b>Bun :</b> A package manager built into the Bun runtime, extremely fast, compatible with npm packages.</li>
+                    </ul>
+                    <h6>Setup &amp; Info -</h6>
+                    <div class="code-box code-box-color"><code>npm init                    # create package.json (interactive)
+npm init -y                 # create it with defaults
+npm --version               # npm version (also: npm -v)
+npm list                    # list installed packages
+npm outdated                # show packages with newer versions</code></div>
+                    <h6>Installing -</h6>
+                    <div class="code-box code-box-color"><code>npm install                 # install everything in package.json
+npm install express         # add a dependency (also: npm i)
+npm install -D nodemon      # add a dev dependency (--save-dev)
+npm install -g nodemon      # install globally (system-wide)
+npm install express@4.18.2  # install a specific version
+npm ci                      # clean install from lock file (CI/CD)</code></div>
+                    <h6>Updating &amp; Removing -</h6>
+                    <div class="code-box code-box-color"><code>npm update                  # update packages within allowed ranges
+npm update express          # update a single package
+npm uninstall express       # remove a package (also: npm remove)
+npm audit                   # scan dependencies for vulnerabilities
+npm audit fix               # auto-fix vulnerabilities where possible</code></div>
+                    <h6>Running Scripts -</h6>
+                    <div class="code-box code-box-color"><code>npm start                   # runs the "start" script
+npm test                    # runs the "test" script
+npm run dev                 # runs the "dev" script
+npm run build               # runs the "build" script
+npx create-react-app app    # run a package without installing it</code></div>
+                    <ul class="justify">
+                        <li><b>npm Scripts :</b> Any command in the <code>"scripts"</code> block of package.json is run with <code>npm run &lt;name&gt;</code>. The <code>start</code> and <code>test</code> names are special and skip the <code>run</code> word. <code>dev</code> and <code>build</code> are conventions, not built in: <code>dev</code> usually starts the app with live reload, and <code>build</code> compiles or bundles it for production.</li>
+                        <li><b>npm version :</b> <code>npm version patch|minor|major</code> bumps the version in package.json and creates a matching Git tag.</li>
+                        <li><b>Dependencies vs devDependencies :</b> Regular dependencies are needed to run the app in production (Express); dev dependencies are only needed while developing (test runners, linters, nodemon).</li>
+                        <li><b>node_modules :</b> The folder where installed packages live. It is never committed to Git; the lock file lets anyone recreate it with <code>npm install</code>.</li>
+                        <li><b>Semantic Versioning :</b> Versions read <code>MAJOR.MINOR.PATCH</code> (e.g. <code>4.18.2</code>). <code>^</code> allows minor and patch updates, <code>~</code> allows only patch updates.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="package-json">
+                <h4 class="heading">package.json</h4>
+                <div class="content">
+                    <p>Every Node project has a <code>package.json</code> file at its root. It is the project's manifest: it records the name, version, scripts, and the exact list of dependencies, so the whole project can be shared and rebuilt from it.</p>
+                    <div class="code-box code-box-color"><code>{
+  "name": "my-app",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}</code></div>
+                    <ul class="justify">
+                        <li><b>scripts :</b> Named shortcuts run with <code>npm run &lt;name&gt;</code>. <code>start</code> and <code>test</code> can be run without <code>run</code>.</li>
+                        <li><b>main :</b> The entry file loaded when the package is imported.</li>
+                        <li><b>type :</b> <code>"module"</code> enables ES Modules; omitted or <code>"commonjs"</code> uses CommonJS.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="frameworks">
+                <h4 class="heading">Frameworks</h4>
+                <div class="content">
+                    <p>Node's core <code>http</code> module is low-level, so frameworks add routing, middleware, and structure on top of it. They fall into two broad groups: backend frameworks (build APIs and servers) and full-stack meta-frameworks (build entire websites, front and back).</p>
+                    <h6>Backend / API Frameworks -</h6>
+                    <ul class="justify">
+                        <li><b>Express :</b> The minimal, most popular framework. Small core plus middleware; you assemble what you need. Great default for REST APIs and a huge ecosystem.</li>
+                        <li><b>NestJS :</b> An opinionated, structured framework using TypeScript, decorators, and dependency injection (Angular-style). Best for large, enterprise applications that need consistent architecture.</li>
+                        <li><b>Fastify :</b> Focused on speed and low overhead, with built-in schema validation. A modern, faster alternative to Express.</li>
+                        <li><b>Koa :</b> A lighter, more modern take on Express by the same team, built around async/await middleware.</li>
+                        <li><b>Hapi :</b> Configuration-driven framework with strong built-in features for larger teams.</li>
+                    </ul>
+                    <h6>Full-Stack Meta-Frameworks -</h6>
+                    <ul class="justify">
+                        <li><b>Next.js :</b> React-based framework for full websites, with server-side rendering, static generation, and API routes. The most popular choice for production React apps.</li>
+                        <li><b>Nuxt :</b> The equivalent of Next.js for Vue.</li>
+                        <li><b>SvelteKit / Remix :</b> Full-stack frameworks for Svelte and React respectively, handling routing, data loading, and server rendering.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>// minimal Express server
+import express from "express";
+const app = express();
+
+app.get("/", (req, res) => res.json({ message: "Hello API" }));
+
+app.listen(3000, () => console.log("API on port 3000"));</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="runtimes">
+                <h4 class="heading">Node vs Other Runtimes</h4>
+                <div class="content">
+                    <p>Node.js is a JavaScript runtime, but it is no longer the only one. Two newer runtimes aim to fix things Node got wrong or make it faster. They are alternatives to Node, not frameworks that run on it.</p>
+                    <ul class="justify">
+                        <li><b>Node.js :</b> The mature, default choice with the largest ecosystem and community. Uses the V8 engine. Added support for TypeScript, a test runner, and a <code>--watch</code> mode in recent versions.</li>
+                        <li><b>Deno :</b> Created by Node's original author to address its regrets. Secure by default (code must be granted file, network, and environment permissions), TypeScript built in, and web-standard APIs. Also uses V8.</li>
+                        <li><b>Bun :</b> An all-in-one runtime built for speed, using Apple's JavaScriptCore engine instead of V8. Bundles a package manager, bundler, and test runner in one tool, and runs most Node packages.</li>
+                    </ul>
+                    <h6>Node vs the Browser -</h6>
+                    <ul class="justify">
+                        <li>The browser has the <code>window</code>, <code>document</code>, and DOM; Node has <code>global</code>, <code>process</code>, and file-system access instead.</li>
+                        <li>The browser sandboxes code away from the operating system; Node can read files, open network sockets, and run system commands.</li>
+                        <li>Both run JavaScript on V8, which is why the language and much of the logic is shared between front and back end.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="uses">
+                <h4 class="heading">Uses</h4>
+                <div class="content">
+                    <p>Node shines wherever the work is mostly waiting on input and output (network, files, databases) rather than crunching numbers, and wherever using one language across the whole stack is an advantage.</p>
+                    <h6>Great Fit -</h6>
+                    <ul class="justify">
+                        <li><b>REST &amp; GraphQL APIs :</b> The most common use, serving data to web and mobile clients.</li>
+                        <li><b>Real-Time Apps :</b> Chat, live notifications, collaborative tools, and multiplayer games using WebSockets, where Node's event-driven model excels.</li>
+                        <li><b>Microservices :</b> Small, fast-starting services that mostly pass data around.</li>
+                        <li><b>Streaming :</b> Handling large uploads, downloads, or media with streams.</li>
+                        <li><b>CLI Tools &amp; Build Tooling :</b> Most front-end tooling (Webpack, Vite, ESLint) runs on Node.</li>
+                        <li><b>Full-Stack JavaScript :</b> Sharing types and logic between a React front end and a Node back end.</li>
+                    </ul>
+                    <h6>Poor Fit -</h6>
+                    <ul class="justify">
+                        <li><b>CPU-Heavy Work :</b> Video encoding, complex image processing, or scientific computation would block the single thread. Languages like Go, Rust, or Python (with native libraries) suit these better, though Node can offload such work to worker threads.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav>
+                <a href="/Cheatsheets"><i class="bi bi-arrow-left-square-fill"></i></a>
+                <a href="#" ><i class="bi bi-arrow-up-square-fill"></i></a>
+            </nav>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
