@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>React.js Cheatsheet</title>
+
+        <!-- Bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+
+    <body data-theme="dark">
+        <div class="container">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <a href="/Cheatsheets" class="back-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Cheatsheets</a>
+                <div class="button"><i class="bi bi-circle-half"></i></div>
+            </div>
+
+            <h3 class="title">React.js</h3>
+
+            <div class="section-list">
+                <ul>
+                    <li><a href="#react">React.js</a></li>
+                    <li><a href="#how-it-works">How React Works</a></li>
+                    <li><a href="#setup">Setup &amp; Commands</a></li>
+                    <li><a href="#structure">Project Structure</a></li>
+                    <li><a href="#jsx">JSX</a></li>
+                    <li><a href="#components">Components &amp; Props</a></li>
+                    <li><a href="#state-events">State &amp; Events</a></li>
+                    <li><a href="#rendering">Conditional &amp; List Rendering</a></li>
+                    <li><a href="#hooks">Hooks</a></li>
+                    <li><a href="#forms">Forms</a></li>
+                    <li><a href="#routing-data">Routing &amp; Data</a></li>
+                    <li><a href="#state-mgmt">State Management</a></li>
+                    <li><a href="#ecosystem">Ecosystem &amp; Uses</a></li>
+                </ul>
+            </div>
+
+            <div class="sections" id="react">
+                <h4 class="heading">React.js</h4>
+                <div class="content">
+                    <p>React is a JavaScript library for building user interfaces, created by Meta (Facebook) in 2013. Instead of manually updating the page when data changes, you describe what the UI should look like for a given state, and React efficiently updates the actual page to match. It is component-based: you build small, reusable pieces and compose them into complex interfaces.</p>
+                    <h6>Key Features -</h6>
+                    <ul class="justify">
+                        <li><b>Component-Based :</b> UIs are built from independent, reusable components, each managing its own logic and appearance.</li>
+                        <li><b>Declarative :</b> You describe the desired result for the current state; React figures out the DOM changes. This is easier to reason about than manual, step-by-step DOM updates.</li>
+                        <li><b>Virtual DOM :</b> React keeps a lightweight copy of the DOM in memory, compares it after each change, and updates only what actually differs, which makes updates fast.</li>
+                        <li><b>Unidirectional Data Flow :</b> Data flows down from parent to child through props, making the app predictable and easier to debug.</li>
+                        <li><b>JSX :</b> A syntax that lets you write HTML-like markup directly inside JavaScript.</li>
+                        <li><b>Learn Once, Write Anywhere :</b> The same ideas power React for web, React Native for mobile, and more.</li>
+                    </ul>
+                    <p><b>Library vs Framework :</b> React is a library focused only on the view (the UI). Unlike a full framework such as Angular, it leaves routing, data fetching, and state management to separate packages that you choose, which is why React apps are assembled from an ecosystem of tools.</p>
+                </div>
+            </div>
+
+            <div class="sections" id="how-it-works">
+                <h4 class="heading">How React Works</h4>
+                <div class="content">
+                    <p>React keeps the UI in sync with your data through a render cycle driven by state. You never touch the real DOM directly; you change state, and React updates the page for you.</p>
+                    <h6>The Render Cycle -</h6>
+                    <ul class="justify">
+                        <li><b>1. Render :</b> A component is a function that returns JSX describing the UI for the current props and state.</li>
+                        <li><b>2. Virtual DOM :</b> React builds a virtual DOM tree from that JSX, an in-memory representation of the UI.</li>
+                        <li><b>3. State Change :</b> When state or props change (for example, a button click updates a counter), React re-runs the component function to get a new virtual DOM.</li>
+                        <li><b>4. Diffing (Reconciliation) :</b> React compares the new virtual DOM with the previous one to find exactly what changed.</li>
+                        <li><b>5. Commit :</b> React updates only the changed parts of the real DOM, leaving the rest untouched, which is what makes it efficient.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>State change
+   -> Re-render component (run the function)
+      -> New Virtual DOM
+         -> Diff against old Virtual DOM
+            -> Update only changed real DOM nodes
+               -> Screen updates</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="setup">
+                <h4 class="heading">Setup &amp; Commands</h4>
+                <div class="content">
+                    <p>Modern React projects are created with a build tool. Vite is the current default (fast and light); Create React App (CRA) is the older, now deprecated tool. React needs Node.js and a package manager installed.</p>
+                    <div class="code-box code-box-color"><code># create a new project with Vite
+npm create vite@latest my-app
+# choose the "React" framework, then:
+cd my-app
+npm install        # install dependencies
+npm run dev        # start dev server with hot reload
+npm run build      # bundle for production
+npm run preview    # preview the production build
+
+# add a package
+npm install react-router-dom</code></div>
+                    <ul class="justify">
+                        <li><b>react &amp; react-dom :</b> The two core packages. <code>react</code> defines components and hooks; <code>react-dom</code> renders them into the browser DOM.</li>
+                        <li><b>Hot Reload (HMR) :</b> The dev server updates the browser instantly as you edit, without a full page refresh.</li>
+                        <li><b>Node Requirement :</b> React tooling runs on Node.js, and packages install through npm.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="structure">
+                <h4 class="heading">Project Structure</h4>
+                <div class="content">
+                    <p>A typical Vite React project separates the entry files from your components and assets.</p>
+                    <div class="code-box code-box-color"><code>my-app/
+├── node_modules/         # installed packages
+├── public/               # static files served as-is
+├── src/
+│   ├── components/        # reusable UI components
+│   ├── pages/             # route-level components
+│   ├── hooks/             # custom hooks
+│   ├── assets/            # images, styles
+│   ├── App.jsx            # root component
+│   └── main.jsx           # entry: mounts App into the DOM
+├── index.html            # single HTML page React renders into
+├── package.json          # dependencies and scripts
+└── vite.config.js        # build tool configuration</code></div>
+                    <ul class="justify">
+                        <li><b>index.html :</b> React is a Single Page Application (SPA): there is one HTML file with a single <code>&lt;div id="root"&gt;</code>, and React renders the entire app inside it.</li>
+                        <li><b>main.jsx :</b> The entry point that attaches the root <code>App</code> component to that div.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>// main.jsx
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+
+createRoot(document.getElementById("root")).render(&lt;App /&gt;);</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="jsx">
+                <h4 class="heading">JSX</h4>
+                <div class="content">
+                    <p>JSX (JavaScript XML) lets you write HTML-like markup inside JavaScript. It is not required but is used everywhere in React. A build tool converts JSX into regular JavaScript function calls before it reaches the browser.</p>
+                    <ul class="justify">
+                        <li><b>Expressions in Braces :</b> Put any JavaScript expression inside <code>{ }</code>, such as a variable or a calculation.</li>
+                        <li><b>One Root Element :</b> A component must return a single parent element. Use a fragment <code>&lt;&gt;...&lt;/&gt;</code> to group siblings without adding an extra DOM node.</li>
+                        <li><b>Attribute Names :</b> Use <code>className</code> instead of <code>class</code>, and <code>camelCase</code> for others (<code>onClick</code>, <code>htmlFor</code>).</li>
+                        <li><b>Self-Closing :</b> Tags without children must close themselves, like <code>&lt;img /&gt;</code> and <code>&lt;br /&gt;</code>.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>const name = "Ada";
+const element = (
+    &lt;&gt;
+        &lt;h1 className="title"&gt;Hello, {name}&lt;/h1&gt;
+        &lt;p&gt;2 + 2 = {2 + 2}&lt;/p&gt;
+    &lt;/&gt;
+);</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="components">
+                <h4 class="heading">Components &amp; Props</h4>
+                <div class="content">
+                    <p>A component is a reusable piece of UI written as a JavaScript function that returns JSX. Component names must start with a capital letter. Modern React uses function components; older code used class components.</p>
+                    <h6>Props -</h6>
+                    <p>Props (properties) pass data from a parent component to a child, like function arguments. They are read-only: a child can never change its own props. This one-way flow keeps data predictable.</p>
+                    <div class="code-box code-box-color"><code>// child component
+function Greeting({ name, age }) {
+    return &lt;p&gt;{name} is {age} years old&lt;/p&gt;;
+}
+
+// parent passes props
+function App() {
+    return &lt;Greeting name="Ada" age={36} /&gt;;
+}</code></div>
+                    <ul class="justify">
+                        <li><b>children :</b> The special <code>children</code> prop holds whatever a component wraps: <code>&lt;Card&gt;content here&lt;/Card&gt;</code>.</li>
+                        <li><b>Composition :</b> Build complex UIs by nesting small components rather than writing one large one.</li>
+                        <li><b>Default &amp; Destructuring :</b> Destructure props in the parameter list and set defaults: <code>function Btn({ label = "OK" })</code>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="state-events">
+                <h4 class="heading">State &amp; Events</h4>
+                <div class="content">
+                    <p>State is data that a component owns and can change over time. When state changes, React re-renders the component to reflect the new value. State is created with the <code>useState</code> hook.</p>
+                    <div class="code-box code-box-color"><code>import { useState } from "react";
+
+function Counter() {
+    const [count, setCount] = useState(0);   // [value, setter]
+
+    return (
+        &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+            Clicked {count} times
+        &lt;/button&gt;
+    );
+}</code></div>
+                    <ul class="justify">
+                        <li><b>Never Mutate Directly :</b> Do not change state variables in place; always call the setter (<code>setCount</code>), or React will not re-render.</li>
+                        <li><b>Updates Are Async :</b> When the new value depends on the old one, use the function form: <code>setCount(c =&gt; c + 1)</code>.</li>
+                        <li><b>Props vs State :</b> Props come from the parent and are read-only; state is owned by the component and is changeable.</li>
+                        <li><b>Events :</b> Handle user actions with camelCase props like <code>onClick</code>, <code>onChange</code>, and <code>onSubmit</code>, passing a function (not calling it).</li>
+                        <li><b>Lifting State Up :</b> When two components need the same data, move the state to their closest common parent and pass it down as props.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="rendering">
+                <h4 class="heading">Conditional &amp; List Rendering</h4>
+                <div class="content">
+                    <h6>Conditional Rendering -</h6>
+                    <p>Show different UI based on a condition using normal JavaScript inside JSX.</p>
+                    <div class="code-box code-box-color"><code>{isLoggedIn ? &lt;Dashboard /&gt; : &lt;Login /&gt;}   // ternary
+{hasError &amp;&amp; &lt;p&gt;Something went wrong&lt;/p&gt;}   // render if true</code></div>
+                    <h6>List Rendering -</h6>
+                    <p>Render an array of items with <code>.map()</code>, returning a component for each. Each item needs a unique <code>key</code> prop so React can track which items changed, were added, or removed. Use a stable id, not the array index, when the list can reorder.</p>
+                    <div class="code-box code-box-color"><code>const users = [{ id: 1, name: "Ada" }, { id: 2, name: "Alan" }];
+
+function UserList() {
+    return (
+        &lt;ul&gt;
+            {users.map(user =&gt; (
+                &lt;li key={user.id}&gt;{user.name}&lt;/li&gt;
+            ))}
+        &lt;/ul&gt;
+    );
+}</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="hooks">
+                <h4 class="heading">Hooks</h4>
+                <div class="content">
+                    <p>Hooks are functions that let function components use React features like state and lifecycle. They must be called at the top level of a component, never inside loops or conditions, and their names start with <code>use</code>.</p>
+                    <ul class="justify">
+                        <li><b>useState :</b> Adds local state to a component. Returns the current value and a setter.</li>
+                        <li><b>useEffect :</b> Runs side effects (data fetching, subscriptions, timers) after render. The dependency array controls when it re-runs.</li>
+                        <li><b>useContext :</b> Reads a shared value from a Context without passing props through every level.</li>
+                        <li><b>useRef :</b> Holds a mutable value that persists across renders without causing a re-render; often used to access a DOM element.</li>
+                        <li><b>useMemo :</b> Caches the result of an expensive calculation so it only recomputes when its dependencies change.</li>
+                        <li><b>useCallback :</b> Caches a function so it is not recreated on every render, useful when passing callbacks to optimized children.</li>
+                        <li><b>useReducer :</b> Manages complex state with a reducer function, an alternative to useState for related state transitions.</li>
+                        <li><b>Custom Hooks :</b> Your own <code>useSomething</code> functions that reuse stateful logic across components.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>import { useState, useEffect } from "react";
+
+function Timer() {
+    const [seconds, setSeconds] = useState(0);
+
+    useEffect(() =&gt; {
+        const id = setInterval(() =&gt; setSeconds(s =&gt; s + 1), 1000);
+        return () =&gt; clearInterval(id);   // cleanup on unmount
+    }, []);   // [] = run once after first render
+
+    return &lt;p&gt;{seconds}s&lt;/p&gt;;
+}</code></div>
+                    <ul class="justify">
+                        <li><b>Dependency Array :</b> <code>[]</code> runs the effect once; <code>[value]</code> runs it whenever <code>value</code> changes; omitting it runs after every render.</li>
+                        <li><b>Cleanup :</b> Returning a function from useEffect cleans up (clears timers, removes listeners) before the next run or when the component unmounts.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="forms">
+                <h4 class="heading">Forms</h4>
+                <div class="content">
+                    <p>React forms are usually controlled: the input's value is tied to state, so React is the single source of truth. Every keystroke updates state through <code>onChange</code>.</p>
+                    <div class="code-box code-box-color"><code>function LoginForm() {
+    const [email, setEmail] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();          // stop page reload
+        console.log(email);
+    }
+
+    return (
+        &lt;form onSubmit={handleSubmit}&gt;
+            &lt;input
+                value={email}
+                onChange={e =&gt; setEmail(e.target.value)}
+            /&gt;
+            &lt;button type="submit"&gt;Login&lt;/button&gt;
+        &lt;/form&gt;
+    );
+}</code></div>
+                    <ul class="justify">
+                        <li><b>Controlled Component :</b> The input shows <code>value</code> from state and updates state on change, keeping them in sync.</li>
+                        <li><b>preventDefault :</b> Stops the browser's default form submission (a full page reload).</li>
+                        <li><b>Form Libraries :</b> React Hook Form and Formik handle validation and complex forms with less code.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sections" id="routing-data">
+                <h4 class="heading">Routing &amp; Data</h4>
+                <div class="content">
+                    <p>React itself has no built-in routing or data fetching; these come from separate libraries, since React is only the view layer.</p>
+                    <h6>Routing -</h6>
+                    <p>React Router is the standard for navigation. It maps URLs to components without reloading the page, keeping the single-page-app experience.</p>
+                    <div class="code-box code-box-color"><code>import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+&lt;BrowserRouter&gt;
+    &lt;nav&gt;&lt;Link to="/about"&gt;About&lt;/Link&gt;&lt;/nav&gt;
+    &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+        &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+    &lt;/Routes&gt;
+&lt;/BrowserRouter&gt;</code></div>
+                    <h6>Data Fetching -</h6>
+                    <ul class="justify">
+                        <li><b>fetch / axios :</b> Call APIs inside <code>useEffect</code> and store the result in state.</li>
+                        <li><b>TanStack Query (React Query) :</b> Handles fetching, caching, loading and error states, and refetching automatically. The standard for server data.</li>
+                        <li><b>SWR :</b> A lighter alternative for data fetching with caching.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>useEffect(() =&gt; {
+    fetch("/api/users")
+        .then(res =&gt; res.json())
+        .then(data =&gt; setUsers(data));
+}, []);</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="state-mgmt">
+                <h4 class="heading">State Management</h4>
+                <div class="content">
+                    <p>Local state (<code>useState</code>) works within a component, but sharing state across many components can lead to "prop drilling" (passing props through many layers). Several tools solve this at the app level.</p>
+                    <ul class="justify">
+                        <li><b>Context API :</b> Built into React. Provides a value to a whole subtree without prop drilling. Best for low-frequency global data like theme, language, or the current user.</li>
+                        <li><b>Redux (Redux Toolkit) :</b> A predictable central store for large apps, with a strict update pattern. Redux Toolkit is the modern, less-boilerplate way to use it.</li>
+                        <li><b>Zustand :</b> A tiny, simple store with minimal boilerplate, popular for small to medium apps.</li>
+                        <li><b>Jotai / Recoil :</b> Atom-based state, breaking global state into small independent pieces.</li>
+                    </ul>
+                    <div class="code-box code-box-color"><code>// Context basics
+const ThemeContext = createContext("light");
+
+// provide
+&lt;ThemeContext.Provider value="dark"&gt;
+    &lt;App /&gt;
+&lt;/ThemeContext.Provider&gt;
+
+// consume
+const theme = useContext(ThemeContext);</code></div>
+                </div>
+            </div>
+
+            <div class="sections" id="ecosystem">
+                <h4 class="heading">Ecosystem &amp; Uses</h4>
+                <div class="content">
+                    <p>Because React is only the view layer, real apps combine it with tools from its large ecosystem.</p>
+                    <h6>Common Ecosystem -</h6>
+                    <ul class="justify">
+                        <li><b>Meta-Frameworks :</b> Next.js and Remix add routing, server-side rendering, and a backend around React for full production websites.</li>
+                        <li><b>Styling :</b> Tailwind CSS, CSS Modules, styled-components, and component libraries like Material UI and shadcn/ui.</li>
+                        <li><b>Mobile :</b> React Native builds native iOS and Android apps using the same React concepts.</li>
+                        <li><b>Testing :</b> Vitest or Jest with React Testing Library.</li>
+                        <li><b>Build Tools :</b> Vite (default) or the older Create React App.</li>
+                    </ul>
+                    <h6>What React Is Used For -</h6>
+                    <ul class="justify">
+                        <li><b>Single Page Applications :</b> Dashboards, admin panels, and web apps that update without full page reloads.</li>
+                        <li><b>Interactive UIs :</b> Anything with lots of dynamic, changing content driven by user actions.</li>
+                        <li><b>Full Websites :</b> With Next.js, marketing sites and e-commerce that also need SEO and server rendering.</li>
+                        <li><b>Cross-Platform :</b> Mobile apps via React Native, sharing skills and logic with the web.</li>
+                    </ul>
+                    <h6>React vs Others -</h6>
+                    <p>React is a flexible library you assemble with other tools. Angular is a complete, opinionated framework with routing and more built in. Vue sits in between, approachable with a gentle learning curve. React has the largest ecosystem and job market of the three.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav>
+                <a href="/Cheatsheets"><i class="bi bi-arrow-left-square-fill"></i></a>
+                <a href="#" ><i class="bi bi-arrow-up-square-fill"></i></a>
+            </nav>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
